@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core

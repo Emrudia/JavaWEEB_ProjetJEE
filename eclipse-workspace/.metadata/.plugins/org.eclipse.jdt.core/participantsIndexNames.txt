@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3464351310.index
+/projetWebHugo/src
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3195730832.index
+/projetWebHugo/src
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/918319762.index
+/projetWebHugo/src
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3511790610.index
+/projetWebHugo/src
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2414626474.index
+/projetWebHugo/src
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/807122720.index
+/Projet_JEE/src
+/home/tonystark/git/JavaWEEB_ProjetJEE/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1871572252.index
+/Enssat/src
