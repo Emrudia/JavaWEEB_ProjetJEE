@@ -6,16 +6,16 @@ html, body {
 }
 
 html {
-  font-size: 10px;
-  /*background-image=url("../background.png");*/
-  background-size: 100%;
+  font-size: 10px;  
 }
 
 body {
-  width: 70%;
+background-image: url("./background.png");
+  width: 100%;
   margin: 0 auto;
-  background-color: #f48fb1;
+  background-repeat: repeat;
 }
+
 /* || typography */
 
 h1, h2, h3 {
@@ -30,7 +30,6 @@ p, input, li {
 
 .container{
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -74,25 +73,27 @@ nav {
   height: 92px;
   padding:0;
   background-color: #ef5350;
-  display: flex;
   margin-bottom: 10px;
 }
 
 nav ul {
   padding: 0;
   list-style-type: none;
-  flex: 2;
-  display: flex;
   align-items: center;
   vertical-align: middle;
+  margin: 0;
 }
 
 nav li {
   display: inline;
   text-align: center;
   vertical-align: middle;
-  flex: 1;
-  height:60px;
+  height: 100%;
+  margin: 0;
+}
+
+nav li:hover{
+	background-color : #795548;
 }
 
 nav a {
@@ -102,11 +103,14 @@ nav a {
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
+  height: 100%;
+  text-align: center;
+  vertical-align: inherit;
+  height: 100%;
+  width: 23%;
 }
 
 nav form {
-  flex: 1;
-  display: flex;
   align-items: center;
   height: 100%;
   padding: 0 2em;
@@ -163,8 +167,6 @@ footer {
 	font-size: 60px;
 	text-align: left;
 	color: #ffffff;
-	background-color: #ef5350;
-	padding: 10px 10px;
 }
 .copyright{
 	font-size: 15px;
