@@ -7,12 +7,14 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #f48fb1;
+  /*background-image=url("../background.png");*/
+  background-size: 100%;
 }
 
 body {
   width: 70%;
   margin: 0 auto;
+  background-color: #f48fb1;
 }
 /* || typography */
 
@@ -69,9 +71,9 @@ nav, article, aside, footer {
 }
 
 nav {
-  height: 60px;
+  height: 92px;
   padding:0;
-  background-color: #B7462e;
+  background-color: #ef5350;
   display: flex;
   margin-bottom: 10px;
 }
@@ -90,8 +92,6 @@ nav li {
   text-align: center;
   vertical-align: middle;
   flex: 1;
-  border-color: #E9E6E5 ;
-  border-style: solid;
   height:60px;
 }
 
@@ -160,7 +160,17 @@ footer {
 
 /* || class*/
 .title {
-	font-size: 6rem;
+	font-size: 60px;
 	text-align: left;
 	color: #ffffff;
+	background-color: #ef5350;
+	padding: 10px 10px;
+}
+.copyright{
+	font-size: 15px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #ef5350;
+	padding: 10px 10px;
+	height: 3%;
 }
