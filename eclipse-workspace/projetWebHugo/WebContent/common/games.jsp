@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Page accueil</title>
+<title>Jeux</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 
