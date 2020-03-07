@@ -27,6 +27,7 @@ background-image: url("./background.png");
   overflow: hidden;
   background-color: #ef5350;
   padding: 20px 10px;
+  width: 100%
 }
 
 /* Style the header links */
@@ -34,7 +35,7 @@ background-image: url("./background.png");
   float: left;
   color: white;
   text-align: center;
-  padding: 12px;
+  padding: 12px 20px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
@@ -59,6 +60,7 @@ background-image: url("./background.png");
 /* Float the link section to the right */
 .header-right {
   float: right;
+  margin-right: 20px;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -79,6 +81,7 @@ footer {
   display: table-row;
   height: 10px;
   background-color: #ef5350;
+  font-family: 'MS Serif', 'New York', sans-serif;
 }
 
 .copyright{
@@ -91,10 +94,11 @@ footer {
 
 /* || typography */
 h1{
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
-	color: #fffffff;
+	font-family: 'MS Serif', 'New York', sans-serif;
+	color: white;
 	font-size: 5rem;
     text-align: center;
+    background-color: red;
 }
 
 h2, h3 {
@@ -212,7 +216,7 @@ main {
 }
 
 article {
-  flex: 4;
+  flex: 4;  
 }
 
 aside {

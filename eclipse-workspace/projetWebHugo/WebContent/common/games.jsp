@@ -28,8 +28,9 @@
 
 		<main>
 		<article>
-			<h1>PAGE D'ACCUEIL</h1>
+			<h1>PAGE JEUX</h1>
 		</article>
+
 		</main>
 	</div>
 
