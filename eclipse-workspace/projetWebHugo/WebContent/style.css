@@ -38,14 +38,14 @@ background-image: url("./background.png");
   text-align: center;
   padding: 12px 20px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 25px;
   border-radius: 4px;
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
-  font-size: 25px;
+  font-size: 50px;
   font-weight: bold;
 }
 
@@ -255,6 +255,7 @@ aside li {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-size: 3rem;
 }
 
 .registerbtn:hover {

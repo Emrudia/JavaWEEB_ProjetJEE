@@ -36,45 +36,45 @@
 					<h2>
 
 						<div>
-							<label for="uname"><h3>Nom :</h3></label> <input type="text"
-								class="form-control" id="uname" placeholder="First Name"
+							<label for="uname">Nom :</label> <input type="text"
+								class="form-control" id="uname" placeholder="Nom"
 								name="firstName" required>
 						</div>
 
 						<div>
-							<label for="uname"><h3>Prénom :</h3></label> <input type="text"
-								class="form-control" id="uname" placeholder="last Name"
+							<label for="uname">Prénom :</label> <input type="text"
+								class="form-control" id="uname" placeholder="Prénom"
 								name="lastName" required>
 						</div>
 
 						<div>
-							<label for="uname"><h3>Date de naissance :</h3></label> <input
+							<label for="uname">Date de naissance :</label> <input
 								type="text" class="form-control" id="birthdayDate"
-								placeholder="BirthdayDate" name="birthdayDate" required>
+								placeholder="Date de naissance" name="birthdayDate" required>
 						</div>
 
 						<div>
-							<label for="uname"><h3>E-mail :</h3></label> <input type="text"
-								class="form-control" id="email" placeholder="Email" name="email"
+							<label for="uname">E-mail :</label> <input type="text"
+								class="form-control" id="email" placeholder="E-mail" name="email"
 								required>
 						</div>
 
 						<div>
-							<label for="uname"><h3>Nom d'utilisateur :</h3></label> <input
+							<label for="uname">Nom d'utilisateur :</label> <input
 								type="text" class="form-control" id="username"
-								placeholder="User Name" name="username" required>
+								placeholder="Nom d'utilisateur" name="username" required>
 						</div>
 
 						<div>
-							<label for="uname"><h3>Mot de passe :</h3></label> <input
+							<label for="uname">Mot de passe :</label> <input
 								type="password" class="form-control" id="password"
-								placeholder="Password" name="password" required>
+								placeholder="Mot de passe" name="password" required>
 						</div>
 
 						<div>
-							<label for="uname"><h3>Remettre le mot de passe :</h3></label> <input
+							<label for="uname">Remettre le mot de passe :</label> <input
 								type="password" class="form-control" id="password"
-								placeholder="Password" name="password" required>
+								placeholder="Mot de passe" name="password" required>
 						</div>
 
 					</h2>

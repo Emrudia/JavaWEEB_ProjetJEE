@@ -1,38 +1,61 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+<title>Inscription</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 
-	<jsp:include page="../common/header.jsp"></jsp:include>
-	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
-		<h1>Login Form</h1>
-		<form action="<%=request.getContextPath()%>/login" method="post">
+	<header>
 
-			<div class="form-group">
-				<label for="uname">User Name:</label> <input type="text"
-					class="form-control" id="username" placeholder="User Name"
-					name="username" required>
+		<div class="header">
+
+			<a href="../common/index_player.jsp" class="logo">JeuWEEB</a>
+			<div class="header-right">
+				<a href="../common/index_player.jsp">Accueil</a> <a
+					href="../common/games.jsp">Jeux</a> <a href="../common/profil.jsp">Profil</a>
+				<a href="../common/contact.jsp">Contacts</a> <a href="./login.jsp">Authentification</a>
+				<a href="../register/register.jsp">Inscription</a>
+				</nav>
+
 			</div>
+	</header>
+	<div>
+		<main>
+		<article>
 
-			<div class="form-group">
-				<label for="uname">Password:</label> <input type="password"
-					class="form-control" id="password" placeholder="Password"
-					name="password" required>
-			</div>
+			<h1>Connexion</h1>
 
 
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
+			<form action="<%=request.getContextPath()%>/login" method="post">
+				<div class="container">
+					<h2>
+						<div>
+							<label for="uname">Nom d'utilisateur :</label> <input type="text"
+								class="form-control" id="username" placeholder="Nom d'utilisateur"
+								name="username" required>
+						</div>
+
+						<div>
+							<label for="uname">Mot de passe :</label> <input type="password"
+								class="form-control" id="password" placeholder="Mot de passe"
+								name="password" required>
+						</div>
+
+					</h2>
+
+					<div class="container">
+						<button type="submit" class="registerbtn">Se connecter</button>
+					</div>
+				</div>
+			</form>
+		</article>
+		</main>
 	</div>
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	<footer>
+		<div class='copyright'>@copyright JavaWEEB Project Team</div>
+	</footer>
 </body>
 </html>
