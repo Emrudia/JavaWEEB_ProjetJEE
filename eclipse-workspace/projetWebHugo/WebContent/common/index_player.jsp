@@ -27,10 +27,10 @@
 		<main>
 		<article>
 			<h2>Projets JEE</h2>
-			<p>Ta mission, si tu l'acceptes est de parcours notre site afin de découvrir toutes ses possibilités.
-			Tu pourras découvrir des jeu avec leur classement etc ... ainsi que parcourir ton profil.</p>
+			<p>Ta mission, si tu l'acceptes est de parcourir notre site afin de découvrir toutes ses possibilités.
+			Tu pourras découvrir des jeux avec leur classement etc ... ainsi que parcourir ton profil.</p>
 			<h3>Ce qu'il faut faire</h3>
-			<p>Les consignes sont dans le sujets</p>
+			<p>Les consignes sont dans le sujet</p>
 		</article>
 
 		</main>
