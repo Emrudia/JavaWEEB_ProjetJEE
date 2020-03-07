@@ -6,6 +6,7 @@ html, body {
   display: table;
   height: 100%;
   width: 100%;
+  font-family: 'MS Serif', 'New York', sans-serif;
 }
 
 html {
@@ -40,12 +41,10 @@ background-image: url("./background.png");
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
-  font-family: 'MS Serif', 'New York', sans-serif;
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
-  font-family: 'MS Serif', 'New York', sans-serif;
   font-size: 25px;
   font-weight: bold;
 }
@@ -81,7 +80,6 @@ footer {
   display: table-row;
   height: 10px;
   background-color: #ef5350;
-  font-family: 'MS Serif', 'New York', sans-serif;
 }
 
 .copyright{
@@ -94,7 +92,6 @@ footer {
 
 /* || typography */
 h1{
-	font-family: 'MS Serif', 'New York', sans-serif;
 	color: white;
 	font-size: 5rem;
     text-align: center;
@@ -102,19 +99,35 @@ h1{
 }
 
 h2, h3 {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: #ffffff;
 }
 
 p, input, li {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: #ffffff;
 }
 
 .container{
-  width: 100%;
+  width: 80%;
   align-items: center;
   justify-content: center;
+  opacity: 0.9;
+  margin: auto;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background-color:#ef5350;
+  font-size: 2.2rem;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: red;
+  outline: none;
 }
 
 .container > img {
@@ -149,6 +162,7 @@ nav {
   padding:0;
   background-color: #ef5350;
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 nav ul {
@@ -189,7 +203,9 @@ nav a {
 nav form {
   align-items: center;
   height: 100%;
+  width: 100%;
   padding: 0 2em;
+  display: inline-block;
 }
 
 input {
@@ -227,4 +243,26 @@ aside {
 
 aside li {
   padding-bottom: 10px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+.form-group{
+	display: table;
+	align-items: center;
+	width: 100%;
 }
