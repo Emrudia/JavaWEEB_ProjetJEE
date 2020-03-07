@@ -9,18 +9,23 @@
 </head>
 
 <body>
-	<header>
-		<div>
-			<nav>
-				<ul>
-					<li><a class="title" href="./index_player.jsp">JeuWEEB</a></li>
-					<li><a href="./games.jsp">Jeux</a></li>
-					<li><a href="./profil.jsp">Profil</a></li>
-					<li><a href="../login/login.jsp">Authentification</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+
+<header>
+
+	<div class="header">
+
+		<a href="./index_player.jsp" class="logo">JeuWEEB</a>
+		<div class="header-right">
+			<a href="./index_player.jsp">Accueil</a>
+			<a href="./games.jsp">Jeux</a>
+			<a href="./profil.jsp">Profil</a>
+			<a href="../login/login.jsp">Authentification</a>
+			<a href="./contact.jsp">Contacts</a>
+		</nav>
+
+	</div>
+
+</header>
 
 	<div>
 

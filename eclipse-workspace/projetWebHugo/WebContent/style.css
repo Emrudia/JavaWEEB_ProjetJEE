@@ -19,6 +19,61 @@ background-image: url("./background.png");
   background-repeat: repeat;
 }
 
+
+/*HEADER*/
+
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #ef5350;
+  padding: 20px 10px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  font-family: 'MS Serif', 'New York', sans-serif;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-family: 'MS Serif', 'New York', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #795548;
+  color: white;
+}
+
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/*FOOTER*/
 footer {
   margin-top: 10px;
   display: table-row;
@@ -26,9 +81,23 @@ footer {
   background-color: #ef5350;
 }
 
-/* || typography */
+.copyright{
+	font-size: 10px;
+	text-align: center;
+	color: #ffffff;
+	padding: 10px 10px;
+	height: auto;
+}
 
-h1, h2, h3 {
+/* || typography */
+h1{
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	color: #fffffff;
+	font-size: 5rem;
+    text-align: center;
+}
+
+h2, h3 {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: #ffffff;
 }
@@ -48,14 +117,6 @@ p, input, li {
   width: 100%;
 }
 
-
-
-h1 {
-  font-size: 4rem;
-  text-align: center;
-  color: #white;
-  /*text-shadow: 2px 2px 10px black;*/
-}
 
 h2 {
   font-size: 3rem;
@@ -116,9 +177,10 @@ nav a {
   color: #ffffff;
   text-align: center;
   vertical-align: inherit;
-  height: 100%;
-  width: 24%;
+  height: auto;
+  width: auto;
 }
+
 
 nav form {
   align-items: center;
@@ -161,30 +223,4 @@ aside {
 
 aside li {
   padding-bottom: 10px;
-}
-
-
-
-#fondAccueil{
-  background-image:url(Images/turbo.png);
-  background-size: cover;
-}
-
-/* || class*/
-.title {
-	font-size: 45px;
-	text-align: center;
-	color: #ffffff;
-	padding: 10px 10px;
-}
-
-.title:hover{
-	background-color: #ef5350
-}
-.copyright{
-	font-size: 15px;
-	text-align: center;
-	color: #ffffff;
-	padding: 10px 10px;
-	height: auto;
 }
