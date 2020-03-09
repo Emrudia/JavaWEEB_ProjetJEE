@@ -266,9 +266,10 @@ aside li {
 .registerbtn {
   background-color: red;
   color: white;
+  border-radius: 10px;
   padding: 16px 20px;
   margin: 8px;
-  border: none;
+  border: 1px solid red;
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
@@ -277,6 +278,7 @@ aside li {
 
 .registerbtn:hover {
   opacity:1;
+  border: 1px solid #ffffff;
 }
 
 .form-group{
