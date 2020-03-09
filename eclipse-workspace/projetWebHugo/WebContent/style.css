@@ -119,10 +119,12 @@ p, input, li {
   align-items: center;
   justify-content: center;
   margin: auto;
+  padding: auto;
 }
 
 .container3{
   width: 100%;
+  text-align: right;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -277,6 +279,42 @@ aside li {
 }
 
 .registerbtn:hover {
+  opacity:1;
+  border: 1px solid #ffffff;
+}
+
+.modifybtn {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 8px;
+  border: 1px solid red;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  font-size: 2rem;
+}
+
+.modifybtn:hover {
+  opacity:1;
+  border: 1px solid #ffffff;
+}
+
+.deletebtn {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 8px;
+  border: 1px solid red;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  font-size: 2rem;
+}
+
+.deletebtn:hover {
   opacity:1;
   border: 1px solid #ffffff;
 }
