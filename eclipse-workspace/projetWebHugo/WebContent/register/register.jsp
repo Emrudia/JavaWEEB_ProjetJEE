@@ -36,7 +36,7 @@
 					<div class='container2'>
 
 
-						<h2>
+						<h3>
 
 							<div>
 								<label for="uname">Nom :</label> <input type="text"
@@ -80,7 +80,7 @@
 									placeholder="Mot de passe" name="password" required>
 							</div>
 
-						</h2>
+						</h3>
 						<div class="container">
 							<button type="submit" class="registerbtn">S'inscrire</button>
 						</div>
