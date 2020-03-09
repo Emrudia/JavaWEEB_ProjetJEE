@@ -114,6 +114,20 @@ p, input, li {
   margin: auto;
 }
 
+.container2{
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.container3{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -130,8 +144,11 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-.container > img {
+.container3 > img {
   width: 100%;
+  display: table-cell;
+  padding: 5px 5px;
+  align-items: center;
 }
 
 

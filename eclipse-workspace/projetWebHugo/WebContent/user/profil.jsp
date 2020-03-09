@@ -14,10 +14,10 @@
 
 		<div class="header">
 
-			<a href="./index_player.jsp" class="logo">JeuWEEB</a>
+			<a href="../common/index_player.jsp" class="logo">JeuWEEB</a>
 			<div class="header-right">
-				<a href="./index_player.jsp">Accueil</a> <a href="./games.jsp">Jeux</a>
-				<a href="../user/profil.jsp">Profil</a> <a href="./contact.jsp">Contacts</a>
+				<a href="../common/index_player.jsp">Accueil</a> <a href="../common/games.jsp">Jeux</a>
+				<a href="./profil.jsp">Profil</a> <a href="../common/contact.jsp">Contacts</a>
 				<a href="../login/login.jsp">Authentification</a>
 				<a href="../register/register.jsp">Inscription</a>
 				</nav>
@@ -29,7 +29,7 @@
 
 		<main>
 		<article>
-			<h1>PAGE JEUX</h1>
+			<h1>PAGE DE PROFIL</h1>
 		</article>
 
 		</main>
