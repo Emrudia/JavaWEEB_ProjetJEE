@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Nous contactez</title>
+<title>Nous contacter</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 
@@ -30,10 +30,10 @@
 		<main>
 		<article>
 			<div class="container2"
-				style="background-color: grey; border-radius: 20px;">
+				style="background-color:  #f491b9; border-radius: 20px;">
 
 				<div class="container3">
-					<h1 style="border-radius: 20px 20px 0px 0px;">Comment nous contactez ?</h1>
+					<h1 style="border-radius: 20px 20px 0px 0px;">Comment nous contacter ?</h1>
 					<h2>Vous pouvez nous joindre via nos réseaux sociaux ou via
 						e-mail.</h2>
 				</div>
