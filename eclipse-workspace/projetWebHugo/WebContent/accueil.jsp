@@ -11,7 +11,7 @@
 <body>
 	<script type="text/javascript">
 		if(log = "none"){
-			document.querySelector(body).innerHTML = "<jsp:include page="./header.jsp"></jsp:include>";
+			document.querySelector(body).innerHTML = "<jsp:include page="../nonlog/header.jsp"></jsp:include>";
 		}
 		else if(log = "user"){
 			document.querySelector(body).innerHTML = "<jsp:include page="./user/header_user.jsp"></jsp:include>";
