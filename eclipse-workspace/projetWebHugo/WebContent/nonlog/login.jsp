@@ -43,8 +43,8 @@
 				<h2>Mot de passe oublié</h2>
 			</div>
 			
-			<div class="container2">
-				<h3bis>Déjà inscrit ?</h3bis>
+			<div class="container2" >
+				<a href="./register.jsp"><h3>Déjà inscrit ? Connectez-vous !</h3></a>
 			</div>
 		</div>
 	</div>
