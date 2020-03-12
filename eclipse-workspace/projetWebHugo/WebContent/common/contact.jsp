@@ -19,7 +19,7 @@
 			<div class="container2"
 				style="background-color:  #f491b9; border-radius: 20px;">
 
-				<div class="container3">
+				<div class="container">
 					<h1 style="border-radius: 20px 20px 0px 0px;">Comment nous contacter ?</h1>
 					<h2>Vous pouvez nous joindre via nos réseaux sociaux ou via
 						e-mail.</h2>

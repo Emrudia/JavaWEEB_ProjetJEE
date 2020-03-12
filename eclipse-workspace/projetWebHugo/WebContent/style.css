@@ -1,88 +1,85 @@
 /* || General setup */
-
 html, body {
-  margin: 0;
-  padding: 0;
-  display: table;
-  height: 100%;
-  width: 100%;
-  font-family: 'MS Serif', 'New York', sans-serif;
+	margin: 0;
+	padding: 0;
+	display: table;
+	height: 100%;
+	width: 100%;
+	font-family: 'MS Serif', 'New York', sans-serif;
 }
 
 html {
-  font-size: 10px;  
+	font-size: 10px;
 }
 
 body {
-background-image: url("./background.png");
-  width: 100%;
-  margin: 0 auto;
-  background-repeat: repeat;
+	background-image: url("./background.png");
+	width: 100%;
+	margin: 0 auto;
+	background-repeat: repeat;
 }
-
 
 /*HEADER*/
 
 /* Style the header with a grey background and some padding */
 .header {
-  overflow: hidden;
-  background-color: #ef5350;
-  padding: 20px 10px;
-  width: 100%
+	overflow: hidden;
+	background-color: #ef5350;
+	padding: 20px 10px;
+	width: 100%
 }
 
 /* Style the header links */
 .header a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 25px;
-  line-height: 25px;
-  border-radius: 4px;
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 12px 20px;
+	text-decoration: none;
+	font-size: 25px;
+	line-height: 25px;
+	border-radius: 4px;
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
-  font-size: 50px;
-  font-weight: bold;
+	font-size: 50px;
+	font-weight: bold;
 }
 
 /* Change the background color on mouse-over */
 .header a:hover {
-  background-color: #795548;
-  color: white;
+	background-color: #795548;
+	color: white;
 }
-
 
 /* Float the link section to the right */
 .header-right {
-  float: right;
-  margin-right: 20px;
+	float: right;
+	margin-right: 20px;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
+	.header a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	.header-right {
+		float: none;
+	}
 }
 
 /*FOOTER*/
 footer {
-  margin-top: 10px;
-  display: table-row;
-  height: 10px;
-  background-color: #ef5350;
+	margin-top: 10px;
+	display: table-row;
+	height: 10px;
+	background-color: #ef5350;
 }
 
-.copyright{
+.copyright {
 	font-size: 10px;
 	text-align: center;
 	color: #ffffff;
@@ -91,235 +88,269 @@ footer {
 }
 
 /* || typography */
-h1{
+h1 {
 	color: white;
 	font-size: 5rem;
-    text-align: center;
-    background-color: red;
+	text-align: center;
+	background-color: red;
 }
 
 h2, h3 {
-  color: #ffffff;
+	color: #ffffff;
+}
+
+h4 {
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
 }
 
 p, input, li {
-  color: #ffffff;
+	color: #ffffff;
 }
 
-.container{
-  width: 80%;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.9;
-  margin: auto;
+.container {
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
 }
 
-.container2{
-  width: 80%;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: auto;
+.container2 {
+	width: 80%;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	padding: auto;
 }
 
-.container3{
-  width: 100%;
-  text-align: right;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+.container2>h1{
+	width: 100%;
+	padding: 20px 0px 20px 0px;
+	border-radius: 20px;
+	border: 3px solid #fff;
+}
+
+.container3 {
+	width: 100%;
+	text-align: center;
+	align-items: left;
+	justify-content: center;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
+.container3>img {
+	width: 100%;
+	display: table-cell;
+	padding: 5px 5px;
+	align-items: center;
+}
+
+.container4 {
+	background-color: #f491b9;
+	border-radius: 10px;
+	width: 19%;
+	margin: 2px 2px;
+	border: 2px solid #fff;
+	display: block;
+}
+
+.container4>h4{
+	background-color: #db3235;
+	border-radius: 0px 0px 10px 10px;
+	width: 100%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.container4>img {
+	width: 180px;
+	padding: 5px 5px 0px 5px;
+	align-items: center;
 }
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background-color:#ef5350;
-  font-size: 2.2rem;
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background-color: #ef5350;
+	font-size: 2.2rem;
 }
 
 input[type=text]:focus, input[type=password]:focus {
-  background-color: red;
-  outline: none;
+	background-color: red;
+	outline: none;
 }
-
-.container3 > img {
-  width: 100%;
-  display: table-cell;
-  padding: 5px 5px;
-  align-items: center;
-}
-
 
 h2 {
-  font-size: 3rem;
-  text-align: center;
+	font-size: 3rem;
+	text-align: center;
 }
 
 h3 {
-  font-size: 2.2rem;
+	font-size: 2.2rem;
 }
 
-
 p, li {
-  font-size: 1.6rem;
-  line-height: 1.5;
+	font-size: 1.6rem;
+	line-height: 1.5;
 }
 
 /* || header layout */
-
 nav, article, aside, footer {
-  /*background-color: white;*/
-  padding: 1%;
+	/*background-color: white;*/
+	padding: 1%;
 }
 
 nav {
-  height: 92px;
-  padding:0;
-  background-color: #ef5350;
-  margin-bottom: 10px;
-  margin-right: 10px;
+	height: 92px;
+	padding: 0;
+	background-color: #ef5350;
+	margin-bottom: 10px;
+	margin-right: 10px;
 }
 
 nav ul {
-  padding: 0;
-  list-style-type: none;
-  align-items: center;
-  vertical-align: middle;
-  margin: 0;
+	padding: 0;
+	list-style-type: none;
+	align-items: center;
+	vertical-align: middle;
+	margin: 0;
 }
 
 nav li {
-  display: inline;
-  text-align: center;
-  vertical-align: middle;
-  height: 100%;
-  margin: 0;
+	display: inline;
+	text-align: center;
+	vertical-align: middle;
+	height: 100%;
+	margin: 0;
 }
 
-nav li:hover{
-	background-color : #795548;
+nav li:hover {
+	background-color: #795548;
 	height: 100%;
 }
 
 nav a {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 3rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #ffffff;
-  text-align: center;
-  vertical-align: inherit;
-  height: auto;
-  width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #ffffff;
+	text-align: center;
+	vertical-align: inherit;
+	height: auto;
+	width: auto;
 }
 
-
 nav form {
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  padding: 0 2em;
-  display: inline-block;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	padding: 0 2em;
+	display: inline-block;
 }
 
 input {
-  font-size: 1.6rem;
-  height: 32px;
+	font-size: 1.6rem;
+	height: 32px;
 }
 
 input[type="search"] {
-  flex: 3;
+	flex: 3;
 }
 
 input[type="submit"] {
-  flex: 1;
-  margin-left: 1rem;
-  background: #333;
-  border: 0;
-  color: white;
+	flex: 1;
+	margin-left: 1rem;
+	background: #333;
+	border: 0;
+	color: white;
 }
 
 /* || main layout */
-
 main {
-  display: flex;
+	display: flex;
 }
 
 article {
-  flex: 4;  
+	flex: 4;
 }
 
 aside {
-  flex: 1;
-  margin-left: 10px;
-  background-color: #ff80ff;
+	flex: 1;
+	margin-left: 10px;
+	background-color: #ff80ff;
 }
 
 aside li {
-  padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 /* Set a style for the submit/register button */
 .registerbtn {
-  background-color: red;
-  color: white;
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin: 8px;
-  border: 1px solid red;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  font-size: 3rem;
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	padding: 16px 20px;
+	margin: 8px;
+	border: 1px solid red;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+	font-size: 3rem;
 }
 
 .registerbtn:hover {
-  opacity:1;
-  border: 1px solid #ffffff;
+	opacity: 1;
+	border: 1px solid #ffffff;
 }
 
 .modifybtn {
-  background-color: red;
-  color: white;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 8px;
-  border: 1px solid red;
-  cursor: pointer;
-  width: 20%;
-  opacity: 0.9;
-  font-size: 2rem;
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	padding: 10px 15px;
+	margin: 8px;
+	border: 1px solid red;
+	cursor: pointer;
+	width: 20%;
+	opacity: 0.9;
+	font-size: 2rem;
 }
 
 .modifybtn:hover {
-  opacity:1;
-  border: 1px solid #ffffff;
+	opacity: 1;
+	border: 1px solid #ffffff;
 }
 
 .deletebtn {
-  background-color: red;
-  color: white;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 8px;
-  border: 1px solid red;
-  cursor: pointer;
-  width: 20%;
-  opacity: 0.9;
-  font-size: 2rem;
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	padding: 10px 15px;
+	margin: 8px;
+	border: 1px solid red;
+	cursor: pointer;
+	width: 20%;
+	opacity: 0.9;
+	font-size: 2rem;
 }
 
 .deletebtn:hover {
-  opacity:1;
-  border: 1px solid #ffffff;
+	opacity: 1;
+	border: 1px solid #ffffff;
 }
 
-.form-group{
+.form-group {
 	display: table;
 	align-items: center;
 	width: 100%;
