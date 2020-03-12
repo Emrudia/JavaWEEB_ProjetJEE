@@ -8,20 +8,8 @@
 </head>
 <body>
 
-	<header>
+	<jsp:include page="./header_login.jsp"></jsp:include>
 
-		<div class="header">
-
-			<a href="../common/index_player.jsp" class="logo">JeuWEEB</a>
-			<div class="header-right">
-				<a href="../common/index_player.jsp">Accueil</a> <a
-					href="../common/games.jsp">Jeux</a> <a href="../user/profil.jsp">Profil</a>
-				<a href="../common/contact.jsp">Contacts</a> <a href="./login.jsp">Authentification</a>
-				<a href="../register/register.jsp">Inscription</a>
-				</nav>
-
-			</div>
-	</header>
 	<div>
 
 		<div class="container2"
@@ -55,8 +43,6 @@
 			</div>
 		</div>
 	</div>
-	<footer>
-		<div class='copyright'>@copyright JavaWEEB Project Team</div>
-	</footer>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>
