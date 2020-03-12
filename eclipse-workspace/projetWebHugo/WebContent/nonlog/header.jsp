@@ -2,11 +2,11 @@
 
 	<div class="header">
 
-		<a href="../accueil.jsp" class="logo">JeuWEEB</a>
+		<a href="./accueil_nonlog.jsp" class="logo">JeuWEEB</a>
 		
 		<div class="header-right">
 		
-			<a href="../accueil.jsp">Accueil</a> 
+			<a href="./accueil_nonlog.jsp">Accueil</a> 
 			<a href="../games/games.jsp">Jeux</a> 
 			<a href="../contact.jsp">Contacts</a>
 			<a href="./login.jsp">Connexion</a>
