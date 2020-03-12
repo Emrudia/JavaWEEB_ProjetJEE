@@ -38,8 +38,13 @@
 					</div>
 				</div>
 			</form>
+			
 			<div class="container2">
 				<h2>Mot de passe oublié</h2>
+			</div>
+			
+			<div class="container2">
+				<h3bis>Déjà inscrit ?</h3bis>
 			</div>
 		</div>
 	</div>
