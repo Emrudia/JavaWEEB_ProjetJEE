@@ -40,7 +40,7 @@
 			</form>
 
 			<div class="container2">
-				<h2>Mot de passe oublié</h2>
+				<a style="text-decoration: none;" href="./accueil_nonlog.jsp"><h3>Mot de passe oublié</h3></a>
 			</div>
 
 			<div class="container2">

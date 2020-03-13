@@ -18,7 +18,7 @@
 		<h1 style="border-radius: 20px 20px 0px 0px;">Nom d'utilisateur</h1>
 
 		<div class="container2">
-			<h3>
+			<h3 style="text-align: left;">
 
 				<div>
 					<label for="uname">Nom :</label>
