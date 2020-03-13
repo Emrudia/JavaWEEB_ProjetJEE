@@ -5,6 +5,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
+
 <title>Jeux</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
@@ -73,6 +74,6 @@
 
 
 
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

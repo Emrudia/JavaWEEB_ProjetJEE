@@ -16,7 +16,7 @@
 			<h1>PAGE D'ACCUEIL NON CONNECTE</h1>
 	</div>
 	<div class="container2">
-		<img src="../image/nouveautes.png"/> 
+		<img src="../image/nouveaute_bleu.png"/> 
 	</div>
 
 <div class="margefooter"></div>
