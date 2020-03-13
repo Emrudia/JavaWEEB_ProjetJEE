@@ -83,6 +83,12 @@ footer {
 	padding: 0.8em 0 1.3em;
 }
 
+.margefooter{
+	height: 8vw;
+	position: static;
+	width: 100%;
+}
+
 .copyright {
 	font-size: 10px;
 	text-align: center;

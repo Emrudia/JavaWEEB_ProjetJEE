@@ -27,8 +27,11 @@
 }
 .container2 .table .ligne{
 	width: 100%;
-	height: 10%;
+	height: 9%;
 	padding-left: 2%;
+}
+.margefooter{
+
 }
 </style>
 </head>
@@ -36,7 +39,6 @@
 <body>
 
 	<jsp:include page="./header_admin.jsp"></jsp:include>
-	<jsp:include page="../footer.jsp"></jsp:include>
 	
 	<div class="container2">
 		<h1>LISTE DE JEUX</h1>
@@ -57,8 +59,10 @@
 			<div class="ligne pair"></div>
 		</div>
 	</div>
+	
+	<div class="margefooter"></div>
 
-
+	<jsp:include page="../footer.jsp"></jsp:include>
 	
 </body>
 </html>
