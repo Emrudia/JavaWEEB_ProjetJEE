@@ -10,18 +10,13 @@
 
 <body>
 
-	<jsp:include page="./header_common.jsp"></jsp:include>
+	<jsp:include page="./header.jsp"></jsp:include>
 
-	<div>
-
-		<main>
-		<article>
-			<h1>PAGE D'ACCUEIL</h1>
-		</article>
-		</main>
+	<div class="container2">
+			<h1>PAGE D'ACCUEIL NON CONNECTE</h1>
 	</div>
 
 
-	<jsp:include page="./footer.jsp"></jsp:include>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

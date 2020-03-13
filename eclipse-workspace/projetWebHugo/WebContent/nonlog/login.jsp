@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<jsp:include page="./header_login.jsp"></jsp:include>
+	<jsp:include page="./header.jsp"></jsp:include>
 
 	<div>
 
@@ -38,11 +38,16 @@
 					</div>
 				</div>
 			</form>
+			
 			<div class="container2">
 				<h2>Mot de passe oublié</h2>
 			</div>
+			
+			<div class="container2" >
+				<a href="./register.jsp"><h3>Déjà inscrit ? Connectez-vous !</h3></a>
+			</div>
 		</div>
 	</div>
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

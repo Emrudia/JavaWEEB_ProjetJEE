@@ -10,17 +10,18 @@
 
 <body>
 
-	<jsp:include page="./header_common.jsp"></jsp:include>
+	<jsp:include page="./header.jsp"></jsp:include>
 
 	<div>
 
 		<main>
 		<article>
 			<div class="container2"
-				style="background-color:  #f491b9; border-radius: 20px;">
+				style="background-color: #f491b9; border-radius: 20px;">
 
 				<div class="container">
-					<h1 style="border-radius: 20px 20px 0px 0px;">Comment nous contacter ?</h1>
+					<h1 style="border-radius: 20px 20px 0px 0px;">Comment nous
+						contacter ?</h1>
 					<h2>Vous pouvez nous joindre via nos réseaux sociaux ou via
 						e-mail.</h2>
 				</div>
@@ -42,6 +43,6 @@
 	</div>
 
 
-	<jsp:include page="./footer.jsp"></jsp:include>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

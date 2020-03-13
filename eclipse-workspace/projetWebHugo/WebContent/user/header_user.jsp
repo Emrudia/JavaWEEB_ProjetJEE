@@ -1,15 +1,18 @@
 <header>
 
-		<div class="header">
+	<div class="header">
 
-			<a href="../common/index_player.jsp" class="logo">JeuWEEB</a>
-			<div class="header-right">
-				<a href="../common/index_player.jsp">Accueil</a> <a
-					href="../games/games.jsp">Jeux</a> <a href="./profil.jsp">Profil</a>
-				<a href="../common/contact.jsp">Contacts</a> <a
-					href="../login/login.jsp">Authentification</a> <a
-					href="../register/register.jsp">Inscription</a>
-				</nav>
-
-			</div>
-	</header>
+		<a href="./accueil_user.jsp" class="logo">JeuWEEB</a>
+		
+		<div class="header-right">
+		
+			<a href="./accueil_user.jsp">Accueil</a> 
+			<a href="../games/games.jsp">Jeux</a> 
+			<a href="../contact.jsp">Contacts</a>
+			<a href="./profil_user.jsp">Profil</a>
+			
+		</div>
+		
+	</div>
+	
+</header>
