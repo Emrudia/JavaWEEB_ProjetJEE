@@ -73,7 +73,7 @@
 			</div>
 		</form>
 	</div>
-
+<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
