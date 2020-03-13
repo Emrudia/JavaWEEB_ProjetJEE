@@ -13,7 +13,7 @@
 	<jsp:include page="./header.jsp"></jsp:include>
 
 	<div class="container2">
-			<h1>PAGE D'ACCUEIL</h1>
+			<h1>PAGE D'ACCUEIL NON CONNECTE</h1>
 	</div>
 
 
