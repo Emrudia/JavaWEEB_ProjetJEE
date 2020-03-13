@@ -44,11 +44,11 @@
 			</div>
 
 			<div class="container2">
-				<a style="text-decoration: none;" href="./register.jsp"><h3>Déjà
-						inscrit ? Connectez-vous !</h3></a>
+				<a style="text-decoration: none;" href="./register.jsp"><h3>Pas encore membre ? Inscrivez-vous !</h3></a>
 			</div>
 		</div>
 	</div>
+	<div style="height: 4vw; width: 100%; margin: 3vw 0;"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
