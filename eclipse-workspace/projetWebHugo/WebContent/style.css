@@ -77,14 +77,16 @@ footer {
 	display: table-row;
 	height: 10px;
 	background-color: #ef5350;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	padding: 0.8em 0 1.3em;
 }
 
 .copyright {
 	font-size: 10px;
 	text-align: center;
 	color: #ffffff;
-	padding: 10px 10px;
-	height: auto;
 }
 
 /* || typography */
