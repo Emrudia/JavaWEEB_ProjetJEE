@@ -57,6 +57,8 @@
 		</div>
 	</div>
 	
+	<jsp:include page="../pages/pages.jsp"></jsp:include>
+	
 	<div class="margefooter"></div>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
