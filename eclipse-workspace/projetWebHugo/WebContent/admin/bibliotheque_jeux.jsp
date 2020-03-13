@@ -30,9 +30,6 @@
 	height: 9%;
 	padding-left: 2%;
 }
-.margefooter{
-
-}
 </style>
 </head>
 
