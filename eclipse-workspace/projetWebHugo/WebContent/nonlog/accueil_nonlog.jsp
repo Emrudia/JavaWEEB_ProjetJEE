@@ -15,6 +15,9 @@
 	<div class="container2">
 			<h1>PAGE D'ACCUEIL NON CONNECTE</h1>
 	</div>
+	<div class="container2">
+		<img src="../image/nouveautes.png"/> 
+	</div>
 
 
 	<jsp:include page="../footer.jsp"></jsp:include>
