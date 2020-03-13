@@ -48,7 +48,7 @@
 			</div>
 		</div>
 	</div>
-	<div style="height: 4vw; width: 100%; margin: 3vw 0;"></div>
+	<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

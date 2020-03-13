@@ -16,7 +16,7 @@
 			<h1>PAGE D'ACCUEIL</h1>
 	</div>
 
-
+<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

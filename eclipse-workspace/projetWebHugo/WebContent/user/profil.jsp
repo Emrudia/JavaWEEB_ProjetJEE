@@ -47,7 +47,7 @@
 
 	</div>
 
-
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+<div class="margefooter"></div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
