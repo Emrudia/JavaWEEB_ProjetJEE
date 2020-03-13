@@ -10,9 +10,14 @@
 .container2 .table{
 	width: 100%;
 	height : 30vw;
+	color: #ffffff;
+	font-size: 2.5em;
+	vertical-align: middle;
+	padding: auto;
 }
-.container2 .table .ligne1{
+.container2 .table .titre{
 	background-color: #0000ff;
+	font-weight: bold;
 }
 .container2 .table .pair{
 	background-color: #ff0000;
@@ -22,7 +27,8 @@
 }
 .container2 .table .ligne{
 	width: 100%;
-	height: 5vw;
+	height: 10%;
+	padding-left: 2%;
 }
 </style>
 </head>
@@ -30,14 +36,17 @@
 <body>
 
 	<jsp:include page="./header_admin.jsp"></jsp:include>
-
+	<jsp:include page="../footer.jsp"></jsp:include>
+	
 	<div class="container2">
 		<h1>LISTE DE JEUX</h1>
 	</div>
 	
 	<div class="container2">
 		<div class="table">
-			<div class="ligne1"><h5>Nom</h5></div>
+			<div class="ligne titre">Nom</div>
+			<div class="ligne impair"></div>
+			<div class="ligne pair"></div>
 			<div class="ligne impair"></div>
 			<div class="ligne pair"></div>
 			<div class="ligne impair"></div>
@@ -50,6 +59,6 @@
 	</div>
 
 
-	<jsp:include page="../footer.jsp"></jsp:include>
+	
 </body>
 </html>
