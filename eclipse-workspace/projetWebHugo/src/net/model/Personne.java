@@ -5,19 +5,26 @@ public class Personne {
 
 	private String identifiant;
 	private String motDePasse;
-	private String pseudo;
 	private String email;
 	
-	public String getUsername() {
+	public String getIdentifiant() {
 		return identifiant;
 	}
-	public void setUsername(String username) {
-		this.identifiant = username;
+	public void setIdentifiant(String identifiant) {
+		this.identifiant = identifiant;
 	}
-	public String getPassword() {
+	public String getMotDePasse() {
 		return motDePasse;
 	}
-	public void setPassword(String password) {
-		this.motDePasse = password;
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+
 }
