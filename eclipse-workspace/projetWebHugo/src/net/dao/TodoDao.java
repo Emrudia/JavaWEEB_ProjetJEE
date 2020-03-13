@@ -1,9 +1,9 @@
-package net.javaguides.todoapp.dao;
+package net.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import net.javaguides.todoapp.model.Todo;
+import net.model.Todo;
 
 public interface TodoDao {
 

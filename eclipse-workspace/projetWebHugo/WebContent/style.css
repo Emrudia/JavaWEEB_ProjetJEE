@@ -95,8 +95,17 @@ h1 {
 	background-color: red;
 }
 
-h2, h3 {
-	color: #ffffff;
+h2 {
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+}
+
+h3 {
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+
 }
 
 h4 {
@@ -122,6 +131,7 @@ p, input, li {
 	justify-content: center;
 	margin: auto;
 	padding: auto;
+	text-align: center;
 }
 
 .container2>h1{
@@ -129,6 +139,16 @@ p, input, li {
 	padding: 20px 0px 20px 0px;
 	border-radius: 20px;
 	border: 3px solid #fff;
+}
+
+.container2>img {
+	background-color: white;
+	width: 100%;
+	height: 20%;
+	display: table-cell;
+	padding: 5px 5px;
+	align-items: center;
+	text-align: center;
 }
 
 .container3 {
@@ -140,7 +160,6 @@ p, input, li {
 	display: flex;
 	flex-wrap: wrap;
 }
-
 
 
 .container3>img {
@@ -187,15 +206,6 @@ input[type=text], input[type=password] {
 input[type=text]:focus, input[type=password]:focus {
 	background-color: red;
 	outline: none;
-}
-
-h2 {
-	font-size: 3rem;
-	text-align: center;
-}
-
-h3 {
-	font-size: 2.2rem;
 }
 
 p, li {

@@ -1,12 +1,12 @@
-package net.javaguides.todoapp.dao;
+package net.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import net.javaguides.todoapp.model.LoginBean;
-import net.javaguides.todoapp.utils.JDBCUtils;
+import net.model.LoginBean;
+import net.utils.JDBCUtils;
 
 public class LoginDao {
 

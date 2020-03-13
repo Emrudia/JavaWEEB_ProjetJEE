@@ -60,7 +60,7 @@
 					</div>
 
 					<div>
-						<label for="uname">Remettre le mot de passe :</label> <input
+						<label for="uname">Vérifier le mot de passe :</label> <input
 							type="password" class="form-control" id="password"
 							placeholder="Mot de passe" name="password" required>
 					</div>

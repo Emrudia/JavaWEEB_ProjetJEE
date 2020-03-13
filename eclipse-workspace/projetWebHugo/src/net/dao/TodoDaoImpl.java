@@ -1,4 +1,4 @@
-package net.javaguides.todoapp.dao;
+package net.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.javaguides.todoapp.model.Todo;
-import net.javaguides.todoapp.utils.JDBCUtils;
+import net.model.Todo;
+import net.utils.JDBCUtils;
 
 /**
  * This DAO class provides CRUD database operations for the table todos in the

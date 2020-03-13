@@ -1,4 +1,4 @@
-package net.javaguides.todoapp.web;
+package net.web;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.javaguides.todoapp.dao.UserDao;
-import net.javaguides.todoapp.model.User;
+import net.dao.UserDao;
+import net.model.User;
 
 /**
  * @email Ramesh Fadatare
