@@ -1,4 +1,4 @@
-package net.javaguides.todoapp.utils;
+package net.utils;
 
 import java.sql.Connection;
 import java.sql.Date;

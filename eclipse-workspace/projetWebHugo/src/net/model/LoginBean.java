@@ -1,4 +1,4 @@
-package net.javaguides.todoapp.model;
+package net.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package net.javaguides.todoapp.web;
+package net.web;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.javaguides.todoapp.dao.TodoDao;
-import net.javaguides.todoapp.dao.TodoDaoImpl;
-import net.javaguides.todoapp.model.Todo;
+import net.dao.TodoDao;
+import net.dao.TodoDaoImpl;
+import net.model.Todo;
 
 /**
  * ControllerServlet.java This servlet acts as a page controller for the
