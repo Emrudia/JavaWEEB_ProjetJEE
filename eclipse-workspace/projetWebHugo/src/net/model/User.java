@@ -17,18 +17,43 @@ public class User extends Personne implements Serializable {
 	private LocalDate dateInscription;
 	private boolean banni;
 	private int nbParties;
-	public String getFirstName() {
+	public String getPrenom() {
 		return prenom;
 	}
-	public void setFirstName(String firstName) {
-		this.prenom = firstName;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
-	public String getLastName() {
+	public String getNom() {
 		return nom;
 	}
-	public void setLastName(String lastName) {
-		this.nom = lastName;
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public LocalDate getDateNaissance() {
+		return dateNaissance;
+	}
+	public void setDateNaissance(LocalDate dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+	public LocalDate getDateInscription() {
+		return dateInscription;
+	}
+	public void setDateInscription(LocalDate dateInscription) {
+		this.dateInscription = dateInscription;
+	}
+	public boolean isBanni() {
+		return banni;
+	}
+	public void setBanni(boolean banni) {
+		this.banni = banni;
+	}
+	public int getNbParties() {
+		return nbParties;
+	}
+	public void setNbParties(int nbParties) {
+		this.nbParties = nbParties;
 	}
 
+	
 
 }
