@@ -15,6 +15,8 @@ import net.model.Jeu;
 
 public class BibliothequeJeuxController extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) {
 		JeuService jeuService = new JeuServiceImpl();
 		List<Jeu> listJeux;

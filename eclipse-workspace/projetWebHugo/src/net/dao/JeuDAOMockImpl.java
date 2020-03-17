@@ -41,6 +41,35 @@ public class JeuDAOMockImpl implements JeuDAO{
 		listJeu.add(new Jeu("Warframe"));
 		listJeu.add(new Jeu("Faze10"));
 		listJeu.add(new Jeu("GooseGame.io"));
+		listJeu.add(new Jeu("Jeu1"));
+		listJeu.add(new Jeu("Jeu12"));
+		listJeu.add(new Jeu("Jeu13"));
+		listJeu.add(new Jeu("Jeu14"));
+		listJeu.add(new Jeu("Jeu15"));
+		listJeu.add(new Jeu("Jeu16"));
+		listJeu.add(new Jeu("Jeu17"));
+		listJeu.add(new Jeu("Jeu18"));
+		listJeu.add(new Jeu("Jeu19"));
+		listJeu.add(new Jeu("Jeu111"));
+		listJeu.add(new Jeu("Jeu112"));
+		listJeu.add(new Jeu("Jeu113"));
+		listJeu.add(new Jeu("Jeu114"));
+		listJeu.add(new Jeu("Jeu115"));
+		listJeu.add(new Jeu("Jeu116"));
+		listJeu.add(new Jeu("Jeu117"));
+		listJeu.add(new Jeu("Jeu118"));
+		listJeu.add(new Jeu("Jeu119"));
+		listJeu.add(new Jeu("Jeu120"));
+		listJeu.add(new Jeu("Jeu121"));
+		listJeu.add(new Jeu("Jeu122"));
+		listJeu.add(new Jeu("Jeu123"));
+		listJeu.add(new Jeu("Jeu124"));
+		listJeu.add(new Jeu("Jeu125"));
+		listJeu.add(new Jeu("Jeu126"));
+		listJeu.add(new Jeu("Jeu127"));
+		listJeu.add(new Jeu("Jeu128"));
+		listJeu.add(new Jeu("Jeu129"));
+		listJeu.add(new Jeu("Jeu130"));
 		return listJeu;
 	}
 
