@@ -1,4 +1,4 @@
-package net.javaguides.todoapp.web;
+package net.web;
 
 import java.io.IOException;
 
@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import net.javaguides.todoapp.dao.LoginDao;
-import net.javaguides.todoapp.model.LoginBean;
+import net.dao.LoginDao;
+import net.model.LoginBean;
 
 /**
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/login")
+@WebServlet("/nonlog")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LoginDao loginDao;

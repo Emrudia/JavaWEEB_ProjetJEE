@@ -77,14 +77,22 @@ footer {
 	display: table-row;
 	height: 10px;
 	background-color: #ef5350;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	padding: 0.8em 0 1.3em;
+}
+
+.margefooter{
+	height: 8vw;
+	position: static;
+	width: 100%;
 }
 
 .copyright {
 	font-size: 10px;
 	text-align: center;
 	color: #ffffff;
-	padding: 10px 10px;
-	height: auto;
 }
 
 /* || typography */
@@ -105,6 +113,7 @@ h3 {
 	color: white;
 	font-size: 3rem;
 	text-align: center;
+
 }
 
 h4 {
@@ -113,7 +122,11 @@ h4 {
 	text-align: center;
 }
 
-p, input, li {
+p, li {
+	color: #ffffff;
+}
+
+.container input{
 	color: #ffffff;
 }
 
@@ -130,6 +143,7 @@ p, input, li {
 	justify-content: center;
 	margin: auto;
 	padding: auto;
+	text-align: center;
 }
 
 .container2>h1{
@@ -137,6 +151,15 @@ p, input, li {
 	padding: 20px 0px 20px 0px;
 	border-radius: 20px;
 	border: 3px solid #fff;
+}
+
+.container2>img {
+	width: 100%;
+	height: 20%;
+	display: table-cell;
+	padding: 5px 5px;
+	align-items: center;
+	text-align: center;
 }
 
 .container3 {
@@ -181,7 +204,7 @@ p, input, li {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+.container2 input[type=text], .container2 input[type=password] {
 	width: 100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
@@ -191,7 +214,7 @@ input[type=text], input[type=password] {
 	font-size: 2.2rem;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.container2 input[type=text]:focus, .container2 input[type=password]:focus {
 	background-color: red;
 	outline: none;
 }
@@ -262,11 +285,11 @@ input {
 	height: 32px;
 }
 
-input[type="search"] {
+.container2 input[type="search"] {
 	flex: 3;
 }
 
-input[type="submit"] {
+.container2 input[type="submit"] {
 	flex: 1;
 	margin-left: 1rem;
 	background: #333;

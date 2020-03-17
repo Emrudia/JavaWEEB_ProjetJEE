@@ -38,16 +38,17 @@
 					</div>
 				</div>
 			</form>
-			
+
 			<div class="container2">
-				<h2>Mot de passe oublié</h2>
+				<a style="text-decoration: none;" href="./accueil_nonlog.jsp"><h3>Mot de passe oublié</h3></a>
 			</div>
-			
-			<div class="container2" >
-				<a href="./register.jsp"><h3>Déjà inscrit ? Connectez-vous !</h3></a>
+
+			<div class="container2">
+				<a style="text-decoration: none;" href="./register.jsp"><h3>Pas encore membre ? Inscrivez-vous !</h3></a>
 			</div>
 		</div>
 	</div>
+	<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

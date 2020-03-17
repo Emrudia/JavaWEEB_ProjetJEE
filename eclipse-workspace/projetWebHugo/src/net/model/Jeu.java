@@ -1,4 +1,5 @@
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+package net.model;
+
 
 public class Jeu {
 	//attributs

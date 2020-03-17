@@ -16,7 +16,7 @@
 	<div class="container2"
 		style="background-color: #f491b9; border-radius: 20px;">
 		<h1 style="border-radius: 20px 20px 0px 0px;">Inscription</h1>
-		<form action="<%=request.getContextPath()%>/register" method="post">
+		<form action="<%=request.getContextPath()%>/nonlog/accueil_nonlog.jsp" method="post">
 
 			<div class='container2'>
 
@@ -60,7 +60,7 @@
 					</div>
 
 					<div>
-						<label for="uname">Remettre le mot de passe :</label> <input
+						<label for="uname">Vérifier le mot de passe :</label> <input
 							type="password" class="form-control" id="password"
 							placeholder="Mot de passe" name="password" required>
 					</div>
@@ -73,7 +73,7 @@
 			</div>
 		</form>
 	</div>
-
+<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

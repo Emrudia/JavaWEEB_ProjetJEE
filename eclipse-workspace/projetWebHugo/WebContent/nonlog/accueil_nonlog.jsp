@@ -15,8 +15,11 @@
 	<div class="container2">
 			<h1>PAGE D'ACCUEIL NON CONNECTE</h1>
 	</div>
+	<div class="container2">
+		<img src="../image/nouveaute_bleu.png"/> 
+	</div>
 
-
+<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
