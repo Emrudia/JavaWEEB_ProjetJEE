@@ -204,6 +204,18 @@ p, li {
 	align-items: center;
 }
 
+.container5 {
+	background-color: #f491b9;
+	border-radius: 5px;
+	width: 80%;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
 /* Full-width input fields */
 .container2 input[type=text], .container2 input[type=password] {
 	width: 100%;
