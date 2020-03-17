@@ -21,7 +21,7 @@
 			style="border-radius: 110px 0px 114px 0px;" />
 	</div>
 
-	<div class="container5">
+	<div class="container6">
 		<h2>Bienvenue !</h2>
 		<p>Bienvenue sur le site JavaWEEB, le meilleur site de jeux en
 			ligne. Ici tu pourras trouver tout type de jeux pour plaire aux
