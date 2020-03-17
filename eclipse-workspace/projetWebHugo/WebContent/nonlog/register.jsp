@@ -16,7 +16,7 @@
 	<div class="container2"
 		style="background-color: #f491b9; border-radius: 20px;">
 		<h1 style="border-radius: 20px 20px 0px 0px;">Inscription</h1>
-		<form action="<%=request.getContextPath()%>/nonlog/accueil_nonlog.jsp" method="post">
+		<form action="UserController" method="post">
 
 			<div class='container2'>
 

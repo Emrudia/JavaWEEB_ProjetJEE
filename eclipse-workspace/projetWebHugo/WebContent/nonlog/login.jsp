@@ -16,7 +16,7 @@
 			style="background-color: #f491b9; border-radius: 20px;">
 			<h1 style="border-radius: 20px 20px 0px 0px;">Connexion</h1>
 
-			<form action="<%=request.getContextPath()%>/login" method="post">
+			<form action="LoginController" method="post">
 				<div class="container2">
 					<h3>
 						<div>
