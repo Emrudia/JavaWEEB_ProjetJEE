@@ -1,7 +1,8 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu"%>
+<%@page import="java.util.List"%>
+<%@page import="net.model.Jeu"%>
 <%
-List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
+List<Jeu> listJeux = (List<Jeu>) request.getAttribute("listJeux");
 
 %>
 
