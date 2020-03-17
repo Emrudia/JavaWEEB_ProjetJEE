@@ -61,7 +61,7 @@ public class UserController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("nonlog/register.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
 		dispatcher.forward(request, response);
 	}
 }

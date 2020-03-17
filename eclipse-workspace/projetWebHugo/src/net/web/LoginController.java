@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("login/login.jsp");
+		response.sendRedirect("nonlog/login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
