@@ -17,7 +17,7 @@ import net.model.LoginBean;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/nonlog")
+@WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LoginDao loginDao;

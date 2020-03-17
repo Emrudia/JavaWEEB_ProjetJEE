@@ -11,9 +11,9 @@
 <body>
 
 	<jsp:include page="./header.jsp"></jsp:include>
-
 	<div class="containerBandeauAccueil">
-		<h2>10 000 joueurs connectés</h2>
+		<marquee scrollamount="300" scrolldelay="500">10 000 joueurs
+			connectés</marquee>
 	</div>
 
 	<div class="container2">
@@ -27,10 +27,11 @@
 			ligne. Ici tu pourras trouver tout type de jeux pour plaire aux
 			petits mais aussi aux grands ! Tu pourras également te créer un
 			compte afin de sauvegarder tes meilleurs scores et renseigner tes
-			meilleurs jeux. Nous espérons que notre sélection des derniers jeux te plaira. 
-		</p>
+			meilleurs jeux. Nous espérons que notre sélection des derniers jeux
+			te plaira.</p>
 		<p>Bon divertissement !</p>
 	</div>
+
 	<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>

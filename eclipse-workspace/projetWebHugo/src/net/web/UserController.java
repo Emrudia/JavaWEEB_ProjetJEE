@@ -20,7 +20,7 @@ import net.model.User;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/nonlog")
+@WebServlet("/UserController")
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDao userDao;
@@ -40,6 +40,7 @@ public class UserController extends HttpServlet {
 	}
 
 	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		System.out.println("register s'active");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String username = request.getParameter("username");
