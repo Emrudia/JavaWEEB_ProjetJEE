@@ -37,6 +37,7 @@
 				</div>
 				<div>
 					<label for="uname">Jeux favoris :</label>
+					<div class="container5"></div>
 				</div>
 			</h3>
 			<div class="container3">
@@ -47,7 +48,7 @@
 
 	</div>
 
-<div class="margefooter"></div>
+	<div class="margefooter"></div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
