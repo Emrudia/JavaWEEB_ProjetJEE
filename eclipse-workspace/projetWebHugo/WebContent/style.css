@@ -127,6 +127,21 @@ p, li {
 	color: #ffffff;
 }
 
+.containerBandeauAccueil{
+	width: 95%;
+	justify-content: right;
+	margin: auto;
+	display: flex;
+}
+
+.containerBandeauAccueil>h2{
+	padding: 10px 5px 10px 5px;
+	background-color: red ;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	
+}
+
 .container input{
 	color: #ffffff;
 }
