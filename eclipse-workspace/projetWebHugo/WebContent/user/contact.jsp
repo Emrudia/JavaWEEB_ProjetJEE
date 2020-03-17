@@ -3,7 +3,7 @@
 <html>
 
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Nous contacter</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
