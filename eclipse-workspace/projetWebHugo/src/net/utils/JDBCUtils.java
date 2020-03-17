@@ -6,10 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 public class JDBCUtils {
 
 	private static String jdbcURL = "jdbc:mysql://localhost:8080/demo";
