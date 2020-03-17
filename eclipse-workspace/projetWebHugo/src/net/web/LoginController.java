@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("login/login.jsp");
+		response.sendRedirect("nonlog/login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet {
 
 		try {
 			if (loginDao.validate(loginBean)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("todo/todo-list.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
 				dispatcher.forward(request, response);
 			} else {
 				HttpSession session = request.getSession();
