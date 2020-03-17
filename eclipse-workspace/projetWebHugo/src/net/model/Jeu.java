@@ -7,6 +7,9 @@ public class Jeu {
 	private String nom;
 	
 	//Constructeur
+	public Jeu(String nom) {
+		this.nom = nom;
+	}
 	
 	//Méthodes
 	public int getIdJeu() {
