@@ -1,7 +1,7 @@
 <%@ page language="java"%>
 <%@page import="java.util.List,net.model.Jeu"%>
 <%
-//List<Jeu> listJeux = (List<Jeu>) request.tousJeux();
+
 
 
 
@@ -15,45 +15,6 @@
 <meta charset="UTF-8">
 <title>Bibliothèque de jeux</title>
 <link rel="stylesheet" type="text/css" href="../style.css">
-<style>
-.container5{
-	width: 70%;
-	margin: 0 15%;
-}
-
-.container5 > h2{
-	border-radius: 20px;
-	border: 3px solid #ffffff;
-	background-color: red;
-}
-
-.container5 .table{
-	width: 100%;
-	height : 60vw;
-	font-size: 2.5em;
-	vertical-align: middle;
-}
-.container5 .table .titre{
-	background-color: #795548;
-	font-weight: bold;
-	color: #ffffff;
-}
-.container5 .table .impair{
-	background-color: #f3b0e2;
-	color: #000000;
-}
-.container5 .table .pair{
-	background-color: #c90932;
-	color: #ffffff;
-}
-.container5 .table .ligne{
-	width: 100%;
-	height: 4.7%;
-	padding-left: 2%;
-	border-radius: 10px;
-	box-sizing: border-box;
-}
-</style>
 </head>
 
 <body>
