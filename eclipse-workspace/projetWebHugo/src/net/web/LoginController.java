@@ -17,7 +17,7 @@ import net.model.LoginBean;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/nonlog")
+@WebServlet("/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LoginDao loginDao;
@@ -43,7 +43,7 @@ public class LoginController extends HttpServlet {
 		loginBean.setUsername(username);
 		loginBean.setPassword(password);
 
-		try {
+		/*try {
 			if (loginDao.validate(loginBean)) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
 				dispatcher.forward(request, response);
@@ -54,7 +54,9 @@ public class LoginController extends HttpServlet {
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}
+		}*/
+		RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
+		dispatcher.forward(request, response);
 
 	}
 }
