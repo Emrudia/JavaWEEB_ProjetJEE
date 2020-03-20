@@ -6,7 +6,7 @@
 		
 		<div class="header-right">
 		
-			<a href="./accueil_nonlog.jsp">Accueil</a> 
+			<a href="./accueil_nonlog.jsp">Accueil</a> <!-- utiliser un controller pour avoir les bons liens quoi qu'il arrive -->
 			<a href="../games/games.jsp">Jeux</a> 
 			<a href="./contact.jsp">Contacts</a>
 			<a href="./login.jsp" class="nav-link">Connexion</a>
