@@ -6,20 +6,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-
 public class JDBCUtils {
 
-	private static String jdbcURL = "jdbc:mysql://vps.tonychouteau.fr";
+	private static String jdbcURL = "jdbc:mysql://vps.tonychouteau.fr:3306/javaweeb";
 	private static String jdbcUsername = "JavaWEEB";
 	private static String jdbcPassword = "JavaWEEB";
 
-	public static Connection getConnection() {
+	public static Connection getConnection() throws InstantiationException, IllegalAccessException {
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK1111");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK22222");
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
