@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="JavaWEEB_le_retour">
+    <wb-module deploy-name="javaweeb">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="JavaWEEB_le_retour"/>
-        <property name="java-output-path" value="/JavaWEEB_le_retour/build/classes"/>
+        <property name="java-output-path" value="/javaweeb/build/classes"/>
+        <property name="context-root" value="javaweeb"/>
     </wb-module>
 </project-modules>
