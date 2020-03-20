@@ -2,14 +2,14 @@
 
 	<div class="header">
 
-		<a href="/accueil_nonlog.jsp" class="logo">JeuWEEB</a>
+		<a href="<%= request.getContextPath() %>/headerAccueil_nonlog" class="logo">JeuWEEB</a>
 		
 		<div class="header-right">
 		
-			<a href="./accueil_nonlog.jsp">Accueil</a> <!-- utiliser un controller pour avoir les bons liens quoi qu'il arrive -->
-			<a href="../games/games.jsp">Jeux</a> 
-			<a href="./contact.jsp">Contacts</a>
-			<a href="./login.jsp" class="nav-link">Connexion</a>
+			<a href="<%= request.getContextPath() %>/headerAccueil_nonlog">Accueil</a> 
+			<a href="<%= request.getContextPath() %>/headerGames">Jeux</a> 
+			<a href="<%= request.getContextPath() %>/headerContacts">Contacts</a>
+			<a href="<%= request.getContextPath() %>/headerLogin" class="nav-link">Connexion</a>
 			
 			
 		</div>
