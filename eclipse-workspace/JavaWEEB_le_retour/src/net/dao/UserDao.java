@@ -10,11 +10,15 @@ import net.utils.JDBCUtils;
 
 public class UserDao {
 
-	public int registerEmployee(User utilisateur) throws ClassNotFoundException, SQLException {
-		String INSERT_USERS_SQL = "INSERT INTO Utilisateurs"
+	public int registerEmployee(User utilisateur) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+		String INSERT_USERS_SQL = "INSERT INTO Utilisateur"
 				+ "  (nom, prenom, dateDeNaissance, email, dateInscription) VALUES "
 				+ " (?, ?, ?, ?, ?);";
-
+		
+		String INSERT_Account_SQL = "INSERT INTO Compte"
+				+ "  (identifiant, modDePasse) VALUES "
+				+ " (?, ?);";
+		
 		int result = 0;
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
@@ -29,18 +33,16 @@ public class UserDao {
 			// Step 3: Execute the query or update query
 			result = preparedStatement.executeUpdate();
 
-			String INSERT_Account_SQL = "INSERT INTO Compte"
-					+ "  (identifiant, modDePasse) VALUES "
-					+ " (?, ?);";
+			
 
 			int result1 = 0;
 			try (Connection connection1 = JDBCUtils.getConnection();
 					// Step 2:Create a statement using connection object
 					PreparedStatement preparedStatement1 = connection.prepareStatement(INSERT_Account_SQL)) {
-				preparedStatement.setString(1, utilisateur.getIdentifiant());
-				preparedStatement.setString(2, utilisateur.getMotDePasse());
+				preparedStatement1.setString(1, utilisateur.getIdentifiant());
+				preparedStatement1.setString(2, utilisateur.getMotDePasse());
 
-				System.out.println(preparedStatement1);
+				System.out.println(preparedStatement);
 				// Step 3: Execute the query or update query
 				result1 = preparedStatement1.executeUpdate();
 
@@ -48,13 +50,7 @@ public class UserDao {
 				// process sql exception
 				JDBCUtils.printSQLException(e);
 			}
-<<<<<<< refs/remotes/origin/master
-<<<<<<< refs/remotes/origin/master
-=======
 			return result;
->>>>>>> Quick fix
-=======
->>>>>>> url bdd
 		}
 	}
 }

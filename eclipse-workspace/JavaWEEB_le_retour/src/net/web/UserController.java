@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,6 +48,9 @@ public class UserController extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
+		String birthdayDate = request.getParameter("birthdayDate");
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 
 		User utilisateur = new User();
@@ -54,6 +59,7 @@ public class UserController extends HttpServlet {
 		utilisateur.setIdentifiant(username);
 		utilisateur.setMotDePasse(password);
 		utilisateur.setEmail(email);
+		utilisateur.setDateNaissance(LocalDate.parse(birthdayDate, formatter));
 
 		try {
 			int result = userDao.registerEmployee(utilisateur);
