@@ -9,5 +9,3 @@ public interface JeuDAO {
 	public List<Jeu> rechercheJeux(String recherche);
 }
 
-
-//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
