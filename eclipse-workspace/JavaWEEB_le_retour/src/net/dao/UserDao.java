@@ -49,10 +49,12 @@ public class UserDao {
 				JDBCUtils.printSQLException(e);
 			}
 <<<<<<< refs/remotes/origin/master
+<<<<<<< refs/remotes/origin/master
 =======
 			return result;
 >>>>>>> Quick fix
+=======
+>>>>>>> url bdd
 		}
 	}
-
 }
