@@ -48,8 +48,11 @@ public class UserDao {
 				// process sql exception
 				JDBCUtils.printSQLException(e);
 			}
+<<<<<<< refs/remotes/origin/master
+=======
+			return result;
+>>>>>>> Quick fix
 		}
-		return result;
 	}
 
 }
