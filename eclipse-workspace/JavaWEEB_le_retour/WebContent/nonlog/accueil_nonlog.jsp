@@ -13,7 +13,8 @@
 	<jsp:include page="./header.jsp"></jsp:include>
 
 	<div class="containerBandeauAccueil">
-		<h2>10 000 joueurs connectés</h2>
+		<marquee scrollamount="300" scrolldelay="500">10 000 joueurs
+			connectés</marquee>
 	</div>
 
 	<div class="container2">

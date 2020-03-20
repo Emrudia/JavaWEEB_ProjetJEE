@@ -134,12 +134,15 @@ p, li {
 	display: flex;
 }
 
-.containerBandeauAccueil>h2{
+.containerBandeauAccueil>marquee{
+	width: 17%;
+	color: white;
+	font-size: 2.2em;
 	padding: 10px 5px 10px 5px;
+	margin: 10px;
 	background-color: red ;
 	border-radius: 10px;
 	border: 2px solid #fff;
-	
 }
 
 .container input{
