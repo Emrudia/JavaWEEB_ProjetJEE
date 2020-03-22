@@ -2,7 +2,7 @@
 
 	<div class="header">
 
-		<a href="/accueil_nonlog.jsp" class="logo">JeuWEEB</a>
+		<a href="./accueil_nonlog.jsp" class="logo">JeuWEEB</a>
 		
 		<div class="header-right">
 		

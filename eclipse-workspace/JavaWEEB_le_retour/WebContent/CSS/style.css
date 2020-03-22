@@ -294,6 +294,27 @@ p, li {
 	outline: none;
 }
 
+
+
+table{
+	width: 100%;
+	background-color: #ef5350;
+	border: 1px solid white;
+	border-collapse: collapse;
+}
+
+th, td {
+  font-size: 2.2rem;
+  height: 50px;
+  color: white;
+  border: 1px solid white;
+}
+
+tr:hover {
+	background-color: #c90932;
+}
+ 
+ 
 p, li {
 	font-size: 1.6rem;
 	line-height: 1.5;
