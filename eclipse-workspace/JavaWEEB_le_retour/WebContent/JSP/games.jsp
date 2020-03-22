@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 
 <title>Jeux</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -30,43 +30,43 @@
 
 		<div class="container3">
 			<div class="container4">
-				<img src="./images/fortnite.png" />
+				<img src="../image/fortnite.png" />
 				<h4>Fortnite</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/warframe.png" />
+				<img src="../image/warframe.png" />
 				<h4>Warframe</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/phase10.png" />
+				<img src="../images/phase10.png" />
 				<h4>Phase10</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/worldoftanks.png" />
+				<img src="../image/worldoftanks.png" />
 				<h4>World Of Tanks</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/goosegameio.png" />
+				<img src="../image/goosegameio.png" />
 				<h4>GooseGame.io</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/bubbleshooter.png" />
+				<img src="../image/bubbleshooter.png" />
 				<h4>BubbleShooter</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/fortnite.png" />
+				<img src="../image/fortnite.png" />
 				<h4>Fortnite</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/warframe.png" />
+				<img src="../image/warframe.png" />
 				<h4>Warframe</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/phase10.png" />
+				<img src="../image/phase10.png" />
 				<h4>Phase10</h4>
 			</div>
 			<div class="container4">
-				<img src="./images/worldoftanks.png" />
+				<img src="../image/worldoftanks.png" />
 				<h4>World Of Tanks</h4>
 			</div>
 		</div>
@@ -74,6 +74,6 @@
 
 
 
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="./footer.jsp"></jsp:include>
 </body>
 </html>

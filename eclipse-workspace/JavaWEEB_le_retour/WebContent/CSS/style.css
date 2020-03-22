@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	background-image: url("./background.png");
+	background-image: url("./image/background.png");
 	width: 100%;
 	margin: 0 auto;
 	background-repeat: repeat;

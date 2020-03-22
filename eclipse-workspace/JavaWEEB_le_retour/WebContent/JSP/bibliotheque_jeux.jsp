@@ -12,7 +12,7 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 <head>
 <meta charset="UTF-8">
 <title>Bibliothèque de jeux</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -53,7 +53,7 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
 	<div class="margefooter"></div>
 
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="./footer.jsp"></jsp:include>
 
 	<script>
 	
