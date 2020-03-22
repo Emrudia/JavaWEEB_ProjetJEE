@@ -48,10 +48,7 @@ public class UserDao {
 				// process sql exception
 				JDBCUtils.printSQLException(e);
 			}
-<<<<<<< HEAD
-=======
 			return result;
->>>>>>> master
 		}
 	}
 }
