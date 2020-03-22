@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Authentification</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 </head>
@@ -74,6 +74,6 @@
 		</form>
 	</div>
 <div class="margefooter"></div>
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="./footer.jsp"></jsp:include>
 </body>
 </html>

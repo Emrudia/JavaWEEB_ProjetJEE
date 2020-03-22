@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page accueil</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -19,6 +19,6 @@
 	</div>
 
 	<div class="margefooter"></div>
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="./footer.jsp"></jsp:include>
 </body>
 </html>

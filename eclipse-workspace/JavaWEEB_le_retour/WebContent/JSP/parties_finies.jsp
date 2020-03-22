@@ -1,9 +1,5 @@
 <%@ page language="java"%>
 <%@page import="java.util.List,net.model.Jeu"%>
-<%
-	List<Jeu> listJeux = (List<Jeu>) request.getAttribute("listJeux");
-%>
-
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Parties finies</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -39,7 +35,7 @@
 	</table>
 	<div class="margefooter"></div>
 
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="./footer.jsp"></jsp:include>
 
 	<script>
 		

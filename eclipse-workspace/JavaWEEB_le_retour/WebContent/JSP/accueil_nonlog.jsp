@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page accueil</title>
-<link rel="stylesheet" type="text/css" href="../style.css">  <!-- Le css marche  ---->
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -33,6 +33,6 @@
 		<p>Bon divertissement !</p>
 	</div>
 	<div class="margefooter"></div>
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="./footer.jsp"></jsp:include>
 </body>
 </html>
