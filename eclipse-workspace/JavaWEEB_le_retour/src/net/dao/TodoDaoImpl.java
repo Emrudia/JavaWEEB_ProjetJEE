@@ -33,7 +33,7 @@ public class TodoDaoImpl implements TodoDao {
 	}
 
 	@Override
-	public void insertTodo(Todo todo) throws SQLException {
+	public void insertTodo(Todo todo) throws SQLException, InstantiationException, IllegalAccessException {
 		System.out.println(INSERT_TODOS_SQL);
 		// try-with-resource statement will auto close the connection.
 		try (Connection connection = JDBCUtils.getConnection();
@@ -51,7 +51,7 @@ public class TodoDaoImpl implements TodoDao {
 	}
 
 	@Override
-	public Todo selectTodo(long todoId) {
+	public Todo selectTodo(long todoId) throws InstantiationException, IllegalAccessException {
 		Todo todo = null;
 		// Step 1: Establishing a Connection
 		try (Connection connection = JDBCUtils.getConnection();
@@ -79,7 +79,7 @@ public class TodoDaoImpl implements TodoDao {
 	}
 
 	@Override
-	public List<Todo> selectAllTodos() {
+	public List<Todo> selectAllTodos() throws InstantiationException, IllegalAccessException {
 
 		// using try-with-resources to avoid closing resources (boiler plate code)
 		List<Todo> todos = new ArrayList<>();
@@ -110,7 +110,7 @@ public class TodoDaoImpl implements TodoDao {
 	}
 
 	@Override
-	public boolean deleteTodo(int id) throws SQLException {
+	public boolean deleteTodo(int id) throws SQLException, InstantiationException, IllegalAccessException {
 		boolean rowDeleted;
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_TODO_BY_ID);) {
@@ -121,7 +121,7 @@ public class TodoDaoImpl implements TodoDao {
 	}
 
 	@Override
-	public boolean updateTodo(Todo todo) throws SQLException {
+	public boolean updateTodo(Todo todo) throws SQLException, InstantiationException, IllegalAccessException {
 		boolean rowUpdated;
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement statement = connection.prepareStatement(UPDATE_TODO);) {

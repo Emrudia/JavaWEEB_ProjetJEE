@@ -7,14 +7,14 @@ import net.model.Todo;
 
 public interface TodoDao {
 
-	void insertTodo(Todo todo) throws SQLException;
+	void insertTodo(Todo todo) throws SQLException, InstantiationException, IllegalAccessException;
 
-	Todo selectTodo(long todoId);
+	Todo selectTodo(long todoId) throws InstantiationException, IllegalAccessException;
 
-	List<Todo> selectAllTodos();
+	List<Todo> selectAllTodos() throws InstantiationException, IllegalAccessException;
 
-	boolean deleteTodo(int id) throws SQLException;
+	boolean deleteTodo(int id) throws SQLException, InstantiationException, IllegalAccessException;
 
-	boolean updateTodo(Todo todo) throws SQLException;
+	boolean updateTodo(Todo todo) throws SQLException, InstantiationException, IllegalAccessException;
 
 }

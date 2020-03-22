@@ -68,11 +68,17 @@ public class TodoController extends HttpServlet {
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	private void listTodo(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
+			throws SQLException, IOException, ServletException, InstantiationException, IllegalAccessException {
 		List<Todo> listTodo = todoDAO.selectAllTodos();
 		request.setAttribute("listTodo", listTodo);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("todo/todo-list.jsp");
@@ -86,7 +92,7 @@ public class TodoController extends HttpServlet {
 	}
 
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, ServletException, IOException {
+			throws SQLException, ServletException, IOException, InstantiationException, IllegalAccessException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Todo existingTodo = todoDAO.selectTodo(id);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("todo/todo-form.jsp");
@@ -95,7 +101,7 @@ public class TodoController extends HttpServlet {
 
 	}
 
-	private void insertTodo(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	private void insertTodo(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, InstantiationException, IllegalAccessException {
 		
 		String title = request.getParameter("title");
 		String username = request.getParameter("username");
@@ -110,7 +116,7 @@ public class TodoController extends HttpServlet {
 		response.sendRedirect("list");
 	}
 
-	private void updateTodo(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	private void updateTodo(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, InstantiationException, IllegalAccessException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		String title = request.getParameter("title");
@@ -127,7 +133,7 @@ public class TodoController extends HttpServlet {
 		response.sendRedirect("list");
 	}
 
-	private void deleteTodo(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	private void deleteTodo(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, InstantiationException, IllegalAccessException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		todoDAO.deleteTodo(id);
 		response.sendRedirect("list");
