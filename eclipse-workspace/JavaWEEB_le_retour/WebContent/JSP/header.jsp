@@ -6,10 +6,10 @@
 		
 		<div class="header-right">
 		
-			<a href="<%= request.getContextPath() %>/headerAccueil_nonlog">Accueil</a> 
-			<a href="<%= request.getContextPath() %>/headerGames">Jeux</a> 
-			<a href="<%= request.getContextPath() %>/headerContacts">Contacts</a>
-			<a href="<%= request.getContextPath() %>/headerLogin" class="nav-link">Connexion</a>
+			<a href="./accueil_nonlog.jsp">Accueil</a> 
+			<a href="./games.jsp">Jeux</a> 
+			<a href="./contact.jsp">Contacts</a>
+			<a href="./login.jsp" class="nav-link">Connexion</a>
 			
 			
 		</div>
