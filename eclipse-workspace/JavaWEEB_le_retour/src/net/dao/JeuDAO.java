@@ -8,3 +8,4 @@ public interface JeuDAO {
 	public List<Jeu> tousJeux();
 	public List<Jeu> rechercheJeux(String recherche);
 }
+
