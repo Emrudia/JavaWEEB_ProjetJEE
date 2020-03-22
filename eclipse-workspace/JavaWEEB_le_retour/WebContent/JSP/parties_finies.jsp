@@ -14,25 +14,23 @@
 
 	<jsp:include page="./header_admin.jsp"></jsp:include>
 
-	<div class="container5">
-		<h2>Partie terminées</h2>
+	<div class="container2">
+		<h1>Partie terminées</h1>
 	</div>
 
-	<table>
-		<tr>
-			<td>Case 1</td>
-			<td>Case 2</td>
-		</tr>
-		<tr>
-			<td>Case 3</td>
-			<td>Case 4</td>
-		</tr>
-		<tr>
-			<td>Case 5</td>
-			<td>Case 6</td>
-		</tr>
+	<div class="container2">
+		<table>
+			<tr>
+				<td class="lignegauche">Nom du jeu</td>
+				<td class="lignedroite">Durée de la partie</td>
+			</tr>
+			<tr>  
+				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->
+				<td>A remplir</td>
+			</tr>
 
-	</table>
+		</table>
+	</div>
 	<div class="margefooter"></div>
 
 	<jsp:include page="./footer.jsp"></jsp:include>
