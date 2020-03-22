@@ -21,16 +21,12 @@
 	<div class="container2">
 		<table>
 			<tr>
-				<td>Case 1</td>
-				<td>Case 2</td>
+				<td class="lignegauche">Nom du jeu</td>
+				<td class="lignedroite">Durée de la partie</td>
 			</tr>
-			<tr>
-				<td>Case 3</td>
-				<td>Case 4</td>
-			</tr>
-			<tr>
-				<td>Case 5</td>
-				<td>Case 6</td>
+			<tr>  
+				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->
+				<td>A remplir</td>
 			</tr>
 
 		</table>

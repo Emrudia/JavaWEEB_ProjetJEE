@@ -303,11 +303,19 @@ table{
 	border-collapse: collapse;
 }
 
-th, td {
+tr, td {
   font-size: 2.2rem;
   height: 50px;
   color: white;
   border: 1px solid white;
+}
+
+.lignegauche{
+	width: 80%;
+}
+
+.lignedroite{
+	width: 20%;
 }
 
 tr:hover {
