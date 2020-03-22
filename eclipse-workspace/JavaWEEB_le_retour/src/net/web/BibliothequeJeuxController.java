@@ -24,7 +24,7 @@ public class BibliothequeJeuxController extends HttpServlet {
 		List<Jeu> listJeux;
 		listJeux = jeuService.tousJeux();
 		request.setAttribute("listJeux", listJeux);
-		String pageName="/admin/bibliotheque_jeu.jsp";
+		String pageName="/JSP/bibliotheque_jeu.jsp";
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		
