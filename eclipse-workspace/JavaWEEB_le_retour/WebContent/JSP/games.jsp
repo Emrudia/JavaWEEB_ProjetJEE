@@ -12,18 +12,6 @@
 
 <body>
 
-	<script type="text/javascript">
-		if(log = "none"){
-			document.querySelector(body).innerHTML = "<jsp:include page="../nonlog/header.jsp"></jsp:include>";
-		}
-		else if(log = "user"){
-			document.querySelector(body).innerHTML = "<jsp:include page="../user/header_user.jsp"></jsp:include>";
-		}
-		else if(log = "admin"){
-			document.querySelector(body).innerHTML = "<jsp:include page="../admin/header_admin.jsp"></jsp:include>";
-		}
-	</script>
-
 	<div class="container2">
 
 		<h1>PAGE JEUX</h1>

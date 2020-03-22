@@ -7,7 +7,7 @@
 		<div class="header-right">
 		
 			<a href="./accueil_user.jsp">Accueil</a> 
-			<a href="../games/games.jsp">Jeux</a> 
+			<a href="./games.jsp">Jeux</a> 
 			<a href="./contact.jsp">Contacts</a>
 			<a href="./profil_user.jsp">Profil</a>
 			
