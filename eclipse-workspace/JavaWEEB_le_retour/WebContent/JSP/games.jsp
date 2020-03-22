@@ -14,13 +14,16 @@
 
 	<script type="text/javascript">
 		if(log = "none"){
-			document.querySelector(body).innerHTML = "<jsp:include page="../nonlog/header.jsp"></jsp:include>";
+			document.querySelector(body).innerHTML = "<jsp:include page="./header.jsp"></jsp:include>";
 		}
 		else if(log = "user"){
-			document.querySelector(body).innerHTML = "<jsp:include page="../user/header_user.jsp"></jsp:include>";
+			document.querySelector(body).innerHTML = "<jsp:include page="./header_user.jsp"></jsp:include>";
 		}
 		else if(log = "admin"){
-			document.querySelector(body).innerHTML = "<jsp:include page="../admin/header_admin.jsp"></jsp:include>";
+			document.querySelector(body).innerHTML = "<jsp:include page="./header_admin.jsp"></jsp:include>";
+		}
+		else{
+			System.out.println("err on log for choosing the header : log = " + log);
 		}
 	</script>
 

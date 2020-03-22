@@ -20,7 +20,7 @@ import net.model.User;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/nonlog")
+@WebServlet(urlPatterns = {"/nonlog", "/register"})
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDao userDao;
@@ -31,6 +31,7 @@ public class UserController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("Hello from UserController on doPost (for registering)");
 		register(request, response);
 	}
 

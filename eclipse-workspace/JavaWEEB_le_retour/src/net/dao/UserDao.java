@@ -18,7 +18,7 @@ public class UserDao {
 		int result = 0;
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 			preparedStatement.setString(1, utilisateur.getNom());
 			preparedStatement.setString(2, utilisateur.getPrenom());
 			preparedStatement.setDate(3, JDBCUtils.getSQLDate(utilisateur.getDateNaissance()));
