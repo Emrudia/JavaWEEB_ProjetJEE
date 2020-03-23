@@ -21,8 +21,8 @@
 	<div class="container2">
 		<table>
 			<tr>
-				<td class="lignegauche">Nom du jeu</td>
-				<td class="lignedroite">Durée de la partie</td>
+				<td class="colonnegauche">Nom du jeu</td>
+				<td class="colonnedroite">Durée de la partie</td>
 			</tr>
 			<tr>  
 				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->

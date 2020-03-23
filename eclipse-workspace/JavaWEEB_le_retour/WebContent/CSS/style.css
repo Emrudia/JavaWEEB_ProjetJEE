@@ -310,27 +310,27 @@ tr, td {
   border: 1px solid white;
 }
 
-.lignegauche{
+.colonnegauche{
 	width: 80%;
 }
 
-.lignedroite{
+.colonnedroite{
 	width: 20%;
 }
 
-.ligne1{
-	width: 40%;
+.colonne1{
+	width: 45%;
 }
 
-.ligne2{
+.colonne2{
 	width: 20%;
 }
 
-.ligne3{
-	width: 20%;
+.colonne3{
+	width: 15%;
 }
 
-.ligne4{
+.colonne4{
 	width: 20%
 }
 

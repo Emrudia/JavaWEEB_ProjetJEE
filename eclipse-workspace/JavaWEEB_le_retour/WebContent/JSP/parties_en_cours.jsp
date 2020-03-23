@@ -21,10 +21,10 @@
 	<div class="container2">
 		<table>
 			<tr>
-				<td class="ligne1">Nom du jeu</td>
-				<td class="ligne2">Pseudo</td>
-				<td class="ligne3">Début de la partie</td>
-				<td class="ligne4">Terminer la partie</td>
+				<td class="colonne1">Nom du jeu</td>
+				<td class="colonne2">Pseudo</td>
+				<td class="colonne3">Début de la partie</td>
+				<td class="colonne4">Terminer la partie</td>
 			</tr>
 			<tr>  
 				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->
