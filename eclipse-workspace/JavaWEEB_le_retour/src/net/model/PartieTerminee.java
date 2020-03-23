@@ -1,22 +1,28 @@
 package net.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class PartieTerminee {
 	
 	private int idUtilisateur;
 	private int idJeu;
 	private String nom;
-	private LocalDate dateDebut;
-	private LocalDate dateFin;
+	private Date dateDebut;
+	private Date dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nom, LocalDate dateDebut, LocalDate dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nom, Date dateDebut, Date dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
 		this.nom=nom;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
+	}
+	
+	public float getDuree(){
+		long diff = dateDebut.getTime() - dateFin.getTime();
+		int nbHeures =  (int) (diff / 3600000.0f);
+		return nbHeures;
 	}
 	
 	public String getNom() {
@@ -44,19 +50,19 @@ public class PartieTerminee {
 		this.idJeu = idJeu;
 	}
 
-	public LocalDate getDateDebut() {
+	public Date getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(LocalDate dateDebut) {
+	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	public LocalDate getDateFin() {
+	public Date getDateFin() {
 		return dateFin;
 	}
 
-	public void setDateFin(LocalDate dateFin) {
+	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
 	

@@ -34,7 +34,7 @@ public class UserController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("nonlog/register.jsp");
+		response.sendRedirect("../JSP/register.jsp");
 	}
 
 	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -67,7 +67,7 @@ public class UserController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/accueil_user.jsp");
 		dispatcher.forward(request, response);
 	}
 	
