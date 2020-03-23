@@ -8,6 +8,7 @@
 		
 			<a href="./accueil_nonlog.jsp">Accueil</a> 
 			<a href="./contact_nonlog.jsp">Contacts</a>
+			<a href="./games_user.jsp">Jeux</a>
 			<a href="./login.jsp" class="nav-link">Connexion</a>
 			
 			
