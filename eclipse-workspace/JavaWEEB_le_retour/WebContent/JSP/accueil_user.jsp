@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="container2">
-		<img src="./image/nouveaute_bleu.png"
+		<img src="../image/nouveaute_bleu.png"
 			style="border-radius: 110px 0px 114px 0px;" />
 	</div>
 
