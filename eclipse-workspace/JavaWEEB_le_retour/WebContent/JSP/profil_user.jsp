@@ -1,3 +1,5 @@
+<%@page import="net.model.User"%>
+<%@page import="net.dao.UserDao" %>
 <%@ page language="java"%>
 <!DOCTYPE html>
 <html>
@@ -14,26 +16,30 @@
 
 	<div class="container2"
 		style="background-color: #f491b9; border-radius: 20px;">
+		
+		<%String username = (String)request.getSession().getAttribute("username");
+		System.err.println(username);
+		User user = UserDao.getUser((String)request.getSession().getAttribute("username")); %>
 
-		<h1 style="border-radius: 20px 20px 0px 0px;">Nom d'utilisateur</h1>
+		<h1 style="border-radius: 20px 20px 0px 0px;"><%=username %></h1>
 
 		<div class="container2">
 			<h3 style="text-align: left;">
 
 				<div>
-					<label for="uname">Nom :</label>
+					<label for="uname">Nom : <%=user.getNom() %></label>
 				</div>
 
 				<div>
-					<label for="uname">Prénom :</label>
+					<label for="uname">Prénom : <%=user.getPrenom() %></label>
 				</div>
 
 				<div>
-					<label for="uname">Date de naissance :</label>
+					<label for="uname">Date de naissance : <%=user.getDateNaissance() %></label>
 				</div>
 
 				<div>
-					<label for="uname">E-mail :</label>
+					<label for="uname">E-mail : <%=user.getEmail() %></label>
 				</div>
 				<div>
 					<label for="uname">Jeux favoris :</label>

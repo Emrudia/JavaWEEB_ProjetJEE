@@ -17,11 +17,13 @@ public class PartieEnCours {
 		this.dateDebut = dateDebut;
 	}
 	
+/* On pourrait remplacer ça par un getDuree de partie jusqu'à maintenant, mais je sais pas faire sans LocalDate
 	public float getDuree(){
-		long diff = dateDebut.getTime() - dateFin.getTime();
+		long diff = dateDebut.getTime() - LocalDate.now();
 		int nbHeures =  (int) (diff / 3600000.0f);
 		return nbHeures;
 	}
+*/
 	
 	public String getNom() {
 		return nom;
@@ -55,8 +57,6 @@ public class PartieEnCours {
 	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
-	
-	
 	
 
 }

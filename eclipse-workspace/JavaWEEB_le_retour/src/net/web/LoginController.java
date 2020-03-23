@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.dao.LoginDao;
 import net.model.LoginBean;
@@ -37,7 +38,7 @@ public class LoginController extends HttpServlet {
 	}
 
 	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		/*String username = request.getParameter("username");
+		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		LoginBean loginBean = new LoginBean();
 		loginBean.setUsername(username);
@@ -45,19 +46,30 @@ public class LoginController extends HttpServlet {
 
 		try {
 			if (loginDao.validate(loginBean)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
+				HttpSession session = request.getSession();
+				session.setAttribute("username", username);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/accueil_user.jsp");
 				dispatcher.forward(request, response);
 			} else {
-				HttpSession session = request.getSession();
-				//session.setAttribute("user", username);
-				//response.sendRedirect("login.jsp");
+				response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
 			}
-		} catch (ClassNotFoundException e) {
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
+		}
+
 		
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
 		//dispatcher.forward(request, response);
-		response.sendRedirect("JSP/accueil_user.jsp");
+		
 	}
 }

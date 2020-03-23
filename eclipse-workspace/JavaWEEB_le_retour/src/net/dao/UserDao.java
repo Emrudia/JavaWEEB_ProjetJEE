@@ -2,6 +2,7 @@ package net.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -9,6 +10,35 @@ import net.model.User;
 import net.utils.JDBCUtils;
 
 public class UserDao {
+	
+	public static User getUser (String username) {
+		String GET_USER_SQL = "SELECT * FROM Utilisateur WHERE Compte_identifiant = '?';";
+		Connection connection;
+		try {
+			connection = JDBCUtils.getConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(GET_USER_SQL);
+			preparedStatement.setString(1, username);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			User user = new User (resultSet.getString("prenom"), resultSet.getString("nom"), 
+			JDBCUtils.getUtilDate(resultSet.getDate("dateDeNaissance")), JDBCUtils.getUtilDate(resultSet.getDate("dateInscription")), 
+			resultSet.getInt("banni") != 0, resultSet.getInt("nbParties"));
+			return user;
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		return null;
+	}
 
 	public int registerEmployee(User utilisateur) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
 		String INSERT_USERS_SQL = "INSERT INTO Utilisateur"

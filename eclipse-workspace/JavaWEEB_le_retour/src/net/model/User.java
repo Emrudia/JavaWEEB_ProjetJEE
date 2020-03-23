@@ -17,6 +17,22 @@ public class User extends Personne implements Serializable {
 	private LocalDate dateInscription;
 	private boolean banni;
 	private int nbParties;
+	
+	public User(String prenom, String nom, LocalDate dateNaissance, LocalDate dateInscription, boolean banni,
+			int nbParties) {
+		super();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.dateNaissance = dateNaissance;
+		this.dateInscription = dateInscription;
+		this.banni = banni;
+		this.nbParties = nbParties;
+	}
+	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getPrenom() {
 		return prenom;
 	}

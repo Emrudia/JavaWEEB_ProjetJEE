@@ -7,7 +7,7 @@ public class PartieTerminee {
 	private int idUtilisateur;
 	private int idJeu;
 	private String nom;
-	private Date dateDebut;
+	private Date dateDebut; //Mais c'est deprecated :o
 	private Date dateFin;
 	
 	public PartieTerminee(int idUtilisateur, int idJeu, String nom, Date dateDebut, Date dateFin) {
