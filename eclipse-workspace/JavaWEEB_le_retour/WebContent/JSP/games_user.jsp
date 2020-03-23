@@ -18,46 +18,66 @@
 		<h1>PAGE JEUX</h1>
 
 		<div class="container3">
-			<div class="container4" onClick="document.location.href='<%request.getContextPath();%>/DebutPartie/Fortnite';">
-				<img src="../image/fortnite.png" />
-				<h4 >Fortnite</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/Warframe';">
-				<img src="../image/warframe.png" />
-				<h4>Warframe</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/Phase10';">
-				<img src="../image/phase10.png" />
-				<h4>Phase10</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/WoT';">
-				<img src="../image/worldoftanks.png" />
-				<h4>World Of Tanks</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/GooseGame';">
-				<img src="../image/goosegameio.png" />
-				<h4>GooseGame.io</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/BubbleShooter';">
-				<img src="../image/bubbleshooter.png" />
-				<h4>BubbleShooter</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/Fortnite';">
-				<img src="../image/fortnite.png" />
-				<h4>Fortnite</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/Warframe';">
-				<img src="../image/warframe.png" />
-				<h4>Warframe</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/Phase10';">
-				<img src="../image/phase10.png" />
-				<h4>Phase10</h4>
-			</div>
-			<div class="container4" onClick="document.location.href='/DebutPartie/WoT';">
-				<img src="../image/worldoftanks.png" />
-				<h4>World Of Tanks</h4>
-			</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>
+						<img src="../image/fortnite.png" />
+					</a>
+					<h4 ><a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>Fortnite</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>
+						<img src="../image/warframe.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>Warframe</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=phase10'>
+						<img src="../image/phase10.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Phase10'>Phase10</a></h4>
+				</div>
+				<div class="container4" onClick="document.location.href='/DebutPartie/WoT';">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>
+						<img src="../image/worldoftanks.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>World Of Tanks</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=goosegame'>
+						<img src="../image/goosegameio.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=goosegame'>GooseGame.io</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=bubbleshooter'>
+						<img src="../image/bubbleshooter.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=bubbleshooter'>BubbleShooter</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>
+						<img src="../image/fortnite.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>Fortnite</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>
+						<img src="../image/warframe.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>Warframe</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=phase10'>
+						<img src="../image/phase10.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=phase10'>Phase10</a></h4>
+				</div>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>
+						<img src="../image/worldoftanks.png" />
+					</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>World Of Tanks</a></h4>
+				</div>
 		</div>
 	</div>
 

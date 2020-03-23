@@ -17,7 +17,6 @@
 		style="background-color: #f491b9; border-radius: 20px;">
 		<h1 style="border-radius: 20px 20px 0px 0px;">Inscription</h1>
 		<form action="<%=request.getContextPath()%>/register" method="post">
-
 			<div class='container2'>
 
 
@@ -30,7 +29,7 @@
 					</div>
 
 					<div>
-						<label for="uname">Prï¿½nom :</label> <input type="text"
+						<label for="uname">Prénom :</label> <input type="text"
 							class="form-control" id="uname" placeholder="Prï¿½nom"
 							name="lastName" required>
 					</div>
@@ -60,7 +59,7 @@
 					</div>
 
 					<div>
-						<label for="uname">Vï¿½rifier le mot de passe :</label> <input
+						<label for="uname">Vérifier le mot de passe :</label> <input
 							type="password" class="form-control" id="password"
 							placeholder="Mot de passe" name="password" required>
 					</div>
