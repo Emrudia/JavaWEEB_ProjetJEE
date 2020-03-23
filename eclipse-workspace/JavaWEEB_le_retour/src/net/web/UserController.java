@@ -1,10 +1,6 @@
 package net.web;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -22,7 +18,7 @@ import net.model.User;
  * @email Ramesh Fadatare
  */
 
-@WebServlet(urlPatterns = {"/nonlog", "/register"})
+@WebServlet("/nonlog")
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDao userDao;
@@ -33,13 +29,12 @@ public class UserController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Hello from UserController on doPost (for registering)");
 		register(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("JSP/register.jsp");
+		response.sendRedirect("nonlog/register.jsp");
 	}
 
 	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -57,7 +52,7 @@ public class UserController extends HttpServlet {
 		utilisateur.setPrenom(firstName);
 		utilisateur.setNom(lastName);
 		utilisateur.setIdentifiant(username);
-		utilisateur.setMotDePasse(password);
+		utilisateur.setMotDePasse(Controller.coding(password));
 		utilisateur.setEmail(email);
 		utilisateur.setDateNaissance(LocalDate.parse(birthdayDate, formatter));
 
@@ -72,33 +67,9 @@ public class UserController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
 		dispatcher.forward(request, response);
 	}
 	
-	public byte[] getSHA(String message){
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            return md.digest(message.getBytes(StandardCharsets.UTF_8));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 	
-    /**
-     * This function returns a hexadecimal String from a byte tab.
-     * @param message
-     * @return the hash of a String.
-     */
-	public String coding(String message){
-        BigInteger tmp = new BigInteger(1, getSHA(message));
-        StringBuilder hash = new StringBuilder(tmp.toString(16));
-
-        while (hash.length() < 32){
-            hash.insert(0, "0");
-        }
-
-        return hash.toString();
-    }
 }
