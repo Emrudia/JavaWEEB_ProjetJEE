@@ -491,6 +491,24 @@ aside li {
 	border: 1px solid #ffffff;
 }
 
+.banbtn {
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	padding: 10px 15px;
+	margin: 8px;
+	border: 1px solid red;
+	cursor: pointer;
+	width: 20%;
+	opacity: 0.9;
+	font-size: 2rem;
+}
+
+.banbtn:hover {
+	opacity: 1;
+	border: 1px solid #ffffff;
+}
+
 .form-group {
 	display: table;
 	align-items: center;
