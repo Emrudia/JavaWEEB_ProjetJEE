@@ -43,7 +43,7 @@ String duree = partieTerminee.getDuree();
 			<tr>
 				<td><%=name %></td>
 				<td><%=duree %></td>
-			</tr>
+			</tr><%} %>
 
 		</table>
 	</div>
