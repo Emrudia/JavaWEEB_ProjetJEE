@@ -1,6 +1,8 @@
 package net.web;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import net.dao.LoginDao;
 import net.dao.UserDao;
+import net.model.Jeu;
 import net.model.LoginBean;
 import net.model.User;
 
@@ -61,10 +64,20 @@ public class LoginController extends HttpServlet {
 		
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
 		//dispatcher.forward(request, response);
+		
 		HttpSession session = request.getSession();
 		User user = new User();
 		user.setNom("Bernat");
 		user.setPrenom("Hugo");
+		user.setEmail("hbernat@enssat.fr");
+		user.setDateNaissance(LocalDate.parse("1998-09-02"));
+		ArrayList<Jeu> jeuxFavoris = new ArrayList<Jeu>();
+		Jeu j1 = new Jeu("Fortnite");
+		Jeu j2 = new Jeu("Halo3");
+		jeuxFavoris.add(j1);
+		jeuxFavoris.add(j2);
+		user.setJeuxFavoris(jeuxFavoris);
+		
 		session.setAttribute("sessionUtilisateur",user);
 		response.sendRedirect("JSP/accueil_user.jsp");
 	}
