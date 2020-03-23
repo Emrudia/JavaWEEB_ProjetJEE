@@ -318,6 +318,22 @@ tr, td {
 	width: 20%;
 }
 
+.ligne1{
+	width: 40%;
+}
+
+.ligne2{
+	width: 20%;
+}
+
+.ligne3{
+	width: 20%;
+}
+
+.ligne4{
+	width: 20%
+}
+
 tr:hover {
 	background-color: #c90932;
 }

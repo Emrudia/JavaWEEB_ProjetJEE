@@ -41,7 +41,7 @@
 				<h4>Warframe</h4>
 			</div>
 			<div class="container4">
-				<img src="../images/phase10.png" />
+				<img src="../image/phase10.png" />
 				<h4>Phase10</h4>
 			</div>
 			<div class="container4">
