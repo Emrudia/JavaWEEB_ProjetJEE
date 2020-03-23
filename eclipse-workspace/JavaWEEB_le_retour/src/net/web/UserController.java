@@ -1,10 +1,6 @@
 package net.web;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -56,7 +52,7 @@ public class UserController extends HttpServlet {
 		utilisateur.setPrenom(firstName);
 		utilisateur.setNom(lastName);
 		utilisateur.setIdentifiant(username);
-		utilisateur.setMotDePasse(coding(password));
+		utilisateur.setMotDePasse(Controller.coding(password));
 		utilisateur.setEmail(email);
 		utilisateur.setDateNaissance(LocalDate.parse(birthdayDate, formatter));
 
@@ -75,28 +71,5 @@ public class UserController extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 	
-	public byte[] getSHA(String message){
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            return md.digest(message.getBytes(StandardCharsets.UTF_8));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 	
-    /**
-     * This function returns a hexadecimal String from a byte tab.
-     * @param message
-     * @return the hash of a String.
-     */
-	public String coding(String message){
-        BigInteger tmp = new BigInteger(1, getSHA(message));
-        StringBuilder hash = new StringBuilder(tmp.toString(16));
-
-        while (hash.length() < 32){
-            hash.insert(0, "0");
-        }
-        return hash.toString();
-    }
 }
