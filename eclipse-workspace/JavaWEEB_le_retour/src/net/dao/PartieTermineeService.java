@@ -8,7 +8,7 @@ public class PartieTermineeService {
 	
 	private PartieTermineeDAO partieTermineeDao = new PartieTermineeDAO();
 		
-	public List<PartieTerminee> getAllGames(){
+	public List<PartieTerminee> getAllGames() throws InstantiationException, IllegalAccessException{
 		return partieTermineeDao.findByAll();
 	}
 	

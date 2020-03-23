@@ -16,6 +16,40 @@ public class PartieTerminee {
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
+
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+
+	public int getIdJeu() {
+		return idJeu;
+	}
+
+	public void setIdJeu(int idJeu) {
+		this.idJeu = idJeu;
+	}
+
+	public LocalDate getDateDebut() {
+		return dateDebut;
+	}
+
+	public void setDateDebut(LocalDate dateDebut) {
+		this.dateDebut = dateDebut;
+	}
+
+	public LocalDate getDateFin() {
+		return dateFin;
+	}
+
+	public void setDateFin(LocalDate dateFin) {
+		this.dateFin = dateFin;
+	}
+	
+	
 	
 	
 
