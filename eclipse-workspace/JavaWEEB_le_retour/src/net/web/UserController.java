@@ -18,7 +18,7 @@ import net.model.User;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/nonlog")
+@WebServlet("/register")
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDao userDao;

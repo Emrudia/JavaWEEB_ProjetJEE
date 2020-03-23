@@ -1,5 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu"%>
+<%@page import="java.util.List,net.model.PartieTerminee"%>
 
 <%
 
