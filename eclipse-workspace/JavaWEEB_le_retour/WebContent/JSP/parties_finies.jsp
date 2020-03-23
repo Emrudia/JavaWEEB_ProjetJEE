@@ -21,14 +21,14 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 	<jsp:include page="./header_admin.jsp"></jsp:include>
 
 	<div class="container2">
-		<h1>Partie terminées</h1>
+		<h1>Partie terminï¿½es</h1>
 	</div>
 
 	<div class="container2">
 		<table>
 			<tr>
 				<td class="colonnegauche">Nom du jeu</td>
-				<td class="colonnedroite">Durée de la partie</td>
+				<td class="colonnedroite">Durï¿½e de la partie</td>
 			</tr>
 
 			<%

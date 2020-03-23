@@ -5,6 +5,7 @@
 
 List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
+
 %>
 
 
@@ -30,18 +31,15 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 			<tr>
 				<td class="colonnegauche">Nom du jeu</td>
 			</tr>
-<%
-String nom;
-for (Jeu jeu:listJeux){
-	nom = jeu.getNom();
 
-%>
-<tr>
-	<td> <%=nom %> </td>
-</tr>
 <%
-}
-%>
+for (Jeu jeu:listJeux){
+
+String nom = jeu.getNom();%>
+<tr>
+<td><%=nom %></td>
+</tr>
+<%} %>
 
 		</table>
 	</div>
@@ -50,10 +48,5 @@ for (Jeu jeu:listJeux){
 
 	<jsp:include page="./footer.jsp"></jsp:include>
 
-	<script>
-	
-	
-	
-	</script>
 </body>
 </html>

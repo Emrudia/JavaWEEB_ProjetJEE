@@ -17,6 +17,5 @@ public class PartieTerminee {
 		this.dateFin = dateFin;
 	}
 	
-	
 
 }
