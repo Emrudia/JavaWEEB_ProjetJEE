@@ -27,6 +27,8 @@
 				<td class="colonne4">Terminer la partie</td>
 			</tr>
 			<tr>  
+				<% %>
+				
 				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->
 				<td>A remplir</td>
 				<td>A remplir</td>
