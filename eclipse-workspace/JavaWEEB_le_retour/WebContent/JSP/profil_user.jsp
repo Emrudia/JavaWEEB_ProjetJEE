@@ -21,7 +21,7 @@
 			<h3 style="text-align: left;">
 
 				<div>
-					<label for="uname">Nom :</label>
+					<label for="uname">Nom : ${sessionScope.sessionUtilisateur.nom}</label>
 				</div>
 
 				<div>

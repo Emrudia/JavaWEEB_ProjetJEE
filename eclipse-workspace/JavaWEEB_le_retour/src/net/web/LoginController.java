@@ -8,9 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.dao.LoginDao;
+import net.dao.UserDao;
 import net.model.LoginBean;
+import net.model.User;
 
 /**
  * @email Ramesh Fadatare
@@ -58,6 +61,11 @@ public class LoginController extends HttpServlet {
 		
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
 		//dispatcher.forward(request, response);
+		HttpSession session = request.getSession();
+		User user = new User();
+		user.setNom("Bernat");
+		user.setPrenom("Hugo");
+		session.setAttribute("sessionUtilisateur",user);
 		response.sendRedirect("JSP/accueil_user.jsp");
 	}
 }

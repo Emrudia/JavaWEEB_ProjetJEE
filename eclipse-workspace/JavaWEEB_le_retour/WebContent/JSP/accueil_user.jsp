@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page accueil</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css" >
 </head>
 
 <body>
