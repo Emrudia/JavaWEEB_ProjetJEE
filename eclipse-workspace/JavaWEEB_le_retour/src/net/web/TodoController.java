@@ -23,7 +23,7 @@ import net.model.Todo;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/")
+@WebServlet("/MainServlet")
 public class TodoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TodoDao todoDAO;
@@ -42,6 +42,8 @@ public class TodoController extends HttpServlet {
 		String action = request.getServletPath();
 
 		try {
+			System.out.println(action);
+			System.out.println("context Path :" + request.getContextPath());
 			switch (action) {
 			case "/new":
 				showNewForm(request, response);
@@ -62,8 +64,8 @@ public class TodoController extends HttpServlet {
 				listTodo(request, response);
 				break;
 			default:
-				RequestDispatcher dispatcher = request.getRequestDispatcher("nonlog/accueil_nonlog.jsp");
-				dispatcher.forward(request, response);
+				RequestDispatcher dispatcher1 = request.getRequestDispatcher("JSP/accueil_nonlog.jsp");
+				dispatcher1.forward(request, response);
 				break;
 			}
 		} catch (SQLException ex) {

@@ -22,7 +22,7 @@ import net.model.User;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/nonlog")
+@WebServlet(urlPatterns = {"/nonlog", "/register"})
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDao userDao;
@@ -33,12 +33,13 @@ public class UserController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("Hello from UserController on doPost (for registering)");
 		register(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("nonlog/register.jsp");
+		response.sendRedirect("JSP/register.jsp");
 	}
 
 	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -71,7 +72,7 @@ public class UserController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
 		dispatcher.forward(request, response);
 	}
 	

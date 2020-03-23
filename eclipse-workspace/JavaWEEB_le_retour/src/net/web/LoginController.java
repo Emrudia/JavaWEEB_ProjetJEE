@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import net.dao.LoginDao;
 import net.model.LoginBean;
@@ -29,7 +28,7 @@ public class LoginController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("nonlog/login.jsp");
+		response.sendRedirect("JSP/login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,13 +37,13 @@ public class LoginController extends HttpServlet {
 	}
 
 	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		String username = request.getParameter("username");
+		/*String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		LoginBean loginBean = new LoginBean();
 		loginBean.setUsername(username);
 		loginBean.setPassword(password);
 
-		/*try {
+		try {
 			if (loginDao.validate(loginBean)) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
 				dispatcher.forward(request, response);
@@ -56,8 +55,9 @@ public class LoginController extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}*/
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
-		dispatcher.forward(request, response);
-
+		
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
+		//dispatcher.forward(request, response);
+		response.sendRedirect("JSP/accueil_user.jsp");
 	}
 }
