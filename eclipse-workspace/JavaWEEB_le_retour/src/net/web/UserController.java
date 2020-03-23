@@ -56,7 +56,7 @@ public class UserController extends HttpServlet {
 		utilisateur.setPrenom(firstName);
 		utilisateur.setNom(lastName);
 		utilisateur.setIdentifiant(username);
-		utilisateur.setMotDePasse(password);
+		utilisateur.setMotDePasse(coding(password));
 		utilisateur.setEmail(email);
 		utilisateur.setDateNaissance(LocalDate.parse(birthdayDate, formatter));
 
@@ -97,7 +97,6 @@ public class UserController extends HttpServlet {
         while (hash.length() < 32){
             hash.insert(0, "0");
         }
-
         return hash.toString();
     }
 }
