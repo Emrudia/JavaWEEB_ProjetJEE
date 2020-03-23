@@ -1,6 +1,8 @@
 <%@ page language="java"%>
 <%@page import="java.util.List,net.model.Jeu"%>
+
 <%
+
 List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
 %>
@@ -23,33 +25,26 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 		<h2>LISTE DE JEUX</h2>
 	</div>
 
-	<div class="container5">
-		<div class="table">
-			<div class="ligne titre">Nom</div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-			<div class="ligne impair"></div>
-			<div class="ligne pair"></div>
-		</div>
-	</div>
+	<div class="container2">
+		<table>
+			<tr>
+				<td class="colonnegauche">Nom du jeu</td>
+			</tr>
+<%
+String nom;
+for (Jeu jeu:listJeux){
+	nom = jeu.getNom();
 
-	<jsp:include page="../pages/pages.jsp"></jsp:include>
+%>
+<tr>
+	<td> <%=nom %> </td>
+</tr>
+<%
+}
+%>
+
+		</table>
+	</div>
 
 	<div class="margefooter"></div>
 
