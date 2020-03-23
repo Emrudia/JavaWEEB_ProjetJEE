@@ -10,7 +10,7 @@ public class PartieTerminee {
 	private LocalDate dateDebut;
 	private LocalDate dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu,String nom, LocalDate dateDebut, LocalDate dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nom, LocalDate dateDebut, LocalDate dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
