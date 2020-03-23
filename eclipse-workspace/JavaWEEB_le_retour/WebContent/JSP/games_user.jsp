@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+	<jsp:include page="./header_user.jsp"></jsp:include>
 	<script type="text/javascript">
 		if(log = "none"){
 			document.querySelector(body).innerHTML = "<jsp:include page="./header.jsp"></jsp:include>";
