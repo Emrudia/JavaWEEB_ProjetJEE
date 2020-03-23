@@ -21,7 +21,7 @@ public class PartieTerminee {
 	
 	public float getDuree(){
 		long diff = dateDebut.getTime() - dateFin.getTime();
-		float nbHeures = diff / 3600000.0f;
+		int nbHeures =  (int) (diff / 3600000.0f);
 		return nbHeures;
 	}
 	
