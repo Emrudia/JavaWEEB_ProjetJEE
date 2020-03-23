@@ -10,7 +10,7 @@ import net.utils.JDBCUtils;
 
 public class LoginDao {
 
-	public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
+	public boolean validate(LoginBean loginBean) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		boolean status = false;
 		Class.forName("com.mysql.jdbc.Driver");
 
