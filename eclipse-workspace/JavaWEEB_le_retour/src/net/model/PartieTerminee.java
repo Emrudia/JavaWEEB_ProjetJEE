@@ -1,17 +1,16 @@
 package net.model;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class PartieTerminee {
 	
 	private int idUtilisateur;
 	private int idJeu;
 	private String nom;
-	private SimpleDateFormat dateDebut;
-	private SimpleDateFormat dateFin;
+	private Date dateDebut;
+	private Date dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nom, SimpleDateFormat dateDebut, SimpleDateFormat dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nom, Date dateDebut, Date dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
@@ -22,7 +21,7 @@ public class PartieTerminee {
 	
 	public int getDuree(){
 		long diff = dateDebut.getTime() - dateFin.getTime();
-		float nbHeures = diff / 3600000.0f;
+		int nbHeures =  (int) (diff / 3600000.0f);
 		return nbHeures;
 	}
 	
@@ -51,19 +50,19 @@ public class PartieTerminee {
 		this.idJeu = idJeu;
 	}
 
-	public LocalDate getDateDebut() {
+	public Date getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(LocalDate dateDebut) {
+	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	public LocalDate getDateFin() {
+	public Date getDateFin() {
 		return dateFin;
 	}
 
-	public void setDateFin(LocalDate dateFin) {
+	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
 	
