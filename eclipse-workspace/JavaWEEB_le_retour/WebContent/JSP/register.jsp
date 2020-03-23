@@ -30,8 +30,8 @@
 					</div>
 
 					<div>
-						<label for="uname">Prénom :</label> <input type="text"
-							class="form-control" id="uname" placeholder="Prénom"
+						<label for="uname">Prï¿½nom :</label> <input type="text"
+							class="form-control" id="uname" placeholder="Prï¿½nom"
 							name="lastName" required>
 					</div>
 
@@ -60,7 +60,7 @@
 					</div>
 
 					<div>
-						<label for="uname">Vérifier le mot de passe :</label> <input
+						<label for="uname">Vï¿½rifier le mot de passe :</label> <input
 							type="password" class="form-control" id="password"
 							placeholder="Mot de passe" name="password" required>
 					</div>

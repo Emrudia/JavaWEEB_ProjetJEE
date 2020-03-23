@@ -1,5 +1,11 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu"%>
+<%@page import="java.util.List,net.model.PartieTerminee"%>
+
+<%
+
+List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("listGame");
+
+%>
 
 <!DOCTYPE html>
 <html>
@@ -24,10 +30,22 @@
 				<td class="colonnegauche">Nom du jeu</td>
 				<td class="colonnedroite">Durée de la partie</td>
 			</tr>
-			<tr>  
-				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->
-				<td>A remplir</td>
+
+			<%
+
+for (PartieTerminee partieTerminee:listGame) {
+
+String name = partieTerminee.getNom();
+
+String duree = partieTerminee.getDuree();
+
+%>
+			<tr>
+				<td><%=name %></td>
+				<td><%=duree %></td>
 			</tr>
+
+			<%} %>
 
 		</table>
 	</div>
