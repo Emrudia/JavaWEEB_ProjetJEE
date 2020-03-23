@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page accueil</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="container2">
-		<img src="../image/nouveaute_bleu.png"
+		<img src="<%=request.getContextPath()%>/image/nouveaute_bleu.png"
 			style="border-radius: 110px 0px 114px 0px;" />
 	</div>
 

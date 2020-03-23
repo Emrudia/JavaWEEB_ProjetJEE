@@ -2,14 +2,14 @@
 
 	<div class="header">
 
-		<a href="./accueil_nonlog.jsp" class="logo">JeuWEEB</a>
+		<a href="<%=request.getContextPath()%>/JSP/accueil_nonlog.jsp" class="logo">JeuWEEB</a>
 		
 		<div class="header-right">
 		
-			<a href="./accueil_nonlog.jsp">Accueil</a> 
-			<a href="./contact_nonlog.jsp">Contacts</a>
-			<a href="./games_user.jsp">Jeux</a>
-			<a href="./login.jsp" class="nav-link">Connexion</a>
+			<a href="<%=request.getContextPath()%>/JSP/accueil_nonlog.jsp">Accueil</a> 
+			<a href="<%=request.getContextPath()%>/JSP/contact_nonlog.jsp">Contacts</a>
+			<a href="<%=request.getContextPath()%>/JSP/games_user.jsp">Jeux</a>
+			<a href="<%=request.getContextPath()%>/JSP/login.jsp" class="nav-link">Connexion</a>
 			
 			
 		</div>

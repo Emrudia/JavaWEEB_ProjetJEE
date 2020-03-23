@@ -13,7 +13,7 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 <head>
 <meta charset="UTF-8">
 <title>Parties finies</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 <body>

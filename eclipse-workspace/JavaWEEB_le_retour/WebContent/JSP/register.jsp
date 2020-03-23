@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Authentification</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 </head>
