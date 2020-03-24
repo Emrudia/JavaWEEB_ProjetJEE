@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Inscription</title>
+<title>Authentification</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 <body>

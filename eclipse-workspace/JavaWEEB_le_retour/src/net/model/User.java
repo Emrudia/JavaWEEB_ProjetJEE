@@ -23,8 +23,10 @@ public class User extends Personne implements Serializable {
 	public ArrayList<Jeu> getJeuxFavoris() {
 		return jeuxFavoris;
 	}
-		this.jeuxFavoris = jeuxFavoris;
+	
+
 	public void setJeuxFavoris(ArrayList<Jeu> jeuxFavoris) {
+		this.jeuxFavoris = jeuxFavoris;
 	}
 	
 	public User(String prenom, String nom, LocalDate dateNaissance, LocalDate dateInscription, boolean banni,

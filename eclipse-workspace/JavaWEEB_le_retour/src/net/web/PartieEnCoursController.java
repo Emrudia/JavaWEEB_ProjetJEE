@@ -30,7 +30,8 @@ public class PartieEnCoursController extends HttpServlet {
 		
 		switch (action){
 			case "/DebutPartie":
-				
+				PartieEnCours pec = new PartieEnCours(request.getSession().getAttribute("idUtilisateur"), idJeu, nom, dateDebut, dateFin)
+				request.getParameter("game");
 				
 		}
 	}

@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 import net.model.LoginBean;
 import net.utils.JDBCUtils;
-import net.web.Controller;
 
 public class LoginDao {
 
@@ -17,9 +16,9 @@ public class LoginDao {
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from Utilisateur, Compte where identifiant = Compte_identifiant and identifiant = ? and motDePasse = ? ")) {
+						.prepareStatement("select * from Utilisateur, Compte where identifiant = Compte_identifiant and identifiant = ? and motDePasse = ?;")) {
 			preparedStatement.setString(1, loginBean.getUsername());
-			preparedStatement.setString(2, Controller.coding(loginBean.getPassword()));
+			preparedStatement.setString(2, loginBean.getPassword());
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			status = rs.next();

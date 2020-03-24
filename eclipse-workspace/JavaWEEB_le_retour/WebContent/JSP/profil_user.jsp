@@ -17,10 +17,6 @@
 
 	<div class="container2"
 		style="background-color: #f491b9; border-radius: 20px;">
-		
-		<%String username = (String)request.getSession().getAttribute("username");
-		System.err.println(username);
-		User user = UserDao.getUser((String)request.getSession().getAttribute("username")); %>
 
 		<h1 style="border-radius: 20px 20px 0px 0px;"> ${sessionScope.sessionUtilisateur.identifiant} </h1>
 
@@ -32,7 +28,7 @@
 				</div>
 
 				<div>
-					<label for="uname">Prï¿½nom : ${sessionScope.sessionUtilisateur.prenom}</label>
+					<label for="uname">Prénom : ${sessionScope.sessionUtilisateur.prenom}</label>
 				</div>
 
 				<div>

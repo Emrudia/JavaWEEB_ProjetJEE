@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Authentification</title>
+<title>Inscription</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
@@ -30,7 +30,7 @@
 
 					<div>
 						<label for="uname">Prénom :</label> <input type="text"
-							class="form-control" id="uname" placeholder="Prï¿½nom"
+							class="form-control" id="uname" placeholder="Prénom"
 							name="lastName" required>
 					</div>
 
