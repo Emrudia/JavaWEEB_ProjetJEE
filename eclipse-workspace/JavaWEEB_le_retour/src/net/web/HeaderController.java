@@ -24,10 +24,10 @@ public class HeaderController extends HttpServlet {
 			request.getRequestDispatcher("nonlog/login.jsp").forward(request, response);
 			break;
 		case "/headerContacts":
-			request.getRequestDispatcher("nonlog/contact.jsp").forward(request, response);
+			request.getRequestDispatcher("JSP/contact_nonlog.jsp").forward(request, response);
 			break;
 		case "/headerAccueil_nonlog":
-			request.getRequestDispatcher("nonlog/accueil_nonlog.jsp").forward(request, response);
+			request.getRequestDispatcher("JSP/accueil_nonlog.jsp").forward(request, response);
 			break;
 		case "/headerGames":
 			request.getRequestDispatcher("games/games.jsp").forward(request, response);

@@ -1,6 +1,7 @@
 <%@page import="net.model.User"%>
 <%@page import="net.dao.UserDao" %>
 <%@ page language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -21,28 +22,33 @@
 		System.err.println(username);
 		User user = UserDao.getUser((String)request.getSession().getAttribute("username")); %>
 
-		<h1 style="border-radius: 20px 20px 0px 0px;"><%=username %></h1>
+		<h1 style="border-radius: 20px 20px 0px 0px;"> ${sessionScope.sessionUtilisateur.identifiant} </h1>
 
 		<div class="container2">
 			<h3 style="text-align: left;">
 
 				<div>
-					<label for="uname">Nom : <%=user.getNom() %></label>
+					<label for="uname">Nom : ${sessionScope.sessionUtilisateur.nom}</label>
 				</div>
 
 				<div>
-					<label for="uname">Prénom : <%=user.getPrenom() %></label>
+					<label for="uname">Prï¿½nom : ${sessionScope.sessionUtilisateur.prenom}</label>
 				</div>
 
 				<div>
-					<label for="uname">Date de naissance : <%=user.getDateNaissance() %></label>
+					<label for="uname">Date de naissance : ${sessionScope.sessionUtilisateur.dateNaissance}</label>
 				</div>
 
 				<div>
-					<label for="uname">E-mail : <%=user.getEmail() %></label>
+					<label for="uname">E-mail : ${sessionScope.sessionUtilisateur.email}</label>
 				</div>
 				<div>
-					<label for="uname">Jeux favoris :</label>
+					<label for="uname">Jeux favoris :
+						<c:forEach var="jeu" items="${sessionScope.sessionUtilisateur.jeuxFavoris}">
+							<tr><c:out value="${jeu.nom}." /></tr>
+						</c:forEach>
+					</label>
+
 				</div>
 			</h3>
 			<div class="container3">

@@ -1,6 +1,8 @@
 package net.web;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import net.dao.LoginDao;
+import net.dao.UserDao;
+import net.model.Jeu;
 import net.model.LoginBean;
+import net.model.User;
 
 /**
  * @email Ramesh Fadatare
@@ -22,9 +27,11 @@ import net.model.LoginBean;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LoginDao loginDao;
+	private UserDao userDao;
 
 	public void init() {
 		loginDao = new LoginDao();
+		userDao = new UserDao();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,24 +41,40 @@ public class LoginController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		authenticate(request, response);
+		try {
+			authenticate(request, response);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, InstantiationException, IllegalAccessException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		LoginBean loginBean = new LoginBean();
 		loginBean.setUsername(username);
-		loginBean.setPassword(password);
+		loginBean.setPassword(Controller.coding(password));
 
 		try {
 			if (loginDao.validate(loginBean)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("username", username);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/accueil_user.jsp");
-				dispatcher.forward(request, response);
+				User user = userDao.selectUser(username);
+				session.setAttribute("sessionUtilisateur",user);
+				response.sendRedirect("JSP/accueil_user.jsp");
+
 			} else {
-				response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
+				request.setAttribute("NOTIFICATION", "Wrong username or password");
+				response.sendRedirect("JSP/login.jsp");
 			}
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
@@ -66,10 +89,5 @@ public class LoginController extends HttpServlet {
 			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
 		}
-
-		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
-		//dispatcher.forward(request, response);
-		
 	}
 }

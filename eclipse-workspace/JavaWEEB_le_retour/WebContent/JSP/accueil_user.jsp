@@ -14,7 +14,7 @@
 
 	<div class="containerBandeauAccueil">
 		<marquee scrollamount="300" scrolldelay="500">10 000 joueurs
-			connectés</marquee>
+			connectï¿½s</marquee>
 	</div>
 
 	<div class="container2">
@@ -26,9 +26,9 @@
 		<h2>Bienvenue !</h2>
 		<p>Bienvenue sur le site JavaWEEB, le meilleur site de jeux en
 			ligne. Ici tu pourras trouver tout type de jeux pour plaire aux
-			petits mais aussi aux grands ! Tu pourras également te créer un
+			petits mais aussi aux grands ! Tu pourras ï¿½galement te crï¿½er un
 			compte afin de sauvegarder tes meilleurs scores et renseigner tes
-			meilleurs jeux. Nous espérons que notre sélection des derniers jeux te plaira. 
+			meilleurs jeux. Nous espï¿½rons que notre sï¿½lection des derniers jeux te plaira. 
 		</p>
 		<p>Bon divertissement !</p>
 	</div>

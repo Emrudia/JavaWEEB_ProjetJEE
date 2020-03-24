@@ -17,12 +17,14 @@ public class LoginDao {
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from Utilisateur u,Compte c where c.identifiant=u.Compte_identifiant and c.identifiant = ? and motDePasse = ? ")) {
+						.prepareStatement("select * from Utilisateur, Compte where identifiant = Compte_identifiant and identifiant = ? and motDePasse = ? ")) {
 			preparedStatement.setString(1, loginBean.getUsername());
 			preparedStatement.setString(2, Controller.coding(loginBean.getPassword()));
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			status = rs.next();
+			System.out.println("Staaaaaaaaaaaaaaaaaaaaaaaaaatus : "+status);
+			System.out.println(rs.getString("identifiant"));
 
 		} catch (SQLException e) {
 			// process sql exception

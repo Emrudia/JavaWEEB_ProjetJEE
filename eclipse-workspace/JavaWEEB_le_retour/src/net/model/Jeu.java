@@ -11,6 +11,10 @@ public class Jeu {
 		this.nom = nom;
 	}
 	
+	public Jeu() {
+		// TODO Auto-generated constructor stub
+	}
+
 	//Méthodes
 	public int getIdJeu() {
 		return idJeu;

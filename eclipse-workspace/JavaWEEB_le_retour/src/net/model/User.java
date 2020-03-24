@@ -3,6 +3,7 @@ package net.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 
 /**
@@ -17,6 +18,14 @@ public class User extends Personne implements Serializable {
 	private LocalDate dateInscription;
 	private boolean banni;
 	private int nbParties;
+	private ArrayList<Jeu> jeuxFavoris;
+	
+	public ArrayList<Jeu> getJeuxFavoris() {
+		return jeuxFavoris;
+	}
+		this.jeuxFavoris = jeuxFavoris;
+	public void setJeuxFavoris(ArrayList<Jeu> jeuxFavoris) {
+	}
 	
 	public User(String prenom, String nom, LocalDate dateNaissance, LocalDate dateInscription, boolean banni,
 			int nbParties) {

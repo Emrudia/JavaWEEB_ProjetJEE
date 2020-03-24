@@ -11,7 +11,7 @@
 			<a href="<%=request.getContextPath()%>/JSP/games_user.jsp">Jeux</a>
 			<a href="<%=request.getContextPath()%>/JSP/login.jsp" class="nav-link">Connexion</a>
 			
-			
+		
 		</div>
 		
 	</div>
