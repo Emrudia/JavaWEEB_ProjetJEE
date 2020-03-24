@@ -2,9 +2,12 @@ package net.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
+import net.model.Jeu;
 import net.model.User;
 import net.utils.JDBCUtils;
 
@@ -29,9 +32,6 @@ public class UserDao {
 			System.out.println(preparedStatement1);
 			// Step 3: Execute the query or update query
 			result= preparedStatement1.executeUpdate();
-				
-				
-		
 
 			int result1 = 0;
 			try (Connection connection = JDBCUtils.getConnection();
@@ -53,5 +53,69 @@ public class UserDao {
 			}
 			return result;
 		}
+	}
+	
+	public User selectUser(String username) throws InstantiationException, IllegalAccessException{
+		
+		User user = null;
+		// Step 1: Establishing a Connection
+		
+		/*PreparedStatement preparedStatement = connection.prepareStatement("select identifiant, Utilisateur.nom, prenom, "
+		+ "dateDeNaissance, dateInscription, email, banni, nbParties, idJeu, Jeu.nom from Utilisateur, Compte, Bibliotheque, Jeu "
+		+ "where Compte_identifiant = "
+		+ "identifiant and Utilisateur_idUtilisateur = idUtilisateur and Jeu_idJeu = idJeu and identifiant = ? ")*/
+		
+		try (Connection connection = JDBCUtils.getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement("select identifiant, Utilisateur.nom, prenom, "
+						+ "dateDeNaissance, dateInscription, email, banni, nbParties from Utilisateur, "
+						+ "Compte where Compte_identifiant = identifiant and identifiant = ?");) {
+			preparedStatement.setString(1, username);
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			boolean premiereLignePassee = false;
+			ArrayList<Jeu> jeuxFavoris = new ArrayList<Jeu>();
+			Jeu jeu = new Jeu();
+			
+			while (rs.next()) {
+				System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK");
+				//int idJeu = rs.getInt("idJeu");
+				//String nomJeu = rs.getString("Jeu.nom");
+				
+				if (!premiereLignePassee) {
+					String identifiant = rs.getString("identifiant");
+					String nom = rs.getString("Utilisateur.nom");
+					String prenom = rs.getString("prenom");
+					LocalDate dateNaissance = rs.getDate("dateDeNaissance").toLocalDate();
+					LocalDate dateInscription = rs.getDate("dateInscription").toLocalDate();
+					String email = rs.getString("email");
+					boolean banni = rs.getBoolean("banni");
+					int nbParties = rs.getInt("nbParties");
+					
+					user = new User();
+					user.setIdentifiant(identifiant);
+					user.setNom(nom);
+					user.setPrenom(prenom);
+					user.setEmail(email);
+					user.setDateNaissance(dateNaissance);
+					//Jeu j1 = new Jeu(nomJeu);
+					//j1.setIdJeu(idJeu);
+					//jeuxFavoris.add(j1);
+					
+					premiereLignePassee = true;
+				}else{
+					//jeu.setIdJeu(idJeu);
+					//jeu.setNom(nomJeu);
+					//jeuxFavoris.add(jeu);
+				}
+			//user.setJeuxFavoris(jeuxFavoris);
+			}
+		} catch (SQLException exception) {
+			JDBCUtils.printSQLException(exception);
+		}
+		return user;
 	}
 }

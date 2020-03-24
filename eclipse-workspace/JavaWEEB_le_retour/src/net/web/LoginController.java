@@ -27,9 +27,11 @@ import net.model.User;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LoginDao loginDao;
+	private UserDao userDao;
 
 	public void init() {
 		loginDao = new LoginDao();
+		userDao = new UserDao();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,46 +41,46 @@ public class LoginController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		authenticate(request, response);
+		try {
+			authenticate(request, response);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		/*String username = request.getParameter("username");
+	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, InstantiationException, IllegalAccessException {
+		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		LoginBean loginBean = new LoginBean();
 		loginBean.setUsername(username);
-		loginBean.setPassword(password);
+		loginBean.setPassword(Controller.coding(password));
 
 		try {
 			if (loginDao.validate(loginBean)) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("user/accueil_user.jsp");
-				dispatcher.forward(request, response);
-			} else {
 				HttpSession session = request.getSession();
-				//session.setAttribute("user", username);
-				//response.sendRedirect("login.jsp");
+				User user = userDao.selectUser(username);
+				session.setAttribute("sessionUtilisateur",user);
+				response.sendRedirect("JSP/accueil_user.jsp");
+
+			} else {
+				request.setAttribute("NOTIFICATION", "Wrong username or password");
+				response.sendRedirect("JSP/login.jsp");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_user.jsp");
-		//dispatcher.forward(request, response);
 		
-		HttpSession session = request.getSession();
-		User user = new User();
-		user.setNom("Bernat");
-		user.setPrenom("Hugo");
-		user.setEmail("hbernat@enssat.fr");
-		user.setDateNaissance(LocalDate.parse("1998-09-02"));
-		ArrayList<Jeu> jeuxFavoris = new ArrayList<Jeu>();
-		Jeu j1 = new Jeu("Fortnite");
-		Jeu j2 = new Jeu("Halo3");
-		jeuxFavoris.add(j1);
-		jeuxFavoris.add(j2);
-		user.setJeuxFavoris(jeuxFavoris);
 		
-		session.setAttribute("sessionUtilisateur",user);
-		response.sendRedirect("JSP/accueil_user.jsp");
 	}
 }
