@@ -1,6 +1,7 @@
 package net.web;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.dao.JeuDAOImpl;
+import net.model.Jeu;
 import net.model.PartieEnCours;
 
 @WebServlet("/DebutPartie")
@@ -30,8 +33,10 @@ public class PartieEnCoursController extends HttpServlet {
 		
 		switch (action){
 			case "/DebutPartie":
-				PartieEnCours pec = new PartieEnCours(request.getSession().getAttribute("idUtilisateur"), idJeu, nom, dateDebut, dateFin)
-				request.getParameter("game");
+				Jeu jeu = JeuDAOImpl.getJeu(request.getParameter("game"));
+				PartieEnCours pec = new PartieEnCours((int)request.getSession().getAttribute("idUtilisateur"), jeu.getIdJeu(), 
+				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDate.now());
+				
 				
 		}
 	}

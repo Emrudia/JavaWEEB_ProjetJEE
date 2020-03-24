@@ -1,8 +1,13 @@
 package net.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import net.model.Jeu;
+import net.utils.JDBCUtils;
 
 public class JeuDAOImpl implements JeuDAO{
 
@@ -16,6 +21,31 @@ public class JeuDAOImpl implements JeuDAO{
 	public List<Jeu> rechercheJeux(String recherche) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public static Jeu getJeu(String name) {
+		Connection connection;
+		Jeu jeu = null;
+		try {
+			connection = JDBCUtils.getConnection();
+			String request = "SELECT * FROM Jeu Where nom = ?;";
+			PreparedStatement preparedStatement = connection.prepareStatement(request);
+			preparedStatement.setString(1, name);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			jeu = new Jeu(resultSet.getInt("idJeu"), name);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jeu;
+
 	}
 
 }

@@ -6,14 +6,16 @@ public class PartieEnCours {
 	
 	private int idUtilisateur;
 	private int idJeu;
-	private String nom;
+	private String nomUtilisateur;
+	private String nomJeu;
 	private Date dateDebut;
 	
-	public PartieEnCours(int idUtilisateur, int idJeu, String nom, Date dateDebut, Date dateFin) {
+	public PartieEnCours(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, Date dateDebut) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
-		this.nom=nom;
+		this.nomUtilisateur = nomUtilisateur;
+		this.nomJeu = nomJeu;
 		this.dateDebut = dateDebut;
 	}
 	
@@ -25,12 +27,20 @@ public class PartieEnCours {
 	}
 */
 	
-	public String getNom() {
-		return nom;
+	public String getNomUtilisateur() {
+		return nomUtilisateur;
 	}
-	
-	public void setNom(String nom) {
-		this.nom=nom;
+
+	public void setNomUtilisateur(String nomUtilisateur) {
+		this.nomUtilisateur = nomUtilisateur;
+	}
+
+	public String getNomJeu() {
+		return nomJeu;
+	}
+
+	public void setNomJeu(String nomJeu) {
+		this.nomJeu = nomJeu;
 	}
 
 

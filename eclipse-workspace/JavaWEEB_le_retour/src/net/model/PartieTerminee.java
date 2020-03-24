@@ -6,15 +6,17 @@ public class PartieTerminee {
 	
 	private int idUtilisateur;
 	private int idJeu;
-	private String nom;
+	private String nomUtilisateur;
+	private String nomJeu;
 	private Date dateDebut; //Mais c'est deprecated :o
 	private Date dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nom, Date dateDebut, Date dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, Date dateDebut, Date dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
-		this.nom=nom;
+		this.nomUtilisateur = nomUtilisateur;
+		this.nomJeu = nomJeu;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
@@ -25,12 +27,20 @@ public class PartieTerminee {
 		return nbHeures;
 	}
 	
-	public String getNom() {
-		return nom;
+	public String getNomUtilisateur() {
+		return nomUtilisateur;
 	}
-	
-	public void setNom(String nom) {
-		this.nom=nom;
+
+	public void setNomUtilisateur(String nomUtilisateur) {
+		this.nomUtilisateur = nomUtilisateur;
+	}
+
+	public String getNomJeu() {
+		return nomJeu;
+	}
+
+	public void setNomJeu(String nomJeu) {
+		this.nomJeu = nomJeu;
 	}
 
 

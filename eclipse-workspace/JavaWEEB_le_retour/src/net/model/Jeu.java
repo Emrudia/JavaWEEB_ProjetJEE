@@ -15,6 +15,12 @@ public class Jeu {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Jeu(int idJeu, String name) {
+		super();
+		this.idJeu = idJeu;
+		this.nom = name;
+	}
+
 	//Méthodes
 	public int getIdJeu() {
 		return idJeu;
