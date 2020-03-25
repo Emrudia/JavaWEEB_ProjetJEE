@@ -19,7 +19,6 @@
 		<form action="<%=request.getContextPath()%>/register" method="post">
 			<div class='container2'>
 
-
 				<h3>
 
 					<div>

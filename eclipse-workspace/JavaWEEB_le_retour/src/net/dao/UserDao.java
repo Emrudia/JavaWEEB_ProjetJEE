@@ -110,7 +110,7 @@ public class UserDao {
 		
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement("select identifiant, Utilisateur.nom, prenom, "
+				PreparedStatement preparedStatement = connection.prepareStatement("select idUtilisateur, identifiant, Utilisateur.nom, prenom, "
 						+ "dateDeNaissance, dateInscription, email, banni, nbParties from Utilisateur, "
 						+ "Compte where Compte_identifiant = identifiant and identifiant = ?");) {
 			preparedStatement.setString(1, username);
@@ -120,6 +120,7 @@ public class UserDao {
 
 			// Step 4: Process the ResultSet object.
 			rs.next();
+			int idUtilisateur = rs.getInt("idUtilisateur");
 			String identifiant = rs.getString("identifiant");
 			String nom = rs.getString("Utilisateur.nom");
 			String prenom = rs.getString("prenom");
@@ -130,11 +131,15 @@ public class UserDao {
 			int nbParties = rs.getInt("nbParties");
 			
 			user = new User();
+			user.setIdUtilisateur(idUtilisateur);
 			user.setIdentifiant(identifiant);
 			user.setNom(nom);
 			user.setPrenom(prenom);
 			user.setEmail(email);
 			user.setDateNaissance(dateNaissance);
+			user.setBanni(banni);
+			user.setNbParties(nbParties);
+			user.setDateInscription(dateInscription);
 			
 			try (
 					PreparedStatement preparedStatement2 = connection.prepareStatement("select idJeu, Jeu.nom from Utilisateur, "
@@ -163,6 +168,24 @@ public class UserDao {
 				JDBCUtils.printSQLException(exception);
 			}
 		return user;
+		}
+	}
+	
+	public void updateProfilBDD(User updatedProfil) throws InstantiationException, IllegalAccessException{
+		try (Connection connection = JDBCUtils.getConnection();
+				PreparedStatement statement = connection.prepareStatement("update Utilisateur set  nom = ?, prenom = ?, "
+						+ "dateDeNaissance = ?, email = ? where idUtilisateur = ? ;");) {
+			statement.setString(1, updatedProfil.getNom());
+			statement.setString(2, updatedProfil.getPrenom());
+			statement.setDate(3, JDBCUtils.getSQLDate(updatedProfil.getDateNaissance()));
+			statement.setString(4, updatedProfil.getEmail());
+			statement.setInt(5, updatedProfil.getIdUtilisateur());
+			System.out.println(statement);
+			
+			statement.executeUpdate();
+			
+		}catch (SQLException exception) {
+			JDBCUtils.printSQLException(exception);
 		}
 	}
 }

@@ -16,9 +16,6 @@ import net.dao.UserDao;
 import net.model.Jeu;
 import net.model.User;
 
-/**
- * @email Ramesh Fadatare
- */
 
 @WebServlet("/register")
 public class UserController extends HttpServlet {

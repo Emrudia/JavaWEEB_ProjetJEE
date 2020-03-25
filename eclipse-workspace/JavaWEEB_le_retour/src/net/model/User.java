@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class User extends Personne implements Serializable {
 	private static final long serialVersionUID = 1L;
+	private int idUtilisateur;
 	private String prenom;
 	private String nom;
 	private LocalDate dateNaissance;
@@ -24,6 +25,16 @@ public class User extends Personne implements Serializable {
 		return jeuxFavoris;
 	}
 	
+	
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+
 
 	public void setJeuxFavoris(ArrayList<Jeu> jeuxFavoris) {
 		this.jeuxFavoris = jeuxFavoris;

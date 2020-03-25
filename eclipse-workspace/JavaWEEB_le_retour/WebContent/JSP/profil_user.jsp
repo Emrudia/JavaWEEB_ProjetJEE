@@ -60,8 +60,8 @@
 				
 			</h3>
 			<div class="container3">
-				<button class="modifybtn">Modifier</button>
-				<button class="deletebtn">Supprimer le compte</button>
+				<a href = "<%=request.getContextPath()%>/JSP/profil_user_modif.jsp"> <button class="modifybtn" style="width:130px"> Modifier </button> </a>
+				<!-- <button class="deletebtn">Supprimer le compte</button>  -->
 			</div>
 		</div>
 
