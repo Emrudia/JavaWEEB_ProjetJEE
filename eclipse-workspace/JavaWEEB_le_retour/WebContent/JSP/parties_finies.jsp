@@ -32,9 +32,9 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 			</tr>
 
 			<%
-			for (PartieTerminee partieTerminee:listGame) {
-				String name = partieTerminee.getNomJeu();
-				float duree = partieTerminee.getDuree();
+			for (PartieTerminee partie:listGame) {
+				String name = partie.getNomJeu();
+				String duree = Integer.toString(partie.getDuree());
 			%>
 			
 			<tr>
@@ -50,8 +50,5 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 
 	<jsp:include page="./footer.jsp"></jsp:include>
 
-	<script>
-		
-	</script>
 </body>
 </html>

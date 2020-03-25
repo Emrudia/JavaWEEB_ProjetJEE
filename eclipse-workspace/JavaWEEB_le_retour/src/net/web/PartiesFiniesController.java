@@ -15,46 +15,40 @@ import net.model.PartieTerminee;
 
 
 public class PartiesFiniesController extends HttpServlet{
+
+	private PartieTermineeService service;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void init() {
+		service = new PartieTermineeService();
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		try {
 			doProcess(request,response);
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (InstantiationException | IllegalAccessException | ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		try {
 			doProcess(request,response);
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (InstantiationException | IllegalAccessException | ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) throws InstantiationException, IllegalAccessException, ParseException {
 		String pageName="/parties_finies.jsp";
 		
-		PartieTermineeService service = new PartieTermineeService();
-		
 		List<PartieTerminee> listGames = service.getAllGames();
-		
+
 		request.setAttribute("listGames", listGames);
-		
+
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);
