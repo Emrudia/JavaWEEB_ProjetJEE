@@ -30,18 +30,21 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 			<tr>
 				<td class="colonnegauche">Nom du jeu</td>
 			</tr>
-<%
-String nom;
-for (Jeu jeu:listJeux){
-	nom = jeu.getNom();
-
-%>
-<tr>
-	<td> <%=nom %> </td>
-</tr>
-<%
-}
-%>
+			
+			<%
+			String nom;
+			for (Jeu jeu:listJeux){
+				nom = jeu.getNom();
+			
+			%>
+			
+			<tr>
+				<td> <%=nom %> </td>
+			</tr>
+			
+			<%
+			}
+			%>
 
 		</table>
 	</div>

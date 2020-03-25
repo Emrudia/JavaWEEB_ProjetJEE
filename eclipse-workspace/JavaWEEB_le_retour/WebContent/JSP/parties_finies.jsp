@@ -32,14 +32,11 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 			</tr>
 
 			<%
-
-for (PartieTerminee partieTerminee:listGame) {
-
-String name = partieTerminee.getNom();
-
-String duree = partieTerminee.getDuree();
-
-%>
+			for (PartieTerminee partieTerminee:listGame) {
+				String name = partieTerminee.getNomJeu();
+				float duree = partieTerminee.getDuree();
+			%>
+			
 			<tr>
 				<td><%=name %></td>
 				<td><%=duree %></td>
