@@ -3,6 +3,7 @@ package net.web;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.dao.UserDao;
+import net.model.Jeu;
 import net.model.User;
 
 /**
@@ -57,18 +59,16 @@ public class UserController extends HttpServlet {
 		utilisateur.setDateNaissance(LocalDate.parse(birthdayDate, formatter));
 
 		try {
-			int result = userDao.registerEmployee(utilisateur);
+			int result = userDao.register(utilisateur);
 			if(result == 1) {
 				request.setAttribute("NOTIFICATION", "User Registered Successfully!");
+				response.sendRedirect("JSP/accueil_nonlog.jsp");
 			}
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/accueil_user.jsp");
-		dispatcher.forward(request, response);
 	}
 	
 	

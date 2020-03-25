@@ -45,7 +45,37 @@ public class JeuDAOImpl implements JeuDAO{
 			e.printStackTrace();
 		}
 		return jeu;
+	
+	public void deleteJeuFavori(int idJeu, String identifiant) {
+		Connection connection;
+		try {
+			connection = JDBCUtils.getConnection();
+			
+			PreparedStatement preparedStatement0 = connection.prepareStatement("select idUtilisateur from Utilisateur, Compte where "
+					+ "identifiant = Compte_identifiant and identifiant = ?");
+			preparedStatement0.setString(1,identifiant);
+			ResultSet rs0 = preparedStatement0.executeQuery();
+			rs0.next();
+			int idUser = rs0.getInt("idUtilisateur");
+			
+			PreparedStatement preparedStatement = connection.prepareStatement("DELETE from Bibliotheque where Utilisateur_idUtilisateur = ?"
+					+ " and Jeu_idJeu = ?");
+				
+			preparedStatement.setLong(1, idUser);
+			preparedStatement.setLong(2, idJeu);
+			System.out.println(preparedStatement);
+			int result = preparedStatement.executeUpdate();
+			
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
-
 }

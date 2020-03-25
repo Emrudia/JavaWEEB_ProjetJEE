@@ -42,7 +42,7 @@ public class UserDao {
 		return null;
 	}
 
-	public int registerEmployee(User utilisateur) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+	public int register(User utilisateur) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
 		String INSERT_USERS_SQL = "INSERT INTO Utilisateur"
 				+ "  (nom, prenom, dateDeNaissance, email, dateInscription, Compte_identifiant) VALUES "
 				+ " (?, ?, ?, ?, ?, ?);";
@@ -52,6 +52,7 @@ public class UserDao {
 				+ " (?, ?);";
 		
 		int result = 0;
+		
 		try (Connection connection1 = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement1 = connection1.prepareStatement(INSERT_Account_SQL)) {
@@ -63,9 +64,9 @@ public class UserDao {
 			result= preparedStatement1.executeUpdate();
 
 			int result1 = 0;
-			try (Connection connection = JDBCUtils.getConnection();
+			try (
 					// Step 2:Create a statement using connection object
-					PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+					PreparedStatement preparedStatement = connection1.prepareStatement(INSERT_USERS_SQL)) {
 					preparedStatement.setString(1, utilisateur.getNom());
 					preparedStatement.setString(2, utilisateur.getPrenom());
 					preparedStatement.setDate(3, JDBCUtils.getSQLDate(utilisateur.getDateNaissance()));
@@ -75,7 +76,25 @@ public class UserDao {
 					System.out.println(preparedStatement);
 					// Step 3: Execute the query or update query
 					result1 = preparedStatement.executeUpdate();
-
+					
+					
+					
+					PreparedStatement preparedStatement4 = connection1.prepareStatement("select idUtilisateur from Utilisateur, Compte where "
+							+ "Compte_identifiant = identifiant and identifiant = ?");
+					preparedStatement4.setString(1, utilisateur.getIdentifiant());
+					ResultSet rs = preparedStatement4.executeQuery();
+					rs.next();
+					String idUser = rs.getString("idUtilisateur");
+					
+					try (
+							PreparedStatement preparedStatement3 = connection1.prepareStatement("INSERT INTO Bibliotheque"
+				+ "  (Utilisateur_idUtilisateur, Jeu_idJeu) VALUES (?,?);")){
+						preparedStatement3.setString(1,idUser);
+						preparedStatement3.setString(2,"2"); //ajout de Lol 
+						System.out.println(preparedStatement3);
+						int result3 = preparedStatement3.executeUpdate();
+						
+					}
 			} catch (SQLException e) {
 				// process sql exception
 				JDBCUtils.printSQLException(e);
@@ -84,15 +103,10 @@ public class UserDao {
 		}
 	}
 	
-	public User selectUser(String username) throws InstantiationException, IllegalAccessException{
+	public User selectUser(String username) throws InstantiationException, IllegalAccessException, SQLException{
 		
 		User user = null;
 		// Step 1: Establishing a Connection
-		
-		/*PreparedStatement preparedStatement = connection.prepareStatement("select identifiant, Utilisateur.nom, prenom, "
-		+ "dateDeNaissance, dateInscription, email, banni, nbParties, idJeu, Jeu.nom from Utilisateur, Compte, Bibliotheque, Jeu "
-		+ "where Compte_identifiant = "
-		+ "identifiant and Utilisateur_idUtilisateur = idUtilisateur and Jeu_idJeu = idJeu and identifiant = ? ")*/
 		
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
@@ -105,46 +119,50 @@ public class UserDao {
 			ResultSet rs = preparedStatement.executeQuery();
 
 			// Step 4: Process the ResultSet object.
-			boolean premiereLignePassee = false;
-			ArrayList<Jeu> jeuxFavoris = new ArrayList<Jeu>();
-			Jeu jeu = new Jeu();
+			rs.next();
+			String identifiant = rs.getString("identifiant");
+			String nom = rs.getString("Utilisateur.nom");
+			String prenom = rs.getString("prenom");
+			LocalDate dateNaissance = rs.getDate("dateDeNaissance").toLocalDate();
+			LocalDate dateInscription = rs.getDate("dateInscription").toLocalDate();
+			String email = rs.getString("email");
+			boolean banni = rs.getBoolean("banni");
+			int nbParties = rs.getInt("nbParties");
 			
-			while (rs.next()) {
-				System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK");
-				//int idJeu = rs.getInt("idJeu");
-				//String nomJeu = rs.getString("Jeu.nom");
+			user = new User();
+			user.setIdentifiant(identifiant);
+			user.setNom(nom);
+			user.setPrenom(prenom);
+			user.setEmail(email);
+			user.setDateNaissance(dateNaissance);
+			
+			try (
+					PreparedStatement preparedStatement2 = connection.prepareStatement("select idJeu, Jeu.nom from Utilisateur, "
+					+ "Compte, Bibliotheque, Jeu where Compte_identifiant = identifiant and identifiant = ? and Utilisateur_idUtilisateur "
+					+ "= idUtilisateur and Jeu_idJeu = idJeu");) {
 				
-				if (!premiereLignePassee) {
-					String identifiant = rs.getString("identifiant");
-					String nom = rs.getString("Utilisateur.nom");
-					String prenom = rs.getString("prenom");
-					LocalDate dateNaissance = rs.getDate("dateDeNaissance").toLocalDate();
-					LocalDate dateInscription = rs.getDate("dateInscription").toLocalDate();
-					String email = rs.getString("email");
-					boolean banni = rs.getBoolean("banni");
-					int nbParties = rs.getInt("nbParties");
-					
-					user = new User();
-					user.setIdentifiant(identifiant);
-					user.setNom(nom);
-					user.setPrenom(prenom);
-					user.setEmail(email);
-					user.setDateNaissance(dateNaissance);
-					//Jeu j1 = new Jeu(nomJeu);
-					//j1.setIdJeu(idJeu);
-					//jeuxFavoris.add(j1);
-					
-					premiereLignePassee = true;
-				}else{
-					//jeu.setIdJeu(idJeu);
-					//jeu.setNom(nomJeu);
-					//jeuxFavoris.add(jeu);
+				preparedStatement2.setString(1, username);
+				System.out.println(preparedStatement2);
+				ResultSet rs2 = preparedStatement2.executeQuery();
+		
+				ArrayList<Jeu> jeuxFavoris = new ArrayList<Jeu>();
+				Jeu jeu = new Jeu();
+				int idJeu;
+				String nomJeu;
+			
+				while (rs2.next()) {
+					idJeu = rs2.getInt("idJeu");
+					nomJeu = rs2.getString("Jeu.nom");
+					jeu.setIdJeu(idJeu);
+					jeu.setNom(nomJeu);
+					jeuxFavoris.add(jeu);
 				}
-			//user.setJeuxFavoris(jeuxFavoris);
+				user.setJeuxFavoris(jeuxFavoris);
+					
+			} catch (SQLException exception) {
+				JDBCUtils.printSQLException(exception);
 			}
-		} catch (SQLException exception) {
-			JDBCUtils.printSQLException(exception);
-		}
 		return user;
+		}
 	}
 }

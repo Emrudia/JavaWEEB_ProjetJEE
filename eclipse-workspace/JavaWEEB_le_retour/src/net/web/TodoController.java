@@ -23,7 +23,7 @@ import net.model.Todo;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/MainServlet")
+//@WebServlet("/blabla") Servlet modèle 
 public class TodoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TodoDao todoDAO;

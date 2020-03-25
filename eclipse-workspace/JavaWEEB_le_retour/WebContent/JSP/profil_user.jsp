@@ -39,13 +39,25 @@
 					<label for="uname">E-mail : ${sessionScope.sessionUtilisateur.email}</label>
 				</div>
 				<div>
-					<label for="uname">Jeux favoris :
-						<c:forEach var="jeu" items="${sessionScope.sessionUtilisateur.jeuxFavoris}">
-							<tr><c:out value="${jeu.nom}." /></tr>
-						</c:forEach>
-					</label>
+					<label for="uname">Jeux favoris : </label>
 
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Jeu</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="jeu" items="${sessionScope.sessionUtilisateur.jeuxFavoris}">
+								<tr><td><c:out value="${jeu.nom}" /></td>
+									<td><a href="<%=request.getContextPath()%>/delete?idJeu=<c:out value='${jeu.idJeu}' />">Delete</a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
+				
 			</h3>
 			<div class="container3">
 				<button class="modifybtn">Modifier</button>
