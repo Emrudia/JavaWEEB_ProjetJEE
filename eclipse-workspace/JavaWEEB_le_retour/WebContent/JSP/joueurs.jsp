@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Parties finies</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/JSP/CSS/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 <body>

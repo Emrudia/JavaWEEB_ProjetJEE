@@ -19,7 +19,7 @@ import net.model.User;
 public class PartieEnCoursController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static ArrayList<PartieEnCours> parties = new ArrayList <PartieEnCours>();
+	public static ArrayList<PartieEnCours> parties = new ArrayList <PartieEnCours>();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -40,8 +40,6 @@ public class PartieEnCoursController extends HttpServlet {
 				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDateTime.now());
 				parties.add(pec);
 				break;
-			case "/PartiesEnCours":
-				
 		}
 	}
 

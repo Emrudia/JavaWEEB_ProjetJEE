@@ -1,5 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu"%>
+<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
 
 <!DOCTYPE html>
 <html>
@@ -26,15 +26,17 @@
 				<td class="colonne3">Début de la partie</td>
 				<td class="colonne4">Terminer la partie</td>
 			</tr>
+			
+		<%ArrayList <PartieEnCours> parties = PartieEnCoursController.parties; 
+		for (PartieEnCours pec : parties){%>
 			<tr>  
-				<% %>
 				
-				<td>A remplir</td>      <!-- Faudra insérer les listes d'éléments -->
-				<td>A remplir</td>
-				<td>A remplir</td>
+				<td><%=pec.getNomJeu() %></td>      <!-- Faudra insérer les listes d'éléments -->
+				<td><%=pec.getNomUtilisateur() %></td>
+				<td><%=pec.getDateDebut().toString() %></td>
 				<td>A remplir</td>
 			</tr>
-
+<%} %>
 		</table>
 	</div>
 	<div class="margefooter"></div>
