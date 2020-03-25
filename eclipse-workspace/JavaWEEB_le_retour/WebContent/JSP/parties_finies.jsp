@@ -3,7 +3,7 @@
 
 <%
 
-List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("listGame");
+List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("listGames");
 
 %>
 
