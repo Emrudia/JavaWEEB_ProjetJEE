@@ -26,6 +26,9 @@ public class PartieEnCours {
 		return nbHeures;
 	}
 */
+	/*on a pas besoin de la durée, ce n'est pas demandé dans le consigne (mieux vaut pas se compliquer la vie ^^)*/
+	
+	
 	
 	public String getNomUtilisateur() {
 		return nomUtilisateur;

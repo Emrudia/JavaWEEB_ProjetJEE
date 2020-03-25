@@ -26,7 +26,7 @@ public class PartieTermineeDAO {
 			statement = connexion.createStatement();
 			rs = statement.executeQuery("select * from PartieTerminee;") ;
 			while (rs.next()) {				
-				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),rs.getInt("idJeu"),rs.getString("nomJeu"), sdf.parse(rs.getString("dateDebut")),sdf.parse(rs.getString("dateFin")));
+				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),rs.getInt("idJeu"),rs.getString("nomUtilisateur"),rs.getString("nomJeu"), sdf.parse(rs.getString("dateDebut")),sdf.parse(rs.getString("dateFin")));
 				list.add(partie);
 			}
 			
