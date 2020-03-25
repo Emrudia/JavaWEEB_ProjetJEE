@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.dao.JeuDAOImpl;
 import net.model.Jeu;
 import net.model.PartieEnCours;
+import net.model.User;
 
 @WebServlet("/DebutPartie")
 public class PartieEnCoursController extends HttpServlet {
@@ -34,10 +35,12 @@ public class PartieEnCoursController extends HttpServlet {
 		switch (action){
 			case "/DebutPartie":
 				Jeu jeu = JeuDAOImpl.getJeu(request.getParameter("game"));
-				PartieEnCours pec = new PartieEnCours((int)request.getSession().getAttribute("idUtilisateur"), jeu.getIdJeu(), 
+				System.out.println("idUtilisateur : " + ((User)request.getSession().getAttribute("sessionUtilisateur")).toString());
+				PartieEnCours pec = new PartieEnCours(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdUtilisateur(), jeu.getIdJeu(), 
 				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDateTime.now());
 				parties.add(pec);
-				
+				break;
+			case "/PartiesEnCours":
 				
 		}
 	}

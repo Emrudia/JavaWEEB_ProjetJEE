@@ -92,6 +92,14 @@ public class User extends Personne implements Serializable {
 		this.nbParties = nbParties;
 	}
 
+
+	@Override
+	public String toString() {
+		return "User [idUtilisateur=" + idUtilisateur + ", prenom=" + prenom + ", nom=" + nom + ", dateNaissance="
+				+ dateNaissance + ", dateInscription=" + dateInscription + ", banni=" + banni + ", nbParties="
+				+ nbParties + ", jeuxFavoris=" + jeuxFavoris + "]";
+	}
+
 	
 
 }
