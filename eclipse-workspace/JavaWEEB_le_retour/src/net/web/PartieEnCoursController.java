@@ -1,7 +1,7 @@
 package net.web;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -35,7 +35,8 @@ public class PartieEnCoursController extends HttpServlet {
 			case "/DebutPartie":
 				Jeu jeu = JeuDAOImpl.getJeu(request.getParameter("game"));
 				PartieEnCours pec = new PartieEnCours((int)request.getSession().getAttribute("idUtilisateur"), jeu.getIdJeu(), 
-				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDate.now());
+				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDateTime.now());
+				parties.add(pec);
 				
 				
 		}

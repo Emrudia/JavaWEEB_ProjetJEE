@@ -1,6 +1,6 @@
 package net.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class PartieEnCours {
 	
@@ -8,9 +8,9 @@ public class PartieEnCours {
 	private int idJeu;
 	private String nomUtilisateur;
 	private String nomJeu;
-	private Date dateDebut;
+	private LocalDateTime dateDebut;
 	
-	public PartieEnCours(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, Date dateDebut) {
+	public PartieEnCours(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, LocalDateTime dateDebut) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
@@ -19,13 +19,11 @@ public class PartieEnCours {
 		this.dateDebut = dateDebut;
 	}
 	
-/* On pourrait remplacer ça par un getDuree de partie jusqu'à maintenant, mais je sais pas faire sans LocalDate
 	public float getDuree(){
-		long diff = dateDebut.getTime() - LocalDate.now();
-		int nbHeures =  (int) (diff / 3600000.0f);
-		return nbHeures;
+		int diff = LocalDateTime.now().compareTo(dateDebut);
+		return diff;
 	}
-*/
+
 	/*on a pas besoin de la durée, ce n'est pas demandé dans le consigne (mieux vaut pas se compliquer la vie ^^)*/
 	
 	
@@ -63,11 +61,11 @@ public class PartieEnCours {
 		this.idJeu = idJeu;
 	}
 
-	public Date getDateDebut() {
+	public LocalDateTime getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(Date dateDebut) {
+	public void setDateDebut(LocalDateTime dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 	

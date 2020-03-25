@@ -1,6 +1,6 @@
 package net.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class PartieTerminee {
 	
@@ -8,10 +8,10 @@ public class PartieTerminee {
 	private int idJeu;
 	private String nomUtilisateur;
 	private String nomJeu;
-	private Date dateDebut; //Mais c'est deprecated :o
-	private Date dateFin;
+	private LocalDateTime dateDebut; //Mais c'est deprecated :o
+	private LocalDateTime dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, Date dateDebut, Date dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, LocalDateTime dateDebut, LocalDateTime dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
@@ -22,7 +22,7 @@ public class PartieTerminee {
 	}
 	
 	public int getDuree(){
-		int diff = (int) (dateDebut.getTime() - dateFin.getTime());
+		int diff = (int) (dateFin.compareTo(dateDebut));
 		int nbHeures =  (int) (diff / 3600000.0f);
 		return nbHeures;
 	}
@@ -60,19 +60,19 @@ public class PartieTerminee {
 		this.idJeu = idJeu;
 	}
 
-	public Date getDateDebut() {
+	public LocalDateTime getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(Date dateDebut) {
+	public void setDateDebut(LocalDateTime dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	public Date getDateFin() {
+	public LocalDateTime getDateFin() {
 		return dateFin;
 	}
 
-	public void setDateFin(Date dateFin) {
+	public void setDateFin(LocalDateTime dateFin) {
 		this.dateFin = dateFin;
 	}
 	

@@ -44,7 +44,8 @@ public class JeuDAOImpl implements JeuDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return jeu;
+		return jeu;	
+	}
 	
 	public void deleteJeuFavori(int idJeu, String identifiant) {
 		Connection connection;
