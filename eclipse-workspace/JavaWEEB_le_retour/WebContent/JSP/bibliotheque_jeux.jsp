@@ -1,12 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu"%>
-
-<%
-
-List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
-
-%>
-
+<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOMockImpl"%>
 
 <!DOCTYPE html>
 <html>
@@ -32,14 +25,12 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 			</tr>
 			
 			<%
-			String nom;
+			List<Jeu> listJeux = JeuDAOMockImpl.tousJeux();
 			for (Jeu jeu:listJeux){
-				nom = jeu.getNom();
-			
 			%>
 			
 			<tr>
-				<td> <%=nom %> </td>
+				<td> <%=jeu.getNom() %> </td>
 			</tr>
 			
 			<%

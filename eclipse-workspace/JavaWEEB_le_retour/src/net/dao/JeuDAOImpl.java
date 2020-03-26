@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import net.model.Jeu;
@@ -11,10 +12,28 @@ import net.utils.JDBCUtils;
 
 public class JeuDAOImpl implements JeuDAO{
 
-	@Override
-	public List<Jeu> tousJeux() {
-		// TODO Auto-generated method stub
-		return null;
+	public static List<Jeu> tousJeux() {
+		Connection connection;
+		List<Jeu> listJeux = new ArrayList<Jeu>();
+		try {
+			connection = JDBCUtils.getConnection();
+			String request = "SELECT nom FROM Jeu;";
+			PreparedStatement preparedStatement = connection.prepareStatement(request);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				listJeux.add(new Jeu(resultSet.getInt("idJeu"),resultSet.getString("nom")));
+			}
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listJeux;	
 	}
 
 	@Override

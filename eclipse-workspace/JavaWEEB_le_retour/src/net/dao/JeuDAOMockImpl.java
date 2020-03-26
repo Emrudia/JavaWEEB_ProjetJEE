@@ -7,8 +7,7 @@ import net.model.Jeu;
 
 public class JeuDAOMockImpl implements JeuDAO{
 
-	@Override
-	public List<Jeu> tousJeux() {
+	public static List<Jeu> tousJeux() {
 		List<Jeu> listJeu = new ArrayList<Jeu>();
 		listJeu.add(new Jeu("League of Legends"));
 		listJeu.add(new Jeu("World of Tanks"));

@@ -6,10 +6,11 @@ import net.model.Jeu;
 
 public class JeuServiceImpl implements JeuService{
 	private JeuDAO jeuDAO = new JeuDAOImpl();
-	
+
 	@Override
 	public List<Jeu> tousJeux() {
-		return jeuDAO.tousJeux();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
