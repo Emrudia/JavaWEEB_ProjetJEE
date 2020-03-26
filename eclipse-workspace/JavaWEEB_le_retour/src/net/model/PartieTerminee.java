@@ -1,5 +1,6 @@
 package net.model;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class PartieTerminee {
@@ -31,10 +32,17 @@ public class PartieTerminee {
 		this.dateFin = dateFin;
 	}
 	
-	public int getDuree(){
-		int diff = (int) (dateFin.compareTo(dateDebut));
-		int nbHeures =  (int) (diff / 3600000.0f);
-		return nbHeures;
+	public String getDuree(){
+		Duration duration = Duration.between(dateDebut, dateFin);
+		return  duration.toString();
+	}
+
+	public String getNomUtilisateur() {
+		return nomUtilisateur;
+	}
+
+	public void setNomUtilisateur(String nomUtilisateur) {
+		this.nomUtilisateur = nomUtilisateur;
 	}
 
 	public String getNomJeu() {
