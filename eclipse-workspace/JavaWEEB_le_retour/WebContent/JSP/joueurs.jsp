@@ -35,7 +35,6 @@
 				<td><%=joueur.getIdentifiant() %></td>
 				<td><%=joueur.getDateInscription() %></td>
 				<td><%=joueur.getNbParties() %> </td>
-				      <!-- Faudra insérer les listes d'éléments -->
 				<td>
 					<%if(!joueur.isBanni()){ %>
 						<a href = "<%=request.getContextPath()%>/banJoueur?pseudo=<%=joueur.getIdentifiant()%>">

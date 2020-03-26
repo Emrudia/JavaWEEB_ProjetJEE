@@ -21,8 +21,11 @@
 	<div class="container2">
 		<table>
 			<tr>
-				<td class="colonnegauche">Nom du jeu</td>
-				<td class="colonnedroite">Durée de la partie</td>
+				<td class="colonne2">Nom du jeu</td>
+				<td class="colonne2">Nom d'utilisateur</td>
+				<td class="colonne3">Début</td>
+				<td class="colonne3">Fin</td>
+				<td class="colonne2">Durée de la partie</td>
 			</tr>
 			<%
 			List<PartieTerminee> listGames = PartieTermineeDAO.findByAll();
@@ -31,6 +34,9 @@
 			
 			<tr>
 				<td> <%=partie.getNomJeu() %> </td>
+				<td> <%=partie.getNomUtilisateur() %> </td>
+				<td> <%=partie.getDateDebut() %> </td>
+				<td> <%=partie.getDateFin() %> </td>
 				<td> <%=partie.getDuree() %> </td>
 			</tr>
 			
