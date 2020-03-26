@@ -1,8 +1,12 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOImpl"%>
+<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOImpl,net.web.PartieEnCoursController,java.util.Collections,java.util.ArrayList,net.model.PartieEnCours"%>
 
 <!DOCTYPE html>
 <html>
+<%ArrayList<String> nomParties = new ArrayList<String>();
+for(PartieEnCours partie:PartieEnCoursController.parties){
+	nomParties.add(partie.getNomJeu());
+}%>
 
 <head>
 <meta charset="UTF-8">
@@ -37,7 +41,7 @@
 			
 			<tr>
 				<td class="colonnegauche"> <%=jeu.getNom() %> </td>
-				<td class="colonnedroite"> nombre joueurs</td>
+				<td class="colonnedroite"> <%=Collections.frequency(nomParties, jeu.getNom()) %></td>
 			</tr>
 			
 			<%

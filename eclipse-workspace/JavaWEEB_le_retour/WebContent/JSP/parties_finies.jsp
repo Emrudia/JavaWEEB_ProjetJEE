@@ -1,6 +1,6 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.PartieTerminee,net.dao.PartieTermineeDAO,java.util.Collections"%>
-
+<%@page import="java.util.List,net.model.PartieTerminee,net.dao.PartieTermineeDAO,java.util.Collections,java.time.LocalDateTime,java.time.format.DateTimeFormatter"%>
+<%DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); %>
 <!DOCTYPE html>
 <html>
 
@@ -36,8 +36,8 @@
 			<tr>
 				<td> <%=partie.getNomJeu() %> </td>
 				<td> <%=partie.getNomUtilisateur() %> </td>
-				<td> <%=partie.getDateDebut() %> </td>
-				<td> <%=partie.getDateFin() %> </td>
+				<td> <%=partie.getDateDebut().format(formatter) %> </td>
+				<td> <%=partie.getDateFin().format(formatter) %> </td>
 				<td> <%=partie.getDuree() %> </td>
 			</tr>
 			
