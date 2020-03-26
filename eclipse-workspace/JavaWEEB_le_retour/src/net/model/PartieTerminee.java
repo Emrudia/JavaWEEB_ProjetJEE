@@ -34,7 +34,10 @@ public class PartieTerminee {
 	
 	public String getDuree(){
 		Duration duration = Duration.between(dateDebut, dateFin);
-		return  duration.toString();
+		long seconde = duration.getSeconds();
+		long minute = seconde / 60;
+		seconde = seconde - minute*60;
+		return  minute + " min " + seconde + " s" ;
 	}
 
 	public String getNomUtilisateur() {
