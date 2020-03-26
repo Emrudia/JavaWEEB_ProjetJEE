@@ -32,7 +32,7 @@
 			String pseudo = joueur.getIdentifiant();
 		%>
 			<tr>  
-				<td><a href = "<%=joueur.getIdentifiant() %></td>
+				<td><a href = "<%=request.getContextPath()%>/JSP/apercu_profil_joueur.jsp?joueur=<%=joueur.getIdentifiant()%>"><%=joueur.getIdentifiant()%></a></td>
 				<td><%=joueur.getDateInscription() %></td>
 				<td><%=joueur.getNbParties() %> </td>
 				<td>

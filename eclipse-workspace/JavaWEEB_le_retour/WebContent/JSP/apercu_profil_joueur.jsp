@@ -1,6 +1,8 @@
 <%@ page language="java"%>
+<%@page import="net.model.User,net.dao.UserDao" %>
 <!DOCTYPE html>
 <html>
+<%User joueur = UserDao.getUser(request.getParameter("joueur"));%>
 <head>
 <meta charset="UTF-8">
 <title>Inscription</title>
@@ -15,7 +17,7 @@
 
 	<div class="container2"
 		style="background-color: #f491b9; border-radius: 20px;">
-		<h1 style="border-radius: 20px 20px 0px 0px;">Inscription</h1>
+		<h1 style="border-radius: 20px 20px 0px 0px;"><%=request.getParameter("joueur")%></h1>
 			<div class="alert alert-fail center" role="alert">
 				<h1 align = middle > <font size="+2">${NOTIFICATION}</font></h1>
 			</div>	
