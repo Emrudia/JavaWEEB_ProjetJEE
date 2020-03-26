@@ -26,7 +26,7 @@
 						<div>
 							<label for="uname">Nom d'utilisateur :</label> <input type="text"
 								class="form-control" id="username"
-								placeholder="Nom d'utilisateur" name="username" required>
+								placeholder="Nom d'utilisateur" name="username" required autofocus>
 						</div>
 
 						<div>
@@ -55,5 +55,6 @@
 				
 	<div class="margefooter"></div>
 	<jsp:include page="./footer.jsp"></jsp:include>
+	
 </body>
 </html>
