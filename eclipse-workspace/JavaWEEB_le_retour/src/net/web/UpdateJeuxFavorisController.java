@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.dao.JeuDAOImpl;
-import net.dao.TodoDaoImpl;
 import net.model.Jeu;
 import net.model.User;
 

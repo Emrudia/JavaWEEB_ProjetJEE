@@ -25,7 +25,8 @@
 			%>
 			
 			<tr>
-				<td> <%=jeu.getNom() %> </td>
+				<td class="colonnegauche"> <%=jeu.getNom() %> </td>
+				<td class="colonnedroite"> nombre joueurs</td>
 			</tr>
 			
 			<%
