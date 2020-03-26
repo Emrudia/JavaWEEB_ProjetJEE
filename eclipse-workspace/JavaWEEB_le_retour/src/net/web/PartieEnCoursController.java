@@ -53,6 +53,14 @@ public class PartieEnCoursController extends HttpServlet {
 				parties.remove(partie);
 				response.sendRedirect(request.getContextPath() + "/JSP/games_user.jsp");
 				break;
+			
+			case "/AdminFinPartie" :
+				PartieEnCours pt = PartieEnCoursController.parties.get(Integer.parseInt(request.getParameter("index")));
+				PartieTerminee endGame1 = new PartieTerminee(pt, LocalDateTime.now());
+				PartieTermineeDAO.addPartieTerminee(endGame1);
+				//request.getSession().removeAttribute("partieEnCours");
+				parties.remove(pt);
+				response.sendRedirect(request.getContextPath() + "/JSP/parties_en_cours.jsp");
 		}
 	}
 

@@ -19,6 +19,34 @@
 	</div>
 	<div class = "container3">
 		<button class="deletebtn" id="try">Rafra�chir</button> 
+	
+	<div class="container2">
+	
+<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
+		<table>
+			<tr>
+				<td class="colonne1">Nom du jeu</td>
+				<td class="colonne2">Pseudo</td>
+				<td class="colonne3">D�but de la partie</td>
+				<td class="colonne4">Terminer la partie</td>
+			</tr>
+			
+		<%ArrayList <PartieEnCours> parties = PartieEnCoursController.parties; 
+		Collections.reverse(parties);
+		int index = 0;
+		for (PartieEnCours pec : parties){%>
+			<tr>  
+				
+				<td><%=pec.getNomJeu() %></td>
+				<td><%=pec.getNomUtilisateur() %></td>
+				<td><%=pec.getDateDebut().toString() %></td>
+				<td><a href = "<%=request.getContextPath()%>/AdminFinPartie?index=<%=index%>"> <button class="endGameBtn" style="width = 90%">Terminer la partie</button></a></td>
+			</tr>
+			<%index++;
+			} 
+			%>
+		</table>
+	</div>
 	</div>
 	<div class="container2" id ='tableau'>
 	</div>
