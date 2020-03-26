@@ -20,7 +20,6 @@
 
 		<div class="container">
 			<button type="submit" class="addbtn">Ajouter</button>
-			<button type="submit" class="deletebtn">Supprimer</button>
 		</div>
 
 		<table>
@@ -28,6 +27,7 @@
 			<tr>
 				<td class="colonnegauche"> Nom du jeu </td>
 				<td class="colonnedroite"> Nombre de joueurs</td>
+				<td class="colonnedroite">Supprimer le jeu </td>
 			</tr>
 			
 			<%
@@ -38,6 +38,11 @@
 			<tr>
 				<td class="colonnegauche"> <%=jeu.getNom() %> </td>
 				<td class="colonnedroite"> nombre joueurs</td>
+				<td>
+					<a href = "<%=request.getContextPath()%>/deleteJeu?id=<%=jeu.getIdJeu()%>">
+						<button class="deletebtn" style="width: 90%;">Supprimer</button>
+					</a>
+				</td>
 			</tr>
 			
 			<%
