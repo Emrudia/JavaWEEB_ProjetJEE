@@ -44,11 +44,11 @@
 			</form>
 
 			<div class="container2">
-				<a style="text-decoration: none;" href="./accueil_nonlog.jsp"><h3>Mot de passe oublié</h3></a>
+				<a style="text-decoration: none;" href="<%=request.getContextPath()%>/JSP/accueil_nonlog.jsp"><h3>Mot de passe oublié</h3></a>
 			</div>
 
 			<div class="container2">
-				<a style="text-decoration: none;" href="./register.jsp"><h3>Pas encore membre ? Inscrivez-vous !</h3></a>
+				<a style="text-decoration: none;" href="<%=request.getContextPath()%>/JSP/register.jsp"><h3>Pas encore membre ? Inscrivez-vous !</h3></a>
 			</div>
 		</div>
 	</div>
