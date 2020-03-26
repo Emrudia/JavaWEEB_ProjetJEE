@@ -77,6 +77,30 @@ public class JeuDAOImpl implements JeuDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void addJeuFavori(int idJeu, int idUser) {
+		try {
+			Connection connection = JDBCUtils.getConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement("INSERT into Bibliotheque (Utilisateur_idUtilisateur, "
+					+ "jeu_idJeu) values (?,?)");
+			
+			preparedStatement.setLong(1, idUser);
+			preparedStatement.setLong(2, idJeu);
+			System.out.println(preparedStatement);
+			int result = preparedStatement.executeUpdate();
+			
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
+
 }

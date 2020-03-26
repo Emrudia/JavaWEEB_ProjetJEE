@@ -51,7 +51,7 @@
 						<tbody>
 							<c:forEach var="jeu" items="${sessionScope.sessionUtilisateur.jeuxFavoris}">
 								<tr><td><c:out value="${jeu.nom}" /></td>
-									<td><a href="<%=request.getContextPath()%>/delete?idJeu=<c:out value='${jeu.idJeu}' />">Delete</a></td>
+									<td><a href="<%=request.getContextPath()%>/deleteJeu?idJeu=<c:out value='${jeu.idJeu}' />">Delete</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

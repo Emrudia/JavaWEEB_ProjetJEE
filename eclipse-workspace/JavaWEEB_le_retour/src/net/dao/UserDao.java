@@ -77,24 +77,7 @@ public class UserDao {
 					// Step 3: Execute the query or update query
 					result1 = preparedStatement.executeUpdate();
 					
-					
-					
-					PreparedStatement preparedStatement4 = connection1.prepareStatement("select idUtilisateur from Utilisateur, Compte where "
-							+ "Compte_identifiant = identifiant and identifiant = ?");
-					preparedStatement4.setString(1, utilisateur.getIdentifiant());
-					ResultSet rs = preparedStatement4.executeQuery();
-					rs.next();
-					String idUser = rs.getString("idUtilisateur");
-					
-					try (
-							PreparedStatement preparedStatement3 = connection1.prepareStatement("INSERT INTO Bibliotheque"
-				+ "  (Utilisateur_idUtilisateur, Jeu_idJeu) VALUES (?,?);")){
-						preparedStatement3.setString(1,idUser);
-						preparedStatement3.setString(2,"2"); //ajout de Lol 
-						System.out.println(preparedStatement3);
-						int result3 = preparedStatement3.executeUpdate();
-						
-					}
+				
 			} catch (SQLException e) {
 				// process sql exception
 				JDBCUtils.printSQLException(e);
