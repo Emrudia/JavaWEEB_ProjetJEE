@@ -11,11 +11,7 @@
 <body>
 
 	<jsp:include page="./header_user.jsp"></jsp:include>
-	<div class="containerBandeauAccueil">
-		<marquee scrollamount="300" scrolldelay="500">10 000 joueurs
-			connectés</marquee>
-	</div>
-
+	
 	<div class="container6">
 		<h2>Partie en cours</h2>
 		<a href = "<%=request.getContextPath()%>/FinPartie"> <button class = "endGameBtn">Fin de la Partie</button></a>
