@@ -70,19 +70,23 @@ public class LoginController extends HttpServlet {
 		try {
 			if (!loginDao.isAdministrateur(username)) {
 				if (loginDao.validate(loginBean,false)) {
-				
-					HttpSession session = request.getSession();
-					System.out.println("username : " + username);
 					User user = userDao.selectUser(username);
-					System.out.println("user : " + user.toString());
-					session.setAttribute("sessionUtilisateur",user);
-					response.sendRedirect("JSP/accueil_user.jsp");
+					if (!user.isBanni()) {	
+						HttpSession session = request.getSession();
+						session.setAttribute("sessionUtilisateur",user);
+						response.sendRedirect("JSP/accueil_user.jsp");
+					}
+					else {
+						request.setAttribute("NOTIFICATION", "Bah alors ? On est banni?");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
+						dispatcher.forward(request, response);
+					}
 				} else {
 					request.setAttribute("NOTIFICATION", "Mauvais mot de passe ou identifiant");
 					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
 					dispatcher.forward(request, response);
 				}
-				
+
 			}else {
 				if (loginDao.validate(loginBean,true)) {
 					HttpSession session = request.getSession();
