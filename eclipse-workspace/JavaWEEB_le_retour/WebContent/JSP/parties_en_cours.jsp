@@ -15,7 +15,7 @@
 	<jsp:include page="./header_admin.jsp"></jsp:include>
 
 	<div class="container2">
-		<h1>Partie en cours</h1>
+		<h1>Parties en cours</h1>
 	</div>
 
 	<div class="container2">
