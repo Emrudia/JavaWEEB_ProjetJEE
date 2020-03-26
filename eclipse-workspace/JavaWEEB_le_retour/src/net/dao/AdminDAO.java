@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import net.model.Administrateur;
+import net.model.User;
 import net.utils.JDBCUtils;
 
 public class AdminDAO {
@@ -55,20 +57,24 @@ public class AdminDAO {
 		return null;
 	}
 	
-	/*
-	public ArrayList<User> getListJoueurs(){
+
+	public ArrayList<User> getListeJoueurs(){
 		Connection connection;
+		ArrayList<User> listeJoueurs = new ArrayList<User>();
 		try {
 			connection = JDBCUtils.getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(
 					"SELECT * FROM Utilisateur;");
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
+			User utilisateur;
 			while(rs.next()) {
-				//User utilisateur = new User(rs.getString("prenom"), rs.getString("nom"), rs.getDate("dateNaissance"), rs.getDate("dateInscription"),
-						//rs.getInt("banni")!=0, rs.getInt("nbParties"));
+				utilisateur = new User(rs.getString("prenom"), rs.getString("nom"), rs.getDate("dateNaissance").toLocalDate(), rs.getDate("dateInscription").toLocalDate(),
+						rs.getInt("banni")!=0, rs.getInt("nbParties"));
+				listeJoueurs.add(utilisateur);
 			}
-			return utilisateur;
+			
+			return listeJoueurs;
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,5 +87,4 @@ public class AdminDAO {
 		}
 		return null;
 	}
-	*/
 }

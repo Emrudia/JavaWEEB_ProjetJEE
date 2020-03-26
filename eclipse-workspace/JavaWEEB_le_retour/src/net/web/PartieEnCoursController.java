@@ -15,7 +15,7 @@ import net.model.Jeu;
 import net.model.PartieEnCours;
 import net.model.User;
 
-@WebServlet("/DebutPartie")
+@WebServlet(urlPatterns = {"/DebutPartie", "/FinPartie"})
 public class PartieEnCoursController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -41,6 +41,8 @@ public class PartieEnCoursController extends HttpServlet {
 				parties.add(pec);
 				request.getSession().setAttribute("partieEnCours", jeu);
 				break;
+			case "/FinPartie":
+				
 		}
 	}
 
