@@ -54,6 +54,7 @@ public class PartieEnCoursController extends HttpServlet {
 				PartieTerminee endGame = new PartieTerminee(partie, LocalDateTime.now());
 				PartieTermineeDAO.addPartieTerminee(endGame);
 				request.getSession().removeAttribute("partieEnCours");
+				parties.remove(partie);
 				response.sendRedirect(request.getContextPath() + "/JSP/games_user.jsp");
 				break;
 		}
