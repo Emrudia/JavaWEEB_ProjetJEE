@@ -7,7 +7,7 @@
             <tr>
                 <td class="colonne1">Nom du jeu</td>
                 <td class="colonne2">Pseudo</td>
-                <td class="colonne3">Dï¿½but de la partie</td>
+                <td class="colonne3">Début de la partie</td>
                 <td class="colonne4">Terminer la partie</td>
             </tr>
             
