@@ -31,6 +31,7 @@ public class PartieTermineeDAO {
 				list.add(new  PartieTerminee(rs.getInt("Utilisateur_idUtilisateur"),
 											 rs.getInt("Jeu_idJeu"), 
 											 rs.getString("nomJeu"), 
+											 rs.getString("nomUtilisateur"),
 											 LocalDateTime.parse(rs.getString("dateDebut").substring(0, 16), formatter), 
 											 LocalDateTime.parse(rs.getString("dateFin").substring(0, 16),formatter))
 				);
@@ -61,9 +62,12 @@ public class PartieTermineeDAO {
 			String request = "";
 			rs = statement.executeQuery("select * from PartieTerminee;") ;
 			while (rs.next()) {				
-				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),rs.getInt("idJeu"), 
-						rs.getString("nomJeu"), LocalDateTime.parse(rs.getString("dateDebut").substring(0, 16), formatter), 
-						 LocalDateTime.parse(rs.getString("dateFin").substring(0, 16),formatter));
+				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),
+														   rs.getInt("idJeu"), 
+														   rs.getString("nomJeu"), 
+														   rs.getString("nomUtilisateur"),
+														   LocalDateTime.parse(rs.getString("dateDebut").substring(0, 16), formatter), 
+														   LocalDateTime.parse(rs.getString("dateFin").substring(0, 16),formatter));
 			}
 			
 		} catch (SQLException e) {

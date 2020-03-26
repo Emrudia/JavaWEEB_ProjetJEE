@@ -38,7 +38,6 @@
 			}
 			%>
 			
-
 		</table>
 	</div>
 	<div class="margefooter"></div>
