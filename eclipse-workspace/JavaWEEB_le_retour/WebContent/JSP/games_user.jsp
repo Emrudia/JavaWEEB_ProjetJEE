@@ -1,11 +1,10 @@
 
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu"%>
-<%@page import="java.util.List,net.model.User"%>
+<%@page import="java.util.List,net.model.Jeu,net.model.User,net.dao.AdminDAO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-
+<% %>
 <head>
 <meta charset="UTF-8">
 
@@ -45,6 +44,8 @@
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
 							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : 
 					</h4>
 				</div>
 				<div class="container4">

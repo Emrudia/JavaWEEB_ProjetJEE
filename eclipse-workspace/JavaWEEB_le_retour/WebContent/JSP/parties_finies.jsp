@@ -1,5 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.PartieTerminee,net.dao.PartieTermineeDAO"%>
+<%@page import="java.util.List,net.model.PartieTerminee,net.dao.PartieTermineeDAO,java.util.Collections"%>
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +29,7 @@
 			</tr>
 			<%
 			List<PartieTerminee> listGames = PartieTermineeDAO.findByAll();
+			Collections.reverse(listGames);
 			for ( PartieTerminee partie:listGames){
 			%>
 			
