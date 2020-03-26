@@ -21,10 +21,10 @@
 	<div class="container2">
 		<table>
 			<tr>
-				<td class="colonnegauche">Pseudo de joueurs</td>
-				<td>Date d'inscription </td>
-				<td>Nombre de parties </td>
-				<td class="colonnedroite">Bannir</td>
+				<td class="colonne1">Pseudo de joueurs</td>
+				<td class="colonne2">Date d'inscription </td>
+				<td class="colonne3">Nombre de parties </td>
+				<td class="colonne4">Bannir</td>
 			</tr>
 		
 		<%ArrayList<User> joueurs = AdminDAO.getListeJoueurs();
