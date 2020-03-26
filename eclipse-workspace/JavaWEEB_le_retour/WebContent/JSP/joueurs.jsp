@@ -22,6 +22,8 @@
 		<table>
 			<tr>
 				<td class="colonnegauche">Pseudo de joueurs</td>
+				<td>Date d'inscription </td>
+				<td>Nombre de parties </td>
 				<td class="colonnedroite">Bannir</td>
 			</tr>
 		
@@ -30,7 +32,10 @@
 			String pseudo = joueur.getIdentifiant();
 		%>
 			<tr>  
-				<td><%=joueur.getIdentifiant() %></td>      <!-- Faudra insérer les listes d'éléments -->
+				<td><%=joueur.getIdentifiant() %></td>
+				<td><%=joueur.getDateInscription() %></td>
+				<td><%=joueur.getNbParties() %> </td>
+				      <!-- Faudra insérer les listes d'éléments -->
 				<td>
 					<%if(!joueur.isBanni()){ %>
 						<a href = "<%=request.getContextPath()%>/banJoueur?pseudo=<%=joueur.getIdentifiant()%>">

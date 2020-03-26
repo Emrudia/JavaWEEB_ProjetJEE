@@ -107,7 +107,7 @@ public class UserDao {
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Utilisateur "
-						+ "WHERE Compte_identifiant= '?' ;");) {
+						+ "WHERE Compte_identifiant= ? ;");) {
 			preparedStatement.setString(1, username);
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
