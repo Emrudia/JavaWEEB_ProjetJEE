@@ -27,9 +27,8 @@ public class PartieTermineeDAO {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
 			
 			while (rs.next()) {
-				list.add(new  PartieTerminee(rs.getInt("idUtilisateur"),
-											 rs.getInt("idJeu"),
-											 rs.getString("nomUtilisateur"), 
+				list.add(new  PartieTerminee(rs.getInt("Utilisateur_idUtilisateur"),
+											 rs.getInt("Jeu_idJeu"), 
 											 rs.getString("nomJeu"), 
 											 LocalDateTime.parse(rs.getString("dateDebut"), formatter), 
 											 LocalDateTime.parse(rs.getString("dateFin"), formatter))

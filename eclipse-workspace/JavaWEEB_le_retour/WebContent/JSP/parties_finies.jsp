@@ -25,8 +25,8 @@
 				<td class="colonnedroite">Durée de la partie</td>
 			</tr>
 			<%
-			List<PartieTerminee> listGame = PartieTermineeDAO.findByAll();
-			for ( PartieTerminee partie:listGame){
+			List<PartieTerminee> listGames = PartieTermineeDAO.findByAll();
+			for ( PartieTerminee partie:listGames){
 			%>
 			
 			<tr>

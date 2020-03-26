@@ -11,7 +11,7 @@ public class PartieTerminee {
 	private LocalDateTime dateDebut; //Mais c'est deprecated :o
 	private LocalDateTime dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, LocalDateTime dateDebut, LocalDateTime dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nomJeu, LocalDateTime dateDebut, LocalDateTime dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
