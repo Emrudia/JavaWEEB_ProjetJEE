@@ -1,10 +1,11 @@
 <%@ page language="java"%>
+<%@page import = "net.model.PartieEnCours" %>
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="UTF-8">
-<title>Dans le jeu <%=request.getSession().getAttribute("partieEnCours")%></title>
+<title>Dans le jeu <%=((PartieEnCours)request.getSession().getAttribute("partieEnCours")).getNomJeu()%></title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 

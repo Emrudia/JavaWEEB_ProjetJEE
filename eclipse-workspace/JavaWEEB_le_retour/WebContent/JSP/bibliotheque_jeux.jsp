@@ -1,12 +1,16 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOImpl"%>
+<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOImpl,net.web.PartieEnCoursController,java.util.Collections,java.util.ArrayList,net.model.PartieEnCours"%>
 
 <!DOCTYPE html>
 <html>
+<%ArrayList<String> nomParties = new ArrayList<String>();
+for(PartieEnCours partie:PartieEnCoursController.parties){
+	nomParties.add(partie.getNomJeu());
+}%>
 
 <head>
 <meta charset="UTF-8">
-<title>Bibliothèque de jeux</title>
+<title>Bibliothï¿½que de jeux</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
@@ -37,7 +41,7 @@
 			
 			<tr>
 				<td class="colonnegauche"> <%=jeu.getNom() %> </td>
-				<td class="colonnedroite"> nombre joueurs</td>
+				<td class="colonnedroite"> <%=Collections.frequency(nomParties, jeu.getNom()) %></td>
 				<td>
 					<a href = "<%=request.getContextPath()%>/deleteJeuBiblio?id=<%=jeu.getIdJeu()%>">
 						<button class="deletebtn" style="width: 90%;">Supprimer</button>
