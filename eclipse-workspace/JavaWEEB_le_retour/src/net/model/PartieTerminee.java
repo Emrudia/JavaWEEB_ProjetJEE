@@ -8,16 +8,26 @@ public class PartieTerminee {
 	private int idJeu;
 	private String nomUtilisateur;
 	private String nomJeu;
-	private LocalDateTime dateDebut; //Mais c'est deprecated :o
+	private LocalDateTime dateDebut;
 	private LocalDateTime dateFin;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, LocalDateTime dateDebut, LocalDateTime dateFin) {
+	public PartieTerminee(int idUtilisateur, int idJeu, String nomJeu, LocalDateTime dateDebut, LocalDateTime dateFin) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
 		this.nomUtilisateur = nomUtilisateur;
 		this.nomJeu = nomJeu;
 		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+	
+	public PartieTerminee(PartieEnCours partie, LocalDateTime dateFin) {
+		super();
+		this.idUtilisateur = partie.getIdUtilisateur();
+		this.idJeu = partie.getIdJeu();
+		this.nomUtilisateur = partie.getNomUtilisateur();
+		this.nomJeu = partie.getNomJeu();
+		this.dateDebut = partie.getDateDebut();
 		this.dateFin = dateFin;
 	}
 	
