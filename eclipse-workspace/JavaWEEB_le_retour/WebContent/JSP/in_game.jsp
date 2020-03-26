@@ -16,15 +16,11 @@
 			connectés</marquee>
 	</div>
 
-	<div class="container2">
-		<img src="<%=request.getContextPath()%>/image/nouveaute_bleu.png"
-			style="border-radius: 110px 0px 114px 0px;" />
-	</div>
-
 	<div class="container6">
 		<h2>Partie en cours</h2>
-		<a href = "<%=request.getContextPath()%>/FinPartie"> <button class = "endGameBtn" style = "150px">Fin de la Partie</button></a>
+		<a href = "<%=request.getContextPath()%>/FinPartie"> <button class = "endGameBtn">Fin de la Partie</button></a>
 	</div>
+	
 	<div class="margefooter"></div>
 	<jsp:include page="./footer.jsp"></jsp:include>
 </body>
