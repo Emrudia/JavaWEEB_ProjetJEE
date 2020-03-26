@@ -39,12 +39,12 @@
 				<td>
 					<%if(!joueur.isBanni()){ %>
 						<a href = "<%=request.getContextPath()%>/banJoueur?pseudo=<%=joueur.getIdentifiant()%>">
-							<button class="banBtn" style="width=100px">Bannir</button>
+							<button class="banbtn">Bannir</button>
 						</a>
 					<%}
 					else{%>
 						<a href = "<%=request.getContextPath()%>/deBanJoueur?pseudo=<%=joueur.getIdentifiant()%>">
-							<button class="deBanBtn" style="width=100px">De-Bannir</button>
+							<button class="debanbtn" >De-Bannir</button>
 						</a>
 					<%} %>
 					</td>
