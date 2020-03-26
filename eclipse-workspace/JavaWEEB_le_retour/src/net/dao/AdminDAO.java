@@ -68,10 +68,12 @@ public class AdminDAO {
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			User utilisateur;
+			System.out.println("getListeJoueurs : début");
 			while(rs.next()) {
-				utilisateur = new User(rs.getString("prenom"), rs.getString("nom"), rs.getDate("dateNaissance").toLocalDate(), rs.getDate("dateInscription").toLocalDate(),
+				utilisateur = new User(rs.getString("Compte_identifiant"), rs.getString("prenom"), rs.getString("nom"), rs.getDate("dateDeNaissance").toLocalDate(), rs.getDate("dateInscription").toLocalDate(),
 						rs.getInt("banni")!=0, rs.getInt("nbParties"));
 				listeJoueurs.add(utilisateur);
+				System.out.println("utilisateur : " + utilisateur.getIdentifiant());
 			}
 			
 			return listeJoueurs;
