@@ -1,25 +1,5 @@
-<%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-<meta charset="UTF-8">
-<title>Parties en cours</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
-</head>
-
-<body>
-
-	<jsp:include page="./header_admin.jsp"></jsp:include>
-
-	<div class="container2">
-		<h1>Parties en cours</h1>
-	</div>
-	
-	<div class="container2">
-	
+<div class="container2">
 <%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
 		<table>
 			<tr>
@@ -41,15 +21,3 @@
 <%} %>
 		</table>
 	</div>
-	
-	
-
-	<div class="margefooter"></div>
-
-	<jsp:include page="./footer.jsp"></jsp:include>
-
-	<script>
-		
-	</script>
-</body>
-</html>
