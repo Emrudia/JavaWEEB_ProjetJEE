@@ -27,7 +27,7 @@
 					<div>
 						<label for="uname">Nom :</label> <input type="text"
 							class="form-control" id="uname" placeholder="Nom"
-							name="firstName" required>
+							name="firstName" required autofocus>
 					</div>
 
 					<div>
