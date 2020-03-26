@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class PartieTermineeDAO {
 			PreparedStatement preparedStatement = connexion.prepareStatement(request);
 			ResultSet rs = preparedStatement.executeQuery();
 			
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss.ssssss");
 			
 			while (rs.next()) {
 				list.add(new  PartieTerminee(rs.getInt("Utilisateur_idUtilisateur"),
@@ -52,23 +53,29 @@ public class PartieTermineeDAO {
 		Connection connexion = null;
 		Statement statement = null;
 		ResultSet rs = null;
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
-		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss.ssssss");
+
 		try{
 			connexion = JDBCUtils.getConnection();
 			statement = connexion.createStatement();
-			String request = ""
-			rs = statement.executeQuery("select * from PartieTerminee;") ;
+			String request = "";
+			rs = statement.executeQuery("select * from PartieTerminee;");
 			while (rs.next()) {				
-				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),rs.getInt("idJeu"),rs.getString("nomUtilisateur"), rs.getString("nomJeu"), LocalDateTime.parse(rs.getString("dateDebut"), formatter), LocalDateTime.parse(rs.getString("dateFin"), formatter));
-				list.add(partie);
+				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),rs.getInt("idJeu"), rs.getString("nomJeu"), LocalDateTime.parse(rs.getString("dateDebut"), formatter), LocalDateTime.parse(rs.getString("dateFin"), formatter));
+
 			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return list;
+
 	}
 
 }
