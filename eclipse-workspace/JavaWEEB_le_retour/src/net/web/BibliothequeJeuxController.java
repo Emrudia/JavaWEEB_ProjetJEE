@@ -68,8 +68,6 @@ public class BibliothequeJeuxController extends HttpServlet {
 		
 		String ADD_GAME_BIB_SQL = "INSERT INTO Jeu (nomJeu) VALUES(?) ;";
 		String nomJeu = request.getParameter("gamename");
-		listJeux = JeuDAOMockImpl.tousJeux();
-		String action = request.getServletPath();
 		Connection connection = null;
 		int rs = -1;
 		
@@ -93,6 +91,6 @@ public class BibliothequeJeuxController extends HttpServlet {
 	}
 		
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		ajouterjeu(request, response);
 	}
 }
