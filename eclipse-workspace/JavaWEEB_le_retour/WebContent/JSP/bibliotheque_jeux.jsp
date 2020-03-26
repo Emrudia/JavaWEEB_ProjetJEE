@@ -5,7 +5,6 @@
 
 List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
-
 %>
 
 
@@ -14,7 +13,7 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
 <head>
 <meta charset="UTF-8">
-<title>Bibliothï¿½que de jeux</title>
+<title>Bibliothèque de jeux</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
