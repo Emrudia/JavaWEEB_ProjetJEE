@@ -1,14 +1,15 @@
 <%@ page language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="java.util.List,net.model.PartieTerminee"%>
+
+<!DOCTYPE html>
+<html>
 
 <%
 
 List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("listGames");
 
 %>
-
-<!DOCTYPE html>
-<html>
 
 <head>
 <meta charset="UTF-8">
@@ -30,19 +31,13 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 				<td class="colonnegauche">Nom du jeu</td>
 				<td class="colonnedroite">Durée de la partie</td>
 			</tr>
-
-			<%
-			for (PartieTerminee partie:listGame) {
-				String name = partie.getNomJeu();
-				String duree = Integer.toString(partie.getDuree());
-			%>
 			
-			<tr>
-				<td><%=name %></td>
-				<td><%=duree %></td>
-			</tr>
-
-			<%} %>
+			<c:forEach var="partie" items="${listGame}">
+				<tr>
+					<td><c:out value="${name}" /></td>
+					<td><c:out value="${duree}" /></td>
+				</tr>
+			</c:forEach>
 
 		</table>
 	</div>
