@@ -15,7 +15,7 @@
 	<jsp:include page="./header_admin.jsp"></jsp:include>
 
 	<div class="container2">
-		<h1>Partie terminées</h1>
+		<h1>Listes des joueurs</h1>
 	</div>
 
 	<div class="container2">
