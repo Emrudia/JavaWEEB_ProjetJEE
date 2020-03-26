@@ -41,7 +41,7 @@ public class PartieEnCoursController extends HttpServlet {
 				System.out.println("idUtilisateur : " + ((User)request.getSession().getAttribute("sessionUtilisateur")).toString());
 				PartieEnCours pec = new PartieEnCours(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdUtilisateur(), 
 														jeu.getIdJeu(), 
-														(String)request.getSession().getAttribute("identifiant"), 
+														((User)request.getSession().getAttribute("identifiant")).getIdentifiant(), 
 														jeu.getNom(), 
 														LocalDateTime.now());
 				parties.add(pec);
