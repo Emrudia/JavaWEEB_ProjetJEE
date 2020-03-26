@@ -1,5 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,java.util.ArrayList,net.model.User"%>
+<%@page import="java.util.List,net.model.Jeu,java.util.ArrayList,net.model.User,net.dao.AdminDAO"%>
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@
 				<td class="colonnedroite">Bannir</td>
 			</tr>
 		
-		<%ArrayList<User> joueurs = adminDAO.getListJoueurs();
+		<%ArrayList<User> joueurs = AdminDAO.getListJoueurs();
 		for(User joueur : joueurs){
 			String pseudo = joueur.getIdentifiant();
 		%>
