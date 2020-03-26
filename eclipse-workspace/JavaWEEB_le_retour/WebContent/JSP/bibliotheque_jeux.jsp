@@ -24,6 +24,11 @@
 		</div>
 
 		<table>
+		
+			<tr>
+				<td class="colonnegauche"> Nom du jeu </td>
+				<td class="colonnedroite"> Nombre de joueurs</td>
+			</tr>
 			
 			<%
 			List<Jeu> listJeux = JeuDAOImpl.tousJeux();
