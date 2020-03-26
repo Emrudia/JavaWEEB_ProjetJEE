@@ -31,7 +31,7 @@ public class PartieTermineeDAO {
 				list.add(new  PartieTerminee(rs.getInt("Utilisateur_idUtilisateur"),
 											 rs.getInt("Jeu_idJeu"), 
 											 rs.getString("nomJeu"), 
-											 rs.getString("nomUtilisateur"),
+											 "",
 											 LocalDateTime.parse(rs.getString("dateDebut").substring(0, 16), formatter), 
 											 LocalDateTime.parse(rs.getString("dateFin").substring(0, 16),formatter))
 				);
