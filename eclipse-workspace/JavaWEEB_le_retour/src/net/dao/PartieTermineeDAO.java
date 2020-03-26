@@ -53,13 +53,14 @@ public class PartieTermineeDAO {
 		Connection connection = null;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		String INSERT_PT_SQL = "INSERT INTO PartieTerminee "
-				+ "(Utilisateur_idUtilisateur, Jeu_idJeu, dateDebut, dateFin, nomJeu) VALUES "
-				+ "(?,?,?,?,?);";
+				+ "(Utilisateur_idUtilisateur, Jeu_idJeu, dateDebut, dateFin, nomJeu, nomUtilisateur) VALUES "
+				+ "(?,?,?,?,?,?);";
 		int idUtilisateur = pt.getIdUtilisateur();
 		int idJeu = pt.getIdJeu();
 		LocalDateTime dateDebut = pt.getDateDebut();
 		LocalDateTime dateFin = pt.getDateFin();
 		String jeu = pt.getNomJeu();
+		String nomUtilisateur = pt.getNomUtilisateur();
 		try{
 			connection = JDBCUtils.getConnection();
 			PreparedStatement preparedStatement =  connection.prepareStatement(INSERT_PT_SQL);
@@ -68,6 +69,7 @@ public class PartieTermineeDAO {
 			preparedStatement.setString(3, dateDebut.format(formatter));
 			preparedStatement.setString(4, dateFin.format(formatter));
 			preparedStatement.setString(5, jeu);
+			preparedStatement.setString(6, nomUtilisateur);
 			
 			preparedStatement.executeUpdate();
 			
