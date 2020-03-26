@@ -16,7 +16,9 @@ import net.dao.JeuDAOMockImpl;
 import net.model.Jeu;
 import net.utils.JDBCUtils;
 
-@WebServlet(urlPatterns = {"/Biblio", "/ajouterjeu"})
+
+@WebServlet(urlPatterns = {"/Biblio", "/deleteJeuBiblio", "/ajouterjeu"})
+
 public class BibliothequeJeuxController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
