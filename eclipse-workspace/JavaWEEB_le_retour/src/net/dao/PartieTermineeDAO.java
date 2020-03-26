@@ -50,25 +50,30 @@ public class PartieTermineeDAO {
 		return list;
 	}
 	
-	public static void addPartieTerminee() {
-		Connection connexion = null;
+	public static void addPartieTerminee(PartieTerminee pt) {
+		Connection connection = null;
 		Statement statement = null;
 		ResultSet rs = null;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-
+		String INSERT_PT_SQL = "INSERT INTO PartieTerminee "
+				+ "(Utilisateur_idUtilisateur, Jeu_idJeu, dateDebut, dateFin, nomJeu) VALUES "
+				+ "(?,?,?,?,?);";
+		int idUtilisateur = pt.getIdUtilisateur();
+		int idJeu = pt.getIdJeu();
+		LocalDateTime dateDebut = pt.getDateDebut();
+		LocalDateTime dateFin = pt.getDateFin();
+		String jeu = pt.getNomJeu();
 		try{
-			connexion = JDBCUtils.getConnection();
-			statement = connexion.createStatement();
-			String request = "";
-			rs = statement.executeQuery("select * from PartieTerminee;") ;
-			while (rs.next()) {				
-				PartieTerminee partie = new PartieTerminee(rs.getInt("idUtilisateur"),
-														   rs.getInt("idJeu"), 
-														   rs.getString("nomJeu"), 
-														   rs.getString("nomUtilisateur"),
-														   LocalDateTime.parse(rs.getString("dateDebut").substring(0, 16), formatter), 
-														   LocalDateTime.parse(rs.getString("dateFin").substring(0, 16),formatter));
-			}
+			connection = JDBCUtils.getConnection();
+			PreparedStatement preparedStatement =  connection.prepareStatement(INSERT_PT_SQL);
+			preparedStatement.setInt(1, idUtilisateur);
+			preparedStatement.setInt(2, idJeu);
+			preparedStatement.setDate(3, java.sql.Date.valueOf(dateDebut.toString()));
+			preparedStatement.setDate(4, java.sql.Date.valueOf(dateFin.toString()));
+			preparedStatement.setString(5, jeu);
+			
+			rs = preparedStatement.executeQuery();
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
