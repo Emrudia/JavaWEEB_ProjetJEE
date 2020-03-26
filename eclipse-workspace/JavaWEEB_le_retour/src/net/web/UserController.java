@@ -62,7 +62,7 @@ public class UserController extends HttpServlet {
 					dispatcher.forward(request, response);
 				}else{
 					request.setAttribute("NOTIFICATION", "Inscription échouée...Essayez un autre identifiant");
-					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/register.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/register.jsp");
 					dispatcher.forward(request, response);
 				}
 
@@ -72,7 +72,7 @@ public class UserController extends HttpServlet {
 			}
 		}else {
 			request.setAttribute("NOTIFICATION", "Inscription échouée...les deux mots de passe sont différents");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/register.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/register.jsp");
 			dispatcher.forward(request, response);
 		}
 		}

@@ -78,12 +78,12 @@ public class LoginController extends HttpServlet {
 					}
 					else {
 						request.setAttribute("NOTIFICATION", "Bah alors ? On est banni?");
-						RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/login.jsp");
 						dispatcher.forward(request, response);
 					}
 				} else {
 					request.setAttribute("NOTIFICATION", "Mauvais mot de passe ou identifiant");
-					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/login.jsp");
 					dispatcher.forward(request, response);
 				}
 
@@ -95,7 +95,7 @@ public class LoginController extends HttpServlet {
 					response.sendRedirect("JSP/accueil_admin.jsp");
 				}else {
 					request.setAttribute("NOTIFICATION", "Mauvais mot de passe ou identifiant");
-					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/login.jsp");
 					dispatcher.forward(request, response);
 				}
 			}
