@@ -29,44 +29,44 @@
 
 					<div>
 						<label for="uname">Nom :</label> <input type="text"
-							class="form-control" id="uname" placeholder="Nom"
+							class="form-control" id="uname" placeholder="<%=joueur.getNom() %>"
 							name="firstName" required>
 					</div>
 
 					<div>
 						<label for="uname">Prénom :</label> <input type="text"
-							class="form-control" id="uname" placeholder="Prénom"
+							class="form-control" id="uname" placeholder="<%=joueur.getPrenom()%>"
 							name="lastName" required>
 					</div>
 
 					<div>
 						<label for="uname">Date de naissance :</label> <input type="text"
 							class="form-control" id="birthdayDate"
-							placeholder="Date de naissance jj/mm/aaaa" name="birthdayDate" required>
+							placeholder="<%=joueur.getDateNaissance() %>" name="birthdayDate" required>
 					</div>
 
 					<div>
 						<label for="uname">E-mail :</label> <input type="text"
-							class="form-control" id="email" placeholder="E-mail" name="email"
+							class="form-control" id="email" placeholder="E-mail" name="<%=joueur.getEmail() %>"
 							required>
 					</div>
 
 					<div>
 						<label for="uname">Nom d'utilisateur :</label> <input type="text"
 							class="form-control" id="username"
-							placeholder="Nom d'utilisateur" name="username" required>
+							placeholder="<%=joueur.getIdentifiant() %>" name="username" required>
 					</div>
 
 					<div>
 						<label for="uname">Mot de passe :</label> <input type="password"
-							class="form-control" id="password" placeholder="Mot de passe"
+							class="form-control" id="password" placeholder="<%=joueur.getMotDePasse() %>"
 							name="password" required>
 					</div>
-
+					
 					<div>
-						<label for="uname">Vérifier le mot de passe :</label> <input
-							type="password" class="form-control" id="password2"
-							placeholder="Mot de passe" name="password2" required>
+						<label for="uname">Id Utilisateur :</label> <input type="idUtilisateur"
+							class="form-control" id="idUtilisateur" placeholder="<%=joueur.getIdUtilisateur() %>"
+							name="idUtilisateur" required>
 					</div>
 
 				</h3>
