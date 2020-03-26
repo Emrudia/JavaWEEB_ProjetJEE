@@ -58,8 +58,13 @@ public class UserController extends HttpServlet {
 		try {
 			int result = userDao.register(utilisateur);
 			if(result == 1) {
-				request.setAttribute("NOTIFICATION", "User Registered Successfully!");
-				response.sendRedirect("JSP/accueil_nonlog.jsp");
+				request.setAttribute("NOTIFICATION", "Inscription réussie !");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_nonlog.jsp");
+				dispatcher.forward(request, response);
+			}else{
+				request.setAttribute("NOTIFICATION", "Inscription échouée...Essayez un autre identifiant");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/register.jsp");
+				dispatcher.forward(request, response);
 			}
 			
 		} catch (Exception e) {

@@ -54,35 +54,47 @@ public class UserDao {
 		int result = 0;
 		
 		try (Connection connection1 = JDBCUtils.getConnection();
+			// Step 2:Create a statement using connection object
+			PreparedStatement preparedStatement0 = connection1.prepareStatement("select identifiant from Compte where identifiant = ? ;")){
+			preparedStatement0.setString(1, utilisateur.getIdentifiant());
+			System.out.println(preparedStatement0);
+			ResultSet rs = preparedStatement0.executeQuery();
+			if (rs.next()) { //ON VERIFIE L'UNICITE DE L'IDENTIFIANT
+				return 0;
+			}
+			
+			try (
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement1 = connection1.prepareStatement(INSERT_Account_SQL)) {
-			preparedStatement1.setString(1, utilisateur.getIdentifiant());
-			preparedStatement1.setString(2, utilisateur.getMotDePasse());
-
-			System.out.println(preparedStatement1);
-			// Step 3: Execute the query or update query
-			result= preparedStatement1.executeUpdate();
-
-			int result1 = 0;
-			try (
-					// Step 2:Create a statement using connection object
-					PreparedStatement preparedStatement = connection1.prepareStatement(INSERT_USERS_SQL)) {
-					preparedStatement.setString(1, utilisateur.getNom());
-					preparedStatement.setString(2, utilisateur.getPrenom());
-					preparedStatement.setDate(3, JDBCUtils.getSQLDate(utilisateur.getDateNaissance()));
-					preparedStatement.setString(4, utilisateur.getEmail());
-					preparedStatement.setDate(5, JDBCUtils.getSQLDate(LocalDate.now()));
-					preparedStatement.setString(6, utilisateur.getIdentifiant());
-					System.out.println(preparedStatement);
-					// Step 3: Execute the query or update query
-					result1 = preparedStatement.executeUpdate();
-					
+				preparedStatement1.setString(1, utilisateur.getIdentifiant());
+				preparedStatement1.setString(2, utilisateur.getMotDePasse());
+	
+				System.out.println(preparedStatement1);
+				// Step 3: Execute the query or update query
+				result= preparedStatement1.executeUpdate();
+	
 				
-			} catch (SQLException e) {
-				// process sql exception
-				JDBCUtils.printSQLException(e);
+				try (
+						// Step 2:Create a statement using connection object
+						PreparedStatement preparedStatement = connection1.prepareStatement(INSERT_USERS_SQL)) {
+						preparedStatement.setString(1, utilisateur.getNom());
+						preparedStatement.setString(2, utilisateur.getPrenom());
+						preparedStatement.setDate(3, JDBCUtils.getSQLDate(utilisateur.getDateNaissance()));
+						preparedStatement.setString(4, utilisateur.getEmail());
+						preparedStatement.setDate(5, JDBCUtils.getSQLDate(LocalDate.now()));
+						preparedStatement.setString(6, utilisateur.getIdentifiant());
+						System.out.println(preparedStatement);
+						// Step 3: Execute the query or update query
+						preparedStatement.executeUpdate();
+						
+					
+				} catch (SQLException e) {
+					// process sql exception
+					JDBCUtils.printSQLException(e);
+				}
+				
+				return result;
 			}
-			return result;
 		}
 	}
 	

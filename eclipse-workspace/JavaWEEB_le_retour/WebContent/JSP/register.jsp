@@ -36,7 +36,7 @@
 					<div>
 						<label for="uname">Date de naissance :</label> <input type="text"
 							class="form-control" id="birthdayDate"
-							placeholder="Date de naissance" name="birthdayDate" required>
+							placeholder="Date de naissance jj/mm/aaaa" name="birthdayDate" required>
 					</div>
 
 					<div>
@@ -67,6 +67,9 @@
 				<div class="container">
 					<button type="submit" class="registerbtn">S'inscrire</button>
 				</div>
+				<div class="alert alert-fail center" role="alert">
+					<h1 align = middle > <font size="+1">${NOTIFICATION}</font></h1>
+				</div>	
 
 			</div>
 		</form>

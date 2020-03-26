@@ -21,6 +21,10 @@
 		<img src="<%=request.getContextPath()%>/image/nouveaute_bleu.png"
 			style="border-radius: 110px 0px 114px 0px;" />
 	</div>
+	
+	<div class="alert alert-success center" role="alert">
+			<h1 align = middle > <font size="+1">${NOTIFICATION}</font></h1>
+	</div>
 
 	<div class="container6">
 		<h2>Bienvenue !</h2>

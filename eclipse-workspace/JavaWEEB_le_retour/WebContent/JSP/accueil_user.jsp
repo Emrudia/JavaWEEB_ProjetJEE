@@ -11,7 +11,6 @@
 <body>
 
 	<jsp:include page="./header_user.jsp"></jsp:include>
-
 	<div class="containerBandeauAccueil">
 		<marquee scrollamount="300" scrolldelay="500">10 000 joueurs
 			connect�s</marquee>
