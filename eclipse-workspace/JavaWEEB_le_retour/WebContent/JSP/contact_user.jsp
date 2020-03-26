@@ -22,7 +22,7 @@
 				<div class="container">
 					<h1 style="border-radius: 20px 20px 0px 0px;">Comment nous
 						contacter ?</h1>
-					<h2>Vous pouvez nous joindre via nos rï¿½seaux sociaux ou via
+					<h2>Vous pouvez nous joindre via nos réseaux sociaux ou via
 						e-mail.</h2>
 				</div>
 				<div class="container3">
