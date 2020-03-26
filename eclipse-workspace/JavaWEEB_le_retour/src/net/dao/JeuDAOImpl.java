@@ -17,7 +17,7 @@ public class JeuDAOImpl implements JeuDAO{
 		List<Jeu> listJeux = new ArrayList<Jeu>();
 		try {
 			connection = JDBCUtils.getConnection();
-			String request = "SELECT nom FROM Jeu;";
+			String request = "SELECT * FROM Jeu;";
 			PreparedStatement preparedStatement = connection.prepareStatement(request);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {

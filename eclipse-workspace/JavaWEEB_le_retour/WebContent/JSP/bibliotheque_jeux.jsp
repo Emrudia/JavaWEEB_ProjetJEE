@@ -1,5 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOMockImpl"%>
+<%@page import="java.util.List,net.model.Jeu,net.dao.JeuDAOImpl"%>
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@
 			</tr>
 			
 			<%
-			List<Jeu> listJeux = JeuDAOMockImpl.tousJeux();
+			List<Jeu> listJeux = JeuDAOImpl.tousJeux();
 			for (Jeu jeu:listJeux){
 			%>
 			
