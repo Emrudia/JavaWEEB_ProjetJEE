@@ -14,15 +14,10 @@
 
 	<jsp:include page="./header_admin.jsp"></jsp:include>
 
-	<div class="container5">
-		<h2>LISTE DE JEUX</h2>
-	</div>
 
 	<div class="container2">
+		<h1>LISTE DE JEUX</h1>
 		<table>
-			<tr>
-				<td class="colonnegauche">Nom du jeu</td>
-			</tr>
 			
 			<%
 			List<Jeu> listJeux = JeuDAOImpl.tousJeux();
