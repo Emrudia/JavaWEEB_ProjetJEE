@@ -49,6 +49,7 @@ public class User extends Personne implements Serializable {
 		this.dateInscription = dateInscription;
 		this.banni = banni;
 		this.nbParties = nbParties;
+		this.jeuxFavoris = new ArrayList<Jeu>();
 	}
 	
 	public User() {

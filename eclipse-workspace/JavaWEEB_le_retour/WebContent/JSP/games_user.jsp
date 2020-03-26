@@ -22,10 +22,10 @@
 
 		<div class="container3">
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Fortnite'>
 						<img src="<%=request.getContextPath()%>/image/fortnite.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>Fortnite</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Fortnite'>Fortnite</a>
 						
 						<%  User user = (User) request.getSession().getAttribute("sessionUtilisateur");
 							List<Jeu> listJeuxFavoris = (List<Jeu>) user.getJeuxFavoris();%>
@@ -48,10 +48,10 @@
 					</h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Warframe'>
 						<img src="<%=request.getContextPath()%>/image/warframe.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>Warframe</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Warframe'>Warframe</a>
 						<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(5 == j.getIdJeu()){
@@ -70,7 +70,7 @@
 					</h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=phase10'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Phase10'>
 						<img src="<%=request.getContextPath()%>/image/phase10.png" />
 					</a>
 					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Phase10'>Phase10</a>
@@ -90,11 +90,11 @@
 							</c:if>
 							<%session.removeAttribute("testAjoutJeu"); %></h4>
 				</div>
-				<div class="container4" onClick="document.location.href='/DebutPartie/WoT';">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>
+				<div class="container4">
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=World of Tanks'>
 						<img src="<%=request.getContextPath()%>/image/worldoftanks.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>World Of Tanks</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=World of Tanks'>World Of Tanks</a>
 					<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(7 == j.getIdJeu()){
@@ -112,10 +112,10 @@
 							<%session.removeAttribute("testAjoutJeu"); %></h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=goosegame'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Goose Game'>
 						<img src="<%=request.getContextPath()%>/image/goosegameio.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=goosegame'>GooseGame.io</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Goose Game'>GooseGame.io</a>
 					<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(8 == j.getIdJeu()){
@@ -134,10 +134,10 @@
 					</h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=bubbleshooter'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Bubble Shooter'>
 						<img src="<%=request.getContextPath()%>/image/bubbleshooter.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=bubbleshooter'>BubbleShooter</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Bubble Shooter'>BubbleShooter</a>
 						<% request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(9 == j.getIdJeu()){
@@ -155,10 +155,10 @@
 							<%session.removeAttribute("testAjoutJeu"); %></h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Fortnite'>
 						<img src="<%=request.getContextPath()%>/image/fortnite.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=fortnite'>Fortnite</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Fortnite'>Fortnite</a>
 					<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(1 == j.getIdJeu()){
@@ -176,10 +176,10 @@
 							<%session.removeAttribute("testAjoutJeu"); %></h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Warframe'>
 						<img src="<%=request.getContextPath()%>/image/warframe.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=warframe'>Warframe</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Warframe'>Warframe</a>
 					<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(5 == j.getIdJeu()){
@@ -197,10 +197,10 @@
 							<%session.removeAttribute("testAjoutJeu"); %></h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=phase10'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=Phase10'>
 						<img src="<%=request.getContextPath()%>/image/phase10.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=phase10'>Phase10</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=Phase10'>Phase10</a>
 					<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(6 == j.getIdJeu()){
@@ -218,10 +218,10 @@
 							<%session.removeAttribute("testAjoutJeu"); %></h4>
 				</div>
 				<div class="container4">
-					<a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>
+					<a href='<%=request.getContextPath()%>/DebutPartie?game=World of Tanks'>
 						<img src="<%=request.getContextPath()%>/image/worldoftanks.png" />
 					</a>
-					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=wot'>World Of Tanks</a>
+					<h4><a href='<%=request.getContextPath()%>/DebutPartie?game=World of Tanks'>World Of Tanks</a>
 					<% 	request.getSession().setAttribute("testAjoutJeu",false);
 							for (Jeu j:listJeuxFavoris){
 								if(7 == j.getIdJeu()){
