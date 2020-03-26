@@ -53,10 +53,5 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
 	<jsp:include page="./footer.jsp"></jsp:include>
 
-	<script>
-	
-	
-	
-	</script>
 </body>
 </html>
