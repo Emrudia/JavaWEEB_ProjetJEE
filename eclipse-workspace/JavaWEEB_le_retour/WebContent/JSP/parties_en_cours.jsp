@@ -39,6 +39,9 @@
 		var raf;
 		raf = document.getElementById("try");
 		raf.click();
+		setInterval(function(){
+			raf.click();
+		},15000);
 	})();
 	
 	</script>
