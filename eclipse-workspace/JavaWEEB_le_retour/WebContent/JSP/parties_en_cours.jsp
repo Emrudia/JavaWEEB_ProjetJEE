@@ -34,7 +34,7 @@
 		for (PartieEnCours pec : parties){%>
 			<tr>  
 				
-				<td><%=pec.getNomJeu() %></td>      <!-- Faudra insérer les listes d'éléments -->
+				<td><%=pec.getNomJeu() %></td>
 				<td><%=pec.getNomUtilisateur() %></td>
 				<td><%=pec.getDateDebut().toString() %></td>
 				<td>A remplir</td>

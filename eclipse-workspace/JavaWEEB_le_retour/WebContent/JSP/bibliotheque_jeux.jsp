@@ -23,7 +23,10 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 		<h1>LISTE DE JEUX</h1>
 
 		<div class="container">
-			<button type="submit" class="addbtn">Ajouter</button>
+			<input type="text" id="gamename" placeholder="Nom du jeu" name="gamename" required>
+			<a href = "<%=request.getContextPath()%>/addbutton?gamename=<%=gamename%>">
+				<button type="submit" class="addbtn">Ajouter</button>
+
 		</div>
 
 		<table>
