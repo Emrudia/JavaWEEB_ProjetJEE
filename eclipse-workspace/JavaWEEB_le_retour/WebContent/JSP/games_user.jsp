@@ -1,10 +1,13 @@
 
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,net.model.User,net.dao.AdminDAO"%>
+<%@page import="java.util.List,net.model.Jeu,net.model.User,net.web.PartieEnCoursController,java.util.Collections,java.util.ArrayList,net.model.PartieEnCours"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<% %>
+<%ArrayList<String> nomParties = new ArrayList<String>();
+for(PartieEnCours partie:PartieEnCoursController.parties){
+	nomParties.add(partie.getNomJeu());
+}%>
 <head>
 <meta charset="UTF-8">
 
@@ -17,7 +20,7 @@
 	
 	<div class="container2">
 
-		<h1>PAGE JEUX</h1>
+		<h1>JEUX</h1>
 
 		<div class="container3">
 				<div class="container4">
@@ -45,7 +48,7 @@
 							</c:if>
 							<%session.removeAttribute("testAjoutJeu"); %>
 						<br>
-						Nb de joueurs : 
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Fortnite") %>
 					</h4>
 				</div>
 				<div class="container4">
@@ -68,6 +71,8 @@
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
 							<%session.removeAttribute("testAjoutJeu"); %>
+							<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Warframe") %>
 					</h4>
 				</div>
 				<div class="container4">
@@ -89,7 +94,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Phase10") %>
+						</h4>
 				</div>
 				<div class="container4">
 					<a href='<%=request.getContextPath()%>/DebutPartie?game=World of Tanks'>
@@ -110,7 +118,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "World of Tanks") %>
+						</h4>
 				</div>
 				<div class="container4">
 					<a href='<%=request.getContextPath()%>/DebutPartie?game=Goose Game'>
@@ -131,7 +142,8 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %>
+					<br>
+					Nb de joueurs : <%=Collections.frequency(nomParties, "Goose Game") %>
 					</h4>
 				</div>
 				<div class="container4">
@@ -153,7 +165,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Bubble Shooter") %>
+						</h4>
 				</div>
 				<div class="container4">
 					<a href='<%=request.getContextPath()%>/DebutPartie?game=Fortnite'>
@@ -174,7 +189,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Fortnite") %>
+						</h4>
 				</div>
 				<div class="container4">
 					<a href='<%=request.getContextPath()%>/DebutPartie?game=Warframe'>
@@ -195,7 +213,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Warframe") %>
+						</h4>
 				</div>
 				<div class="container4">
 					<a href='<%=request.getContextPath()%>/DebutPartie?game=Phase10'>
@@ -216,7 +237,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "Phase10") %>
+						</h4>
 				</div>
 				<div class="container4">
 					<a href='<%=request.getContextPath()%>/DebutPartie?game=World of Tanks'>
@@ -237,7 +261,10 @@
 							<c:if test="${sessionScope.testAjoutJeu == true }">
 								<img src="<%=request.getContextPath()%>/image/plusJaune.svg"  style="width: 14px;" align = right />
 							</c:if>
-							<%session.removeAttribute("testAjoutJeu"); %></h4>
+							<%session.removeAttribute("testAjoutJeu"); %>
+						<br>
+						Nb de joueurs : <%=Collections.frequency(nomParties, "World of Tanks") %>
+						</h4>
 				</div>
 		</div>
 	</div>
