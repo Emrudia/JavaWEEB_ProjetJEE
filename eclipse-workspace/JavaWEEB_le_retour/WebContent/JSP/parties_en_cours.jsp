@@ -34,7 +34,14 @@
     <div class="margefooter"></div>
 
     <jsp:include page="./footer.jsp"></jsp:include>
-
+	<script>
+	(function(){
+		var raf;
+		raf = document.getElementById("try");
+		raf.click();
+	})();
+	
+	</script>
 </body>
 </html>
 
