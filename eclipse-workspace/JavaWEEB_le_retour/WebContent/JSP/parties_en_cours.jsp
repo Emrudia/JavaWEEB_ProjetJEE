@@ -17,33 +17,17 @@
 	<div class="container2">
 		<h1>Parties en cours</h1>
 	</div>
-	
-	<div class="container2">
-	
-<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
-		<table>
-			<tr>
-				<td class="colonne1">Nom du jeu</td>
-				<td class="colonne2">Pseudo</td>
-				<td class="colonne3">Début de la partie</td>
-				<td class="colonne4">Terminer la partie</td>
-			</tr>
-			
-		<%ArrayList <PartieEnCours> parties = PartieEnCoursController.parties; 
-		Collections.reverse(parties);
-		for (PartieEnCours pec : parties){%>
-			<tr>  
-				
-				<td><%=pec.getNomJeu() %></td>
-				<td><%=pec.getNomUtilisateur() %></td>
-				<td><%=pec.getDateDebut().toString() %></td>
-				<td>A remplir</td>
-			</tr>
-<%} %>
-		</table>
+	<div class = "container3">
+		<button class="deletebtn" id="try">Rafraï¿½chir</button> 
+	</div>
+	<div class="container2" id ='tableau'>
 	</div>
 	
-	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var auto_refresh = document.getElementById("try").addEventListener("click", function (){
+			$('#tableau').load('script_tableau.jsp').fadeIn("slow");}); 
+	</script>
 
 	<div class="margefooter"></div>
 
