@@ -40,7 +40,6 @@ public class AdminDAO {
 					"SELECT * FROM Administrateur "
 							+ "WHERE Compte_identifiant= '?' ;");
 			preparedStatement.setString(1, username);
-			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			Administrateur admin = new Administrateur(rs.getString("Compte_identifiant"), rs.getString("email"));
 			return admin;
@@ -65,15 +64,12 @@ public class AdminDAO {
 			connection = JDBCUtils.getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(
 					"SELECT * FROM Utilisateur;");
-			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			User utilisateur;
-			System.out.println("getListeJoueurs : début");
 			while(rs.next()) {
 				utilisateur = new User(rs.getString("Compte_identifiant"), rs.getString("prenom"), rs.getString("nom"), rs.getDate("dateDeNaissance").toLocalDate(), rs.getDate("dateInscription").toLocalDate(),
 						rs.getInt("banni")!=0, rs.getInt("nbParties"));
 				listeJoueurs.add(utilisateur);
-				System.out.println("utilisateur : " + utilisateur.getIdentifiant());
 			}
 			
 			return listeJoueurs;

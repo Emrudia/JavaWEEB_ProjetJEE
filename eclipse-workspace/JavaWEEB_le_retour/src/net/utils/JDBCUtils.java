@@ -16,9 +16,7 @@ public class JDBCUtils {
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK1111");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK22222");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

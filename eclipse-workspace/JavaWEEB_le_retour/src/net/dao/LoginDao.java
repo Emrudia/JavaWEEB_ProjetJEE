@@ -28,7 +28,6 @@ public class LoginDao {
 		
 		preparedStatement.setString(1, loginBean.getUsername());
 		preparedStatement.setString(2, loginBean.getPassword());
-		System.out.println(preparedStatement);
 		ResultSet rs = preparedStatement.executeQuery();
 		status = rs.next();
 		
@@ -52,7 +51,6 @@ public class LoginDao {
 				PreparedStatement preparedStatement = connection
 						.prepareStatement("select identifiant from Administrateur, Compte where identifiant = Compte_identifiant and identifiant = ? ;")) {
 			preparedStatement.setString(1,username);
-			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			status = rs.next();
 		

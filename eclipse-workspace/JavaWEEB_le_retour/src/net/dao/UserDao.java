@@ -58,7 +58,6 @@ public class UserDao {
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement0 = connection1.prepareStatement("select identifiant from Compte where identifiant = ? ;")){
 			preparedStatement0.setString(1, utilisateur.getIdentifiant());
-			System.out.println(preparedStatement0);
 			ResultSet rs = preparedStatement0.executeQuery();
 			if (rs.next()) { //ON VERIFIE L'UNICITE DE L'IDENTIFIANT
 				return 0;
@@ -69,8 +68,6 @@ public class UserDao {
 					PreparedStatement preparedStatement1 = connection1.prepareStatement(INSERT_Account_SQL)) {
 				preparedStatement1.setString(1, utilisateur.getIdentifiant());
 				preparedStatement1.setString(2, utilisateur.getMotDePasse());
-
-				System.out.println(preparedStatement1);
 				// Step 3: Execute the query or update query
 				result= preparedStatement1.executeUpdate();
 
@@ -84,7 +81,6 @@ public class UserDao {
 					preparedStatement.setString(4, utilisateur.getEmail());
 					preparedStatement.setDate(5, JDBCUtils.getSQLDate(LocalDate.now()));
 					preparedStatement.setString(6, utilisateur.getIdentifiant());
-					System.out.println(preparedStatement);
 					// Step 3: Execute the query or update query
 					preparedStatement.executeUpdate();
 
@@ -111,7 +107,6 @@ public class UserDao {
 			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Utilisateur "
 					+ "WHERE Compte_identifiant= ? ;");
 			preparedStatement.setString(1, username);
-			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -138,14 +133,11 @@ public class UserDao {
 			user.setNbParties(nbParties);
 			user.setDateInscription(dateInscription);
 
-			System.out.println(user);
-
 			PreparedStatement preparedStatement2 = connection.prepareStatement("select idJeu, Jeu.nom from Utilisateur, "
 					+ "Compte, Bibliotheque, Jeu where Compte_identifiant = identifiant and identifiant = ? and Utilisateur_idUtilisateur "
 					+ "= idUtilisateur and Jeu_idJeu = idJeu;");
 
 			preparedStatement2.setString(1, username);
-			System.out.println(preparedStatement2);
 			ResultSet rs2 = preparedStatement2.executeQuery();
 
 			ArrayList<Jeu> jeuxFavoris = new ArrayList<Jeu>();
@@ -174,7 +166,6 @@ public class UserDao {
 				PreparedStatement preparedStatement = connection.prepareStatement("select idAdministrateur, identifiant, nom, prenom, email "
 						+ "from Administrateur, Compte where Compte_identifiant = identifiant and identifiant = ?");) {
 			preparedStatement.setString(1, username);
-			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -207,7 +198,6 @@ public class UserDao {
 			statement.setDate(3, JDBCUtils.getSQLDate(updatedProfil.getDateNaissance()));
 			statement.setString(4, updatedProfil.getEmail());
 			statement.setInt(5, updatedProfil.getIdUtilisateur());
-			System.out.println(statement);
 
 			statement.executeUpdate();
 
@@ -221,8 +211,6 @@ public class UserDao {
 			Connection connection = JDBCUtils.getConnection();
 			PreparedStatement statement = connection.prepareStatement("UPDATE Utilisateur SET nbParties = nbParties + 1 WHERE Compte_identifiant = ? ;");
 			statement.setString(1, username);
-			System.out.println(statement);
-
 			statement.executeUpdate();
 
 		}catch (SQLException exception) {

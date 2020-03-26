@@ -91,7 +91,6 @@ public class LoginController extends HttpServlet {
 				if (loginDao.validate(loginBean,true)) {
 					HttpSession session = request.getSession();
 					Administrateur admin = userDao.selectAdmin(username);
-					System.out.println("user : " + admin.toString());
 					session.setAttribute("sessionAdministrateur",admin);
 					response.sendRedirect("JSP/accueil_admin.jsp");
 				}else {

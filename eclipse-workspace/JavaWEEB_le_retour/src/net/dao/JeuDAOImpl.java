@@ -83,7 +83,6 @@ public class JeuDAOImpl implements JeuDAO{
 				
 			preparedStatement.setLong(1, idUser);
 			preparedStatement.setLong(2, idJeu);
-			System.out.println(preparedStatement);
 			int result = preparedStatement.executeUpdate();
 			
 		} catch (InstantiationException e) {
@@ -106,7 +105,6 @@ public class JeuDAOImpl implements JeuDAO{
 			
 			preparedStatement.setLong(1, idUser);
 			preparedStatement.setLong(2, idJeu);
-			System.out.println(preparedStatement);
 			int result = preparedStatement.executeUpdate();
 			
 		} catch (InstantiationException e) {

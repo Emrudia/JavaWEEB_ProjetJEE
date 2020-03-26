@@ -25,9 +25,6 @@ public class AdminController extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
-		System.out.println(action);
-		System.out.println("context Path :" + request.getContextPath());
-		System.out.println("param = " + request.getParameter("pseudo"));
 		Connection connection = null;
 		int rs = -1;
 		String BAN_DEBAN_SQL = "UPDATE Utilisateur SET banni= ? WHERE Compte_identifiant = ? ;";

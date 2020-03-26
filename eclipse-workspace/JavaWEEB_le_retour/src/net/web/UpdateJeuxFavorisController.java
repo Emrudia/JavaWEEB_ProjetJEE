@@ -35,8 +35,6 @@ public class UpdateJeuxFavorisController extends HttpServlet {
 		String action = request.getServletPath();
 
 		try {
-			System.out.println(action);
-			System.out.println("context Path :" + request.getContextPath());
 			switch (action) {
 
 			case "/deleteJeu":

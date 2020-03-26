@@ -31,15 +31,9 @@ public class PartieEnCoursController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
-		System.out.println(action);
-		System.out.println("context Path :" + request.getContextPath());
-		System.out.println("param = " + request.getParameter("game"));
-		
 		switch (action){
 			case "/DebutPartie":
 				Jeu jeu = JeuDAOImpl.getJeu(request.getParameter("game"));
-				System.out.println("idUtilisateur : " + ((User)request.getSession().getAttribute("sessionUtilisateur")).toString());
-				
 				PartieEnCours pec = new PartieEnCours(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdUtilisateur(), 
 														jeu.getIdJeu(), 
 														((User)request.getSession().getAttribute("sessionUtilisateur")).getIdentifiant(), 
