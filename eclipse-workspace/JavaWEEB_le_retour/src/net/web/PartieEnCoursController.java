@@ -18,7 +18,7 @@ import net.model.PartieEnCours;
 import net.model.PartieTerminee;
 import net.model.User;
 
-@WebServlet(urlPatterns = {"/DebutPartie", "/FinPartie"})
+@WebServlet(urlPatterns = {"/DebutPartie", "/FinPartie", "/AdminFinPartie"})
 public class PartieEnCoursController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

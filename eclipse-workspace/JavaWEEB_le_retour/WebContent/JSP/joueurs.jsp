@@ -32,7 +32,7 @@
 			String pseudo = joueur.getIdentifiant();
 		%>
 			<tr>  
-				<td><%=joueur.getIdentifiant() %></td>
+				<td><a href = "<%=joueur.getIdentifiant() %></td>
 				<td><%=joueur.getDateInscription() %></td>
 				<td><%=joueur.getNbParties() %> </td>
 				<td>
