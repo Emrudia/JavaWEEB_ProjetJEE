@@ -137,9 +137,9 @@ public class UserDao {
 			user.setBanni(banni);
 			user.setNbParties(nbParties);
 			user.setDateInscription(dateInscription);
-			
+
 			System.out.println(user);
-			
+
 			PreparedStatement preparedStatement2 = connection.prepareStatement("select idJeu, Jeu.nom from Utilisateur, "
 					+ "Compte, Bibliotheque, Jeu where Compte_identifiant = identifiant and identifiant = ? and Utilisateur_idUtilisateur "
 					+ "= idUtilisateur and Jeu_idJeu = idJeu;");
@@ -153,7 +153,7 @@ public class UserDao {
 				Jeu jeu = new Jeu(rs2.getInt("idJeu"), rs2.getString("Jeu.nom"));
 				jeuxFavoris.add(jeu);
 			}
-			
+
 			user.setJeuxFavoris(jeuxFavoris);
 
 		} catch (SQLException exception) {
@@ -215,12 +215,11 @@ public class UserDao {
 			JDBCUtils.printSQLException(exception);
 		}
 	}
-	
+
 	public static void incrementNbPartie (String username) {
 		try {
 			Connection connection = JDBCUtils.getConnection();
-			System.out.println("userName : " + username);
-			PreparedStatement statement = connection.prepareStatement("update Utilisateur set nbParties = nbParties + 1 Where Compte_identifiant = ? ;");
+			PreparedStatement statement = connection.prepareStatement("UPDATE Utilisateur SET nbParties = nbParties + 1 WHERE Compte_identifiant = ? ;");
 			statement.setString(1, username);
 			System.out.println(statement);
 
