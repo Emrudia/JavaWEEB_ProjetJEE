@@ -16,7 +16,7 @@
 			<%} %>
 			<a href="<%=request.getContextPath()%>/JSP/contact_user.jsp">Contacts</a>
 			<a href="<%=request.getContextPath()%>/JSP/profil_user.jsp">Profil</a>
-			<a href="<%=request.getContextPath()%>/logout">Logout</a>
+			<a href="<%=request.getContextPath()%>/logout">Déconnexion</a>
 			
 		</div>
 		
