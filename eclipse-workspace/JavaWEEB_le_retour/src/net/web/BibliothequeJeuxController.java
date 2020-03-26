@@ -16,7 +16,7 @@ import net.dao.JeuDAOMockImpl;
 import net.model.Jeu;
 import net.utils.JDBCUtils;
 
-@WebServlet("/Biblio")
+@WebServlet(urlPatterns = {"/Biblio", "/deleteJeuBiblio"})
 public class BibliothequeJeuxController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -26,6 +26,8 @@ public class BibliothequeJeuxController extends HttpServlet {
 		
 	}
 	
+
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		listJeux = JeuDAOMockImpl.tousJeux();
 		
@@ -33,10 +35,10 @@ public class BibliothequeJeuxController extends HttpServlet {
 		String action = request.getServletPath();
 		Connection connection = null;
 		int rs = -1;
-		String DELETE_GAME_SQL = "DELETE FROM Jeu WHERE idJeu = ? ; DELETE FROM Bibliotheque WHERE idJeu = ? ;";
+		String DELETE_GAME_SQL = "DELETE FROM Bibliotheque WHERE Jeu_idJeu = ? ; DELETE FROM Jeu WHERE idJeu = ? ; ";
 		int idJeu= Integer.parseInt(request.getParameter("id"));
 		switch (action){
-			case "/deleteJeu":
+			case "/deleteJeuBiblio":
 			try {
 				connection = JDBCUtils.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(DELETE_GAME_SQL);

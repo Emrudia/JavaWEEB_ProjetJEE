@@ -39,7 +39,7 @@
 				<td class="colonnegauche"> <%=jeu.getNom() %> </td>
 				<td class="colonnedroite"> nombre joueurs</td>
 				<td>
-					<a href = "<%=request.getContextPath()%>/deleteJeu?id=<%=jeu.getIdJeu()%>">
+					<a href = "<%=request.getContextPath()%>/deleteJeuBiblio?id=<%=jeu.getIdJeu()%>">
 						<button class="deletebtn" style="width: 90%;">Supprimer</button>
 					</a>
 				</td>
