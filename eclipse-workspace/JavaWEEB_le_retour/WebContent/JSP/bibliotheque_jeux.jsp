@@ -10,7 +10,7 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 
 <head>
 <meta charset="UTF-8">
-<title>Bibliothï¿½que de jeux</title>
+<title>Bibliothéque de jeux</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 

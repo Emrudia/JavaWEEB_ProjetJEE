@@ -26,8 +26,6 @@ public class BibliothequeJeuxController extends HttpServlet {
 		
 	}
 	
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		listJeux = JeuDAOMockImpl.tousJeux();
 		
