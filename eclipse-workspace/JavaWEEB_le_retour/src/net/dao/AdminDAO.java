@@ -58,7 +58,7 @@ public class AdminDAO {
 	}
 	
 
-	public ArrayList<User> getListeJoueurs(){
+	public static ArrayList<User> getListeJoueurs(){
 		Connection connection;
 		ArrayList<User> listeJoueurs = new ArrayList<User>();
 		try {

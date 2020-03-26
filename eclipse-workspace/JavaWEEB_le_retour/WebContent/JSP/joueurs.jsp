@@ -27,7 +27,7 @@
 				<td class="colonnedroite">Bannir</td>
 			</tr>
 		
-		<%ArrayList<User> joueurs = AdminDAO.getListJoueurs();
+		<%ArrayList<User> joueurs = AdminDAO.getListeJoueurs();
 		for(User joueur : joueurs){
 			String pseudo = joueur.getIdentifiant();
 		%>
