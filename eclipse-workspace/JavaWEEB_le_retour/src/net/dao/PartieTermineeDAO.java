@@ -52,7 +52,6 @@ public class PartieTermineeDAO {
 	
 	public static void addPartieTerminee(PartieTerminee pt) {
 		Connection connection = null;
-		Statement statement = null;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		String INSERT_PT_SQL = "INSERT INTO PartieTerminee "
 				+ "(Utilisateur_idUtilisateur, Jeu_idJeu, dateDebut, dateFin, nomJeu) VALUES "
