@@ -3,6 +3,7 @@ package net.web;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import net.dao.LoginDao;
 import net.dao.UserDao;
+import net.model.Administrateur;
 import net.model.LoginBean;
 import net.model.User;
 
@@ -66,28 +68,41 @@ public class LoginController extends HttpServlet {
 		loginBean.setPassword(Controller.coding(password));
 
 		try {
-			if (loginDao.validate(loginBean)) {
-				HttpSession session = request.getSession();
-				System.out.println("username : " + username);
-				User user = userDao.selectUser(username);
-				System.out.println("user : " + user.toString());
-				session.setAttribute("sessionUtilisateur",user);
-				response.sendRedirect("JSP/accueil_user.jsp");
-
-			} else {
-				request.setAttribute("NOTIFICATION", "Wrong username or password");
-				response.sendRedirect("JSP/login.jsp");
+			if (!loginDao.isAdministrateur(username)) {
+				if (loginDao.validate(loginBean,false)) {
+				
+					HttpSession session = request.getSession();
+					System.out.println("username : " + username);
+					User user = userDao.selectUser(username);
+					System.out.println("user : " + user.toString());
+					session.setAttribute("sessionUtilisateur",user);
+					response.sendRedirect("JSP/accueil_user.jsp");
+				} else {
+					request.setAttribute("NOTIFICATION", "Mauvais mot de passe ou identifiant");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
+					dispatcher.forward(request, response);
+				}
+				
+			}else {
+				if (loginDao.validate(loginBean,true)) {
+					HttpSession session = request.getSession();
+					Administrateur admin = userDao.selectAdmin(username);
+					System.out.println("user : " + admin.toString());
+					session.setAttribute("sessionAdministrateur",admin);
+					response.sendRedirect("JSP/accueil_admin.jsp");
+				}else {
+					request.setAttribute("NOTIFICATION", "Mauvais mot de passe ou identifiant");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/login.jsp");
+					dispatcher.forward(request, response);
+				}
 			}
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + "/JSP/login.jsp");
 		}

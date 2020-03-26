@@ -26,5 +26,10 @@ public class Personne {
 		this.email = email;
 	}
 	
-
+	@Override
+	public String toString() {
+		return "Personne [identifiant=" + identifiant + ", motDePasse=" + motDePasse + ", email=" + email + "]";
+	}
+	
+	
 }

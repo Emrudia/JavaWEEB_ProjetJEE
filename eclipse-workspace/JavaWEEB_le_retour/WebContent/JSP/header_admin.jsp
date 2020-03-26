@@ -12,6 +12,7 @@
 			<a href="<%=request.getContextPath()%>/JSP/parties_finies.jsp">Parties finies</a>
 			<a href="<%=request.getContextPath()%>/JSP/joueurs.jsp">Joueurs</a> 
 			<a href="<%=request.getContextPath()%>/JSP/profil_admin.jsp">Mon profil</a>
+			<a href="<%=request.getContextPath()%>/logout">Logout</a>
 
 		</div>
 		

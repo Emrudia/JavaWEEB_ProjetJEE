@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import net.model.Administrateur;
 import net.model.Jeu;
 import net.model.User;
 import net.utils.JDBCUtils;
@@ -105,8 +106,8 @@ public class UserDao {
 		
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Utilisateur "
-						+ "WHERE Compte_identifiant= ? ;");) {
+				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Utilisateur"
+						+ "WHERE Compte_identifiant= '?' ;");) {
 			preparedStatement.setString(1, username);
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
@@ -165,6 +166,41 @@ public class UserDao {
 		}
 	}
 	
+	
+	public Administrateur selectAdmin(String username) throws InstantiationException, IllegalAccessException, SQLException{
+		
+		Administrateur admin = null;
+		// Step 1: Establishing a Connection
+		
+		try (Connection connection = JDBCUtils.getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement("select idAdministrateur, identifiant, nom, prenom, email "
+						+ "from Administrateur, Compte where Compte_identifiant = identifiant and identifiant = ?");) {
+			preparedStatement.setString(1, username);
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			rs.next();
+			int idAdmin= rs.getInt("idAdministrateur");
+			String identifiant = rs.getString("identifiant");
+			String nom = rs.getString("nom");
+			String prenom = rs.getString("prenom");
+			String email = rs.getString("email");
+			
+			admin = new Administrateur();
+			admin.setIdAdministrateur(idAdmin);
+			admin.setIdentifiant(identifiant);
+			admin.setNom(nom);
+			admin.setPrenom(prenom);
+			admin.setEmail(email);
+		
+		return admin;
+		}
+	}
+	
+
 	public void updateProfilBDD(User updatedProfil) throws InstantiationException, IllegalAccessException{
 		try (Connection connection = JDBCUtils.getConnection();
 				PreparedStatement statement = connection.prepareStatement("update Utilisateur set  nom = ?, prenom = ?, "
@@ -182,4 +218,5 @@ public class UserDao {
 			JDBCUtils.printSQLException(exception);
 		}
 	}
+	
 }
