@@ -217,8 +217,10 @@ public class UserDao {
 	}
 	
 	public static void incrementNbPartie (String username) {
-		try (Connection connection = JDBCUtils.getConnection();
-				PreparedStatement statement = connection.prepareStatement("update Utilisateur set nbParties = nbParties + 1 Where Compte_identifiant = ? ;");) {
+		try {
+			Connection connection = JDBCUtils.getConnection();
+			System.out.println("userName : " + username);
+			PreparedStatement statement = connection.prepareStatement("update Utilisateur set nbParties = nbParties + 1 Where Compte_identifiant = ? ;");
 			statement.setString(1, username);
 			System.out.println(statement);
 

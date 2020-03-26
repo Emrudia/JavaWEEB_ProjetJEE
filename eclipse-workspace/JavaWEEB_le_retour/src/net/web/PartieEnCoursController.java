@@ -46,7 +46,7 @@ public class PartieEnCoursController extends HttpServlet {
 														LocalDateTime.now());
 				parties.add(pec);
 				request.getSession().setAttribute("partieEnCours", pec);
-				UserDao.incrementNbPartie((String)request.getSession().getAttribute("identifiant"));
+				UserDao.incrementNbPartie(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdentifiant());
 				response.sendRedirect(request.getContextPath() + "/JSP/in_game.jsp");
 				break;
 			case "/FinPartie":
