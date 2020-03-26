@@ -47,6 +47,12 @@ public class TodoDaoImpl implements TodoDao {
 			preparedStatement.executeUpdate();
 		} catch (SQLException exception) {
 			JDBCUtils.printSQLException(exception);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -74,6 +80,12 @@ public class TodoDaoImpl implements TodoDao {
 			}
 		} catch (SQLException exception) {
 			JDBCUtils.printSQLException(exception);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return todo;
 	}
@@ -105,6 +117,12 @@ public class TodoDaoImpl implements TodoDao {
 			}
 		} catch (SQLException exception) {
 			JDBCUtils.printSQLException(exception);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return todos;
 	}
@@ -116,6 +134,12 @@ public class TodoDaoImpl implements TodoDao {
 				PreparedStatement statement = connection.prepareStatement(DELETE_TODO_BY_ID);) {
 			statement.setInt(1, id);
 			rowDeleted = statement.executeUpdate() > 0;
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return rowDeleted;
 	}
@@ -132,6 +156,12 @@ public class TodoDaoImpl implements TodoDao {
 			statement.setBoolean(5, todo.getStatus());
 			statement.setLong(6, todo.getId());
 			rowUpdated = statement.executeUpdate() > 0;
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return rowUpdated;
 	}

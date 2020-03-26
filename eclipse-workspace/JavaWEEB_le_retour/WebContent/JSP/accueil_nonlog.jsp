@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page accueil</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 <body>
@@ -16,10 +16,18 @@
 		<marquee scrollamount="300" scrolldelay="500">10 000 joueurs
 			connectés</marquee>
 	</div>
+	
+	<div class="alert alert-fail center" role="alert">
+			<h1 align = middle > <font size="+2">${NOTIFICATION2}</font></h1>
+		</div>	
 
 	<div class="container2">
-		<img src="../image/nouveaute_bleu.png"
+		<img src="<%=request.getContextPath()%>/image/nouveaute_bleu.png"
 			style="border-radius: 110px 0px 114px 0px;" />
+	</div>
+	
+	<div class="alert alert-success center" role="alert">
+			<h1 > <font size="+2">${NOTIFICATION}</font></h1>
 	</div>
 
 	<div class="container6">

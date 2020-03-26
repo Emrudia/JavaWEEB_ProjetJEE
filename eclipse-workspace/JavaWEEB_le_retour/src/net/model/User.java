@@ -3,6 +3,7 @@ package net.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 
 /**
@@ -11,12 +12,50 @@ import java.time.LocalDate;
  */
 public class User extends Personne implements Serializable {
 	private static final long serialVersionUID = 1L;
+	private int idUtilisateur;
 	private String prenom;
 	private String nom;
 	private LocalDate dateNaissance;
 	private LocalDate dateInscription;
 	private boolean banni;
 	private int nbParties;
+	private ArrayList<Jeu> jeuxFavoris;
+	
+	public ArrayList<Jeu> getJeuxFavoris() {
+		return jeuxFavoris;
+	}
+	
+	
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+
+
+	public void setJeuxFavoris(ArrayList<Jeu> jeuxFavoris) {
+		this.jeuxFavoris = jeuxFavoris;
+	}
+	
+	public User(String prenom, String nom, LocalDate dateNaissance, LocalDate dateInscription, boolean banni,
+			int nbParties) {
+		super();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.dateNaissance = dateNaissance;
+		this.dateInscription = dateInscription;
+		this.banni = banni;
+		this.nbParties = nbParties;
+		this.jeuxFavoris = new ArrayList<Jeu>();
+	}
+	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getPrenom() {
 		return prenom;
 	}
@@ -52,6 +91,14 @@ public class User extends Personne implements Serializable {
 	}
 	public void setNbParties(int nbParties) {
 		this.nbParties = nbParties;
+	}
+
+
+	@Override
+	public String toString() {
+		return "User [idUtilisateur=" + idUtilisateur + ", prenom=" + prenom + ", nom=" + nom + ", dateNaissance="
+				+ dateNaissance + ", dateInscription=" + dateInscription + ", banni=" + banni + ", nbParties="
+				+ nbParties + ", jeuxFavoris=" + jeuxFavoris + "]";
 	}
 
 	

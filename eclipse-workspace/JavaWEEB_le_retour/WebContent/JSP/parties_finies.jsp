@@ -3,7 +3,7 @@
 
 <%
 
-List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("listGame");
+List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("listGames");
 
 %>
 
@@ -13,7 +13,7 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 <head>
 <meta charset="UTF-8">
 <title>Parties finies</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 <body>
@@ -32,14 +32,11 @@ List<PartieTerminee> listGame = (List<PartieTerminee>)request.getAttribute("list
 			</tr>
 
 			<%
-
-for (PartieTerminee partieTerminee:listGame) {
-
-String name = partieTerminee.getNom();
-
-String duree = partieTerminee.getDuree();
-
-%>
+			for (PartieTerminee partie:listGame) {
+				String name = partie.getNomJeu();
+				String duree = Integer.toString(partie.getDuree());
+			%>
+			
 			<tr>
 				<td><%=name %></td>
 				<td><%=duree %></td>
@@ -53,8 +50,5 @@ String duree = partieTerminee.getDuree();
 
 	<jsp:include page="./footer.jsp"></jsp:include>
 
-	<script>
-		
-	</script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Inscription</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<title>Authentification</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 <body>
 
@@ -47,7 +47,12 @@
 				<a style="text-decoration: none;" href="./register.jsp"><h3>Pas encore membre ? Inscrivez-vous !</h3></a>
 			</div>
 		</div>
+		
+		<div class="alert alert-fail center" role="alert">
+			<h1 align = middle > <font size="+2">${NOTIFICATION}</font></h1>
+		</div>	
 	</div>
+				
 	<div class="margefooter"></div>
 	<jsp:include page="./footer.jsp"></jsp:include>
 </body>

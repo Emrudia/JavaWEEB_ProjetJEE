@@ -10,19 +10,52 @@ import net.utils.JDBCUtils;
 
 public class LoginDao {
 
-	public boolean validate(LoginBean loginBean) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+	public boolean validate(LoginBean loginBean, boolean testAdmin) throws InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
 		boolean status = false;
-
+		
+		try(Connection connection = JDBCUtils.getConnection();){
+					// Step 2:Create a statement using connection object
+			PreparedStatement preparedStatement;
+			if (!testAdmin) {
+				preparedStatement = connection
+						.prepareStatement("select * from Utilisateur, Compte where identifiant = Compte_identifiant "
+										+ "and identifiant = ? and motDePasse = ?;");
+			}else{
+				preparedStatement = connection
+						.prepareStatement("select * from Administrateur, Compte where identifiant = Compte_identifiant "
+										+ "and identifiant = ? and motDePasse = ?;");
+			}
+		
+		preparedStatement.setString(1, loginBean.getUsername());
+		preparedStatement.setString(2, loginBean.getPassword());
+		System.out.println(preparedStatement);
+		ResultSet rs = preparedStatement.executeQuery();
+		status = rs.next();
+		
+		} catch (SQLException e) {
+			// process sql exception
+			JDBCUtils.printSQLException(e);
+		} catch ( InstantiationException e) {
+			System.out.println("InstanciationException");
+		} catch (IllegalAccessException e) {
+			System.out.println("IllegalAccessException");
+		}
+		
+		return status;
+	}
+	
+	public boolean isAdministrateur(String username) throws InstantiationException, IllegalAccessException{
+		boolean status = false;
+		
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from Utilisateur u,Compte c where c.identifiant=u.Compte_identifiant and c.identifiant = ? and motDePasse = ? ")) {
-			preparedStatement.setString(1, loginBean.getUsername());
-			preparedStatement.setString(2, loginBean.getPassword());
+						.prepareStatement("select identifiant from Administrateur, Compte where identifiant = Compte_identifiant and identifiant = ? ;")) {
+			preparedStatement.setString(1,username);
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			status = rs.next();
-
+		
 		} catch (SQLException e) {
 			// process sql exception
 			JDBCUtils.printSQLException(e);

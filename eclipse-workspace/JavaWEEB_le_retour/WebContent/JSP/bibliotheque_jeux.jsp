@@ -14,8 +14,8 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 
 <head>
 <meta charset="UTF-8">
-<title>Bibliothèque de jeux</title>
-<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<title>Bibliothï¿½que de jeux</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
 <body>
@@ -31,15 +31,21 @@ List<Jeu> listJeux = (List<Jeu>)request.getAttribute("listJeux");
 			<tr>
 				<td class="colonnegauche">Nom du jeu</td>
 			</tr>
-
-<%
-for (Jeu jeu:listJeux){
-
-String nom = jeu.getNom();%>
-<tr>
-<td><%=nom %></td>
-</tr>
-<%} %>
+			
+			<%
+			String nom;
+			for (Jeu jeu:listJeux){
+				nom = jeu.getNom();
+			
+			%>
+			
+			<tr>
+				<td> <%=nom %> </td>
+			</tr>
+			
+			<%
+			}
+			%>
 
 		</table>
 	</div>

@@ -2,30 +2,31 @@ package net.model;
 
 import java.time.LocalDateTime;
 
-public class PartieTerminee {
+public class PartieEnCours {
 	
 	private int idUtilisateur;
 	private int idJeu;
 	private String nomUtilisateur;
 	private String nomJeu;
-	private LocalDateTime dateDebut; //Mais c'est deprecated :o
-	private LocalDateTime dateFin;
+	private LocalDateTime dateDebut;
 	
-	public PartieTerminee(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, LocalDateTime dateDebut, LocalDateTime dateFin) {
+	public PartieEnCours(int idUtilisateur, int idJeu, String nomUtilisateur, String nomJeu, LocalDateTime dateDebut) {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
 		this.nomUtilisateur = nomUtilisateur;
 		this.nomJeu = nomJeu;
 		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
 	}
 	
-	public int getDuree(){
-		int diff = (int) (dateFin.compareTo(dateDebut));
-		int nbHeures =  (int) (diff / 3600000.0f);
-		return nbHeures;
+	public float getDuree(){
+		int diff = LocalDateTime.now().compareTo(dateDebut);
+		return diff;
 	}
+
+	/*on a pas besoin de la durée, ce n'est pas demandé dans le consigne (mieux vaut pas se compliquer la vie ^^)*/
+	
+	
 	
 	public String getNomUtilisateur() {
 		return nomUtilisateur;
@@ -67,17 +68,6 @@ public class PartieTerminee {
 	public void setDateDebut(LocalDateTime dateDebut) {
 		this.dateDebut = dateDebut;
 	}
-
-	public LocalDateTime getDateFin() {
-		return dateFin;
-	}
-
-	public void setDateFin(LocalDateTime dateFin) {
-		this.dateFin = dateFin;
-	}
-	
-	
-	
 	
 
 }
