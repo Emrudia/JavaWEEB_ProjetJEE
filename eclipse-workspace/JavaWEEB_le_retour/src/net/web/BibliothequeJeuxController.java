@@ -33,7 +33,7 @@ public class BibliothequeJeuxController extends HttpServlet {
 		String action = request.getServletPath();
 		Connection connection = null;
 		int rs = -1;
-		String DELETE_GAME_SQL = "DELETE FROM Jeu WHERE idJeu = ? ;";
+		String DELETE_GAME_SQL = "DELETE FROM Jeu WHERE idJeu = ? ; DELETE FROM Bibliotheque WHERE idJeu = ? ;";
 		int idJeu= Integer.parseInt(request.getParameter("id"));
 		switch (action){
 			case "/deleteJeu":
