@@ -25,7 +25,7 @@
 				<td class="colonne2">Nom d'utilisateur</td>
 				<td class="colonne3">Début</td>
 				<td class="colonne3">Fin</td>
-				<td class="colonne2">Durée de la partie</td>
+				<td class="colonne3">Durée de la partie</td>
 			</tr>
 			<%
 			List<PartieTerminee> listGames = PartieTermineeDAO.findByAll();

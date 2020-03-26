@@ -39,6 +39,7 @@ public class PartieEnCoursController extends HttpServlet {
 			case "/DebutPartie":
 				Jeu jeu = JeuDAOImpl.getJeu(request.getParameter("game"));
 				System.out.println("idUtilisateur : " + ((User)request.getSession().getAttribute("sessionUtilisateur")).toString());
+				
 				PartieEnCours pec = new PartieEnCours(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdUtilisateur(), 
 														jeu.getIdJeu(), 
 														((User)request.getSession().getAttribute("sessionUtilisateur")).getIdentifiant(), 
@@ -49,6 +50,7 @@ public class PartieEnCoursController extends HttpServlet {
 				UserDao.incrementNbPartie(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdentifiant());
 				response.sendRedirect(request.getContextPath() + "/JSP/in_game.jsp");
 				break;
+				
 			case "/FinPartie":
 				PartieEnCours partie = (PartieEnCours) request.getSession().getAttribute("partieEnCours");
 				PartieTerminee endGame = new PartieTerminee(partie, LocalDateTime.now());

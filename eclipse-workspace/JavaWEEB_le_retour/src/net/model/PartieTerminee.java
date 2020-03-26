@@ -13,7 +13,6 @@ public class PartieTerminee {
 	private LocalDateTime dateFin;
 	
 	public PartieTerminee(int idUtilisateur, int idJeu, String nomJeu, String nomUtilisateur, LocalDateTime dateDebut, LocalDateTime dateFin) {
-		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
 		this.nomJeu = nomJeu;
@@ -23,7 +22,6 @@ public class PartieTerminee {
 	}
 	
 	public PartieTerminee(PartieEnCours partie, LocalDateTime dateFin) {
-		super();
 		this.idUtilisateur = partie.getIdUtilisateur();
 		this.idJeu = partie.getIdJeu();
 		this.nomUtilisateur = partie.getNomUtilisateur();

@@ -17,6 +17,12 @@
 
 	<div class="container2">
 		<h1>LISTE DE JEUX</h1>
+
+		<div class="container">
+			<button type="submit" class="addbtn">Ajouter</button>
+			<button type="submit" class="deletebtn">Supprimer</button>
+		</div>
+
 		<table>
 			
 			<%
