@@ -23,7 +23,7 @@ public class LogOutController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.setAttribute("NOTIFICATION2", "Déconnexion réussie !");
+		request.setAttribute("NOTIFICATION2", "DÃ©connexion rÃ©ussie !");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/accueil_nonlog.jsp");
 		dispatcher.forward(request, response);
 		HttpSession session = request.getSession();
