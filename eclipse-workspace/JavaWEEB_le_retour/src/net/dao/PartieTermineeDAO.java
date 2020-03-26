@@ -25,14 +25,14 @@ public class PartieTermineeDAO {
 			PreparedStatement preparedStatement = connexion.prepareStatement(request);
 			ResultSet rs = preparedStatement.executeQuery();
 			
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss.ssssss");
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 			
 			while (rs.next()) {
 				list.add(new  PartieTerminee(rs.getInt("Utilisateur_idUtilisateur"),
 											 rs.getInt("Jeu_idJeu"), 
 											 rs.getString("nomJeu"), 
-											 LocalDateTime.parse(rs.getString("dateDebut"), formatter), 
-											 LocalDateTime.parse(rs.getString("dateFin"), formatter))
+											 LocalDateTime.parse(rs.getString("dateDebut").substring(0, 16), formatter), 
+											 LocalDateTime.parse(rs.getString("dateFin").substring(0, 16),formatter))
 				);
 			}
 		} catch (InstantiationException e) {
