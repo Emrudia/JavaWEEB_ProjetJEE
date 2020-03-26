@@ -49,7 +49,7 @@
 		</div>
 		
 		<div class="alert alert-fail center" role="alert">
-			<h1 align = middle > <font size="+1">${NOTIFICATION}</font></h1>
+			<h1 align = middle > <font size="+2">${NOTIFICATION}</font></h1>
 		</div>	
 	</div>
 				
