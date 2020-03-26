@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.dao.JeuDAOImpl;
 import net.model.Jeu;
 import net.model.PartieEnCours;
+import net.model.PartieTerminee;
 import net.model.User;
 
 @WebServlet(urlPatterns = {"/DebutPartie", "/FinPartie"})
@@ -39,9 +40,13 @@ public class PartieEnCoursController extends HttpServlet {
 				PartieEnCours pec = new PartieEnCours(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdUtilisateur(), jeu.getIdJeu(), 
 				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDateTime.now());
 				parties.add(pec);
-				request.getSession().setAttribute("partieEnCours", jeu);
+				request.getSession().setAttribute("partieEnCours", pec);
+				response.sendRedirect(request.getContextPath() + "/JSP/in_game.jsp");
 				break;
 			case "/FinPartie":
+				PartieEnCours partie = (PartieEnCours) request.getSession().getAttribute("partieEnCours");
+				PartieTerminee endGame = new PartieTerminee(partie, LocalDateTime.now());
+				
 				
 		}
 	}
