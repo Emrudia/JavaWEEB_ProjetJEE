@@ -16,7 +16,7 @@ import net.dao.JeuDAOMockImpl;
 import net.model.Jeu;
 import net.utils.JDBCUtils;
 
-@WebServlet(urlPatterns = {"/Biblio", "/deleteJeuBiblio"})
+@WebServlet(urlPatterns = {"/Biblio", "/deleteJeuBiblio", "/ajouterjeu"})
 public class BibliothequeJeuxController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -66,7 +66,7 @@ public class BibliothequeJeuxController extends HttpServlet {
 		
 	private void ajouterjeu(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
-		String ADD_GAME_BIB_SQL = "INSERT INTO Jeu (nomJeu) VALUES(?) ;";
+		String ADD_GAME_BIB_SQL = "INSERT INTO Jeu (nom) VALUES(?) ;";
 		String nomJeu = request.getParameter("gamename");
 		Connection connection = null;
 		int rs = -1;
