@@ -54,4 +54,32 @@ public class AdminDAO {
 		}
 		return null;
 	}
+	
+	/*
+	public ArrayList<User> getListJoueurs(){
+		Connection connection;
+		try {
+			connection = JDBCUtils.getConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(
+					"SELECT * FROM Utilisateur;");
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			while(rs.next()) {
+				//User utilisateur = new User(rs.getString("prenom"), rs.getString("nom"), rs.getDate("dateNaissance"), rs.getDate("dateInscription"),
+						//rs.getInt("banni")!=0, rs.getInt("nbParties"));
+			}
+			return utilisateur;
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	*/
 }

@@ -39,7 +39,7 @@ public class PartieEnCoursController extends HttpServlet {
 				PartieEnCours pec = new PartieEnCours(((User)request.getSession().getAttribute("sessionUtilisateur")).getIdUtilisateur(), jeu.getIdJeu(), 
 				(String)request.getSession().getAttribute("identifiant"), jeu.getNom(), LocalDateTime.now());
 				parties.add(pec);
-				
+				request.getSession().setAttribute("partieEnCours", jeu);
 				break;
 		}
 	}

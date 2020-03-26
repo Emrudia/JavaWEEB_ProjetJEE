@@ -16,6 +16,10 @@ import net.model.PartieTerminee;
 
 public class PartiesFiniesController extends HttpServlet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private PartieTermineeService service;
 	
 	public void init() {
