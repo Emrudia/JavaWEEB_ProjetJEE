@@ -24,7 +24,7 @@ public class PartieEnCours {
 		return diff;
 	}
 
-	/*on a pas besoin de la durée, ce n'est pas demandé dans le consigne (mieux vaut pas se compliquer la vie ^^)*/
+
 	
 	
 	

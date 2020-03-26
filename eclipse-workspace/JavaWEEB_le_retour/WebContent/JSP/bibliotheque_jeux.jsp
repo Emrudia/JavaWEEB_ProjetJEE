@@ -10,7 +10,7 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 
 <head>
 <meta charset="UTF-8">
-<title>Bibliothèque de jeux</title>
+<title>Bibliothï¿½que de jeux</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/style.css">
 </head>
 
@@ -24,7 +24,6 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 
 		<div class="container">
 			<button type="submit" class="addbtn">Ajouter</button>
-			<button type="submit" class="deletebtn">Supprimer</button>
 		</div>
 
 		<table>
@@ -32,6 +31,7 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 			<tr>
 				<td class="colonnegauche"> Nom du jeu </td>
 				<td class="colonnedroite"> Nombre de joueurs</td>
+				<td class="colonnedroite">Supprimer le jeu </td>
 			</tr>
 			
 			<%
@@ -42,6 +42,11 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 			<tr>
 				<td class="colonnegauche"> <%=jeu.getNom() %> </td>
 				<td class="colonnedroite"> <%=Collections.frequency(nomParties, jeu.getNom()) %></td>
+				<td>
+					<a href = "<%=request.getContextPath()%>/deleteJeuBiblio?id=<%=jeu.getIdJeu()%>">
+						<button class="deletebtn" style="width: 90%;">Supprimer</button>
+					</a>
+				</td>
 			</tr>
 			
 			<%
