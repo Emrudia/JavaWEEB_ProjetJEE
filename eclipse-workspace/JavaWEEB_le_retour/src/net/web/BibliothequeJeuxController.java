@@ -35,7 +35,7 @@ public class BibliothequeJeuxController extends HttpServlet {
 		String action = request.getServletPath();
 		Connection connection = null;
 		int rs = -1;
-		String DELETE_GAME_SQL = "DELETE FROM Bibliotheque WHERE Jeu_idJeu = ? ; DELETE FROM Jeu WHERE idJeu = ? ; ";
+		String DELETE_GAME_SQL = "DELETE FROM Bibliotheque WHERE Jeu_idJeu = ? ; DELETE FROM Jeu WHERE idJeu = ? ;";
 		int idJeu= Integer.parseInt(request.getParameter("id"));
 		switch (action){
 			case "/deleteJeuBiblio":
@@ -43,6 +43,7 @@ public class BibliothequeJeuxController extends HttpServlet {
 				connection = JDBCUtils.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(DELETE_GAME_SQL);
 				preparedStatement.setInt(1, idJeu);
+				preparedStatement.setInt(2, idJeu);
 				rs = preparedStatement.executeUpdate();
 			} catch (InstantiationException e) {
 				// TODO Auto-generated catch block

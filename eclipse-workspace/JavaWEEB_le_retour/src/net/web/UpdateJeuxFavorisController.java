@@ -56,7 +56,7 @@ public class UpdateJeuxFavorisController extends HttpServlet {
 	
 	
 	private void deleteJeuFavori(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
-		int idJeu = Integer.parseInt(request.getParameter("idJeu"));
+		int idJeu = Integer.parseInt(request.getParameter("id"));
 		User user = (User) request.getSession().getAttribute("sessionUtilisateur");
 		String identifiant = user.getIdentifiant();
 		jeuDAO.deleteJeuFavori(idJeu,identifiant);
