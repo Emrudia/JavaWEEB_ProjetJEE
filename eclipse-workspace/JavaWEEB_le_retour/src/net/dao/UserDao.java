@@ -105,8 +105,8 @@ public class UserDao {
 		
 		try (Connection connection = JDBCUtils.getConnection();
 				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Utilisateur"
-						+ "WHERE Compte_identifiant= '?' ;");) {
+				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Utilisateur "
+						+ "WHERE Compte_identifiant= ? ;");) {
 			preparedStatement.setString(1, username);
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
@@ -115,7 +115,7 @@ public class UserDao {
 			// Step 4: Process the ResultSet object.
 			rs.next();
 			int idUtilisateur = rs.getInt("idUtilisateur");
-			String identifiant = rs.getString("identifiant");
+			String identifiant = rs.getString("Compte_identifiant");
 			String nom = rs.getString("Utilisateur.nom");
 			String prenom = rs.getString("prenom");
 			LocalDate dateNaissance = rs.getDate("dateDeNaissance").toLocalDate();
