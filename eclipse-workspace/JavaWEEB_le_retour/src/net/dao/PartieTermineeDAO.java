@@ -15,7 +15,7 @@ import net.utils.JDBCUtils;
 
 public class PartieTermineeDAO {
 	
-	public List<PartieTerminee> findByAll() throws InstantiationException, IllegalAccessException, ParseException{
+	public static List<PartieTerminee> findByAll() throws InstantiationException, IllegalAccessException, ParseException{
 		Connection connexion = null;
 		Statement statement = null;
 		ResultSet rs = null;
