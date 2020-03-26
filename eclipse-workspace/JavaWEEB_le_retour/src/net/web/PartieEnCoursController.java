@@ -55,6 +55,7 @@ public class PartieEnCoursController extends HttpServlet {
 				PartieTermineeDAO.addPartieTerminee(endGame);
 				request.getSession().removeAttribute("partieEnCours");
 				response.sendRedirect(request.getContextPath() + "/JSP/games_user.jsp");
+				break;
 		}
 	}
 
