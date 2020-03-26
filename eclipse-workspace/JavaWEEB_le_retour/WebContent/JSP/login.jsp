@@ -15,6 +15,10 @@
 		<div class="container2"
 			style="background-color: #f491b9; border-radius: 20px;">
 			<h1 style="border-radius: 20px 20px 0px 0px;">Connexion</h1>
+			
+			<div class="alert alert-fail center" role="alert">
+				<h1 align = middle > <font size="+2">${NOTIFICATION}</font></h1>
+			</div>	
 
 			<form action="<%=request.getContextPath()%>/login" method="post">
 				<div class="container2">
@@ -47,10 +51,6 @@
 				<a style="text-decoration: none;" href="./register.jsp"><h3>Pas encore membre ? Inscrivez-vous !</h3></a>
 			</div>
 		</div>
-		
-		<div class="alert alert-fail center" role="alert">
-			<h1 align = middle > <font size="+2">${NOTIFICATION}</font></h1>
-		</div>	
 	</div>
 				
 	<div class="margefooter"></div>
