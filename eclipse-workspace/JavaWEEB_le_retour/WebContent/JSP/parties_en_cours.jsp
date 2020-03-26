@@ -1,5 +1,5 @@
 <%@ page language="java"%>
-<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
+<%@page import="java.util.List,net.model.Jeu,java.util.Collections,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList"%>
 
 <!DOCTYPE html>
 <html>
@@ -30,6 +30,7 @@
 			</tr>
 			
 		<%ArrayList <PartieEnCours> parties = PartieEnCoursController.parties; 
+		Collections.reverse(parties);
 		for (PartieEnCours pec : parties){%>
 			<tr>  
 				
