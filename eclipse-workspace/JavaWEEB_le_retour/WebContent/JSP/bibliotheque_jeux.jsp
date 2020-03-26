@@ -24,12 +24,13 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 	<div class="container2">
 		<h1>LISTE DE JEUX</h1>
 
-		<div class="container">
+		<button id="button1" type="submit" class="addbtn">Ajouter</button>
+
+		<div id="formAjouter" class="container">
 			<form action="<%=request.getContextPath()%>/ajouterjeu" method="post">
 				<input type="text" id="gamename" placeholder="Nom du jeu"
 					name="gamename" required>
-				<button type="submit" class="addbtn">Ajouter</button>
-
+				<button id="button2" type="submit" class="addbtn">Ajouter</button>
 			</form>
 		</div>
 
@@ -66,5 +67,24 @@ for(PartieEnCours partie:PartieEnCoursController.parties){
 
 	<jsp:include page="./footer.jsp"></jsp:include>
 
+	<script>
+	(function(){var b1, b2, f;
+	b1 = document.getElementById("button1");
+	b2 = document.getElementById("button2");
+	f = document.getElementById("formAjouter");
+	f.style.display = 'none';
+	
+	b1.addEventListener('click',function(e){
+		b1.style.display = 'none';
+		f.style.display = 'block';
+	})
+	
+	b2.addEventListener('click', function(e){
+		b1.style.display = 'block';
+		f.style.display = 'none';
+	})
+	
+	})();
+	</script>
 </body>
 </html>
