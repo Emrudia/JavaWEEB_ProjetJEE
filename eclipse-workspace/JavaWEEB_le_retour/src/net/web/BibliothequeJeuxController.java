@@ -33,11 +33,11 @@ public class BibliothequeJeuxController extends HttpServlet {
 		String action = request.getServletPath();
 		Connection connection = null;
 		int rs = -1;
-		String ADD_GAME_BIB_SQL = "INSERT INTO Jeu (nomJeu) VALUES(?) ;";
+		
 		String DELETE_GAME_BIB_SQL = "DELETE FROM Bibliotheque WHERE Jeu_idJeu = ? ;";
 		String DELETE_GAME_SQL= "DELETE FROM Jeu WHERE idJeu = ? ;";
 		int idJeu= Integer.parseInt(request.getParameter("id"));
-		String nomJeu = request.getParameter("gamename");
+		
 		switch (action){
 			case "/deleteJeuBiblio":
 			try {
@@ -61,27 +61,37 @@ public class BibliothequeJeuxController extends HttpServlet {
 			response.sendRedirect("JSP/bibliotheque_jeux.jsp");
 				
 			break;
-			case "/addbutton" :
-				try {
-					connection = JDBCUtils.getConnection();
-					PreparedStatement preparedStatement = connection.prepareStatement(ADD_GAME_BIB_SQL);
-					preparedStatement.setString(1, nomJeu);
-					rs = preparedStatement.executeUpdate();
-				} catch (InstantiationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				response.sendRedirect("JSP/bibliotheque_jeux.jsp");
-			break;
 		}
 	}
+		
+	private void ajouterjeu(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		String ADD_GAME_BIB_SQL = "INSERT INTO Jeu (nomJeu) VALUES(?) ;";
+		String nomJeu = request.getParameter("gamename");
+		listJeux = JeuDAOMockImpl.tousJeux();
+		String action = request.getServletPath();
+		Connection connection = null;
+		int rs = -1;
+		
+		try {
+			connection = JDBCUtils.getConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(ADD_GAME_BIB_SQL);
+			preparedStatement.setString(1, nomJeu);
+			rs = preparedStatement.executeUpdate();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		response.sendRedirect("JSP/bibliotheque_jeux.jsp");
 	
+	}
+		
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
