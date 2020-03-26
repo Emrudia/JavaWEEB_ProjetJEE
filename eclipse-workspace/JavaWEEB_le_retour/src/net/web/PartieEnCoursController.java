@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.dao.JeuDAOImpl;
+import net.dao.PartieTermineeDAO;
+import net.dao.UserDao;
 import net.model.Jeu;
 import net.model.PartieEnCours;
 import net.model.PartieTerminee;
@@ -44,13 +46,15 @@ public class PartieEnCoursController extends HttpServlet {
 														LocalDateTime.now());
 				parties.add(pec);
 				request.getSession().setAttribute("partieEnCours", pec);
+				UserDao.incrementNbPartie((String)request.getSession().getAttribute("identifiant"));
 				response.sendRedirect(request.getContextPath() + "/JSP/in_game.jsp");
 				break;
 			case "/FinPartie":
 				PartieEnCours partie = (PartieEnCours) request.getSession().getAttribute("partieEnCours");
 				PartieTerminee endGame = new PartieTerminee(partie, LocalDateTime.now());
-				
-				
+				PartieTermineeDAO.addPartieTerminee(endGame);
+				request.getSession().removeAttribute("partieEnCours");
+				response.sendRedirect(request.getContextPath() + "/JSP/games_user.jsp");
 		}
 	}
 
