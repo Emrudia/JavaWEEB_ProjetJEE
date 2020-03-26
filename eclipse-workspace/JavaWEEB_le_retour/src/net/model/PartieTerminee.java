@@ -6,7 +6,6 @@ public class PartieTerminee {
 	
 	private int idUtilisateur;
 	private int idJeu;
-	private String nomUtilisateur;
 	private String nomJeu;
 	private LocalDateTime dateDebut;
 	private LocalDateTime dateFin;
@@ -15,7 +14,6 @@ public class PartieTerminee {
 		super();
 		this.idUtilisateur = idUtilisateur;
 		this.idJeu = idJeu;
-		this.nomUtilisateur = nomUtilisateur;
 		this.nomJeu = nomJeu;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
@@ -35,14 +33,6 @@ public class PartieTerminee {
 		int diff = (int) (dateFin.compareTo(dateDebut));
 		int nbHeures =  (int) (diff / 3600000.0f);
 		return nbHeures;
-	}
-	
-	public String getNomUtilisateur() {
-		return nomUtilisateur;
-	}
-
-	public void setNomUtilisateur(String nomUtilisateur) {
-		this.nomUtilisateur = nomUtilisateur;
 	}
 
 	public String getNomJeu() {
