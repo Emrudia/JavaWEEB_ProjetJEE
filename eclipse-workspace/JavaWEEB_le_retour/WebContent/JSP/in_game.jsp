@@ -18,7 +18,7 @@
 
 	<div class="container6">
 		<h2>Partie en cours</h2>
-		<a href = "<%=request.getContextPath()%>/FinPartie"> <button class = "endGameBtn" style = "150px">Fin de la Partie</button></a>
+		<a href = "<%=request.getContextPath()%>/FinPartie"> <button class = "endGameBtn">Fin de la Partie</button></a>
 	</div>
 	
 	<div class="margefooter"></div>
