@@ -62,8 +62,8 @@
 
 					<div>
 						<label for="uname">Vérifier le mot de passe :</label> <input
-							type="password" class="form-control" id="password"
-							placeholder="Mot de passe" name="password" required>
+							type="password" class="form-control" id="password2"
+							placeholder="Mot de passe" name="password2" required>
 					</div>
 
 				</h3>
