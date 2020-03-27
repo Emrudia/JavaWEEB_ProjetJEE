@@ -42,12 +42,12 @@
 					<div>
 						<label for="uname">Date de naissance :</label> <input type="text"
 							class="form-control" id="birthdayDate"
-							placeholder="<%=joueur.getDateNaissance() %>" name="birthdayDate" required>
+							placeholder="<%=joueur.getDateNaissance()%>" name="birthdayDate" required>
 					</div>
 
 					<div>
 						<label for="uname">E-mail :</label> <input type="text"
-							class="form-control" id="email" placeholder="E-mail" name="<%=joueur.getEmail() %>"
+							class="form-control" id="email" placeholder="<%=joueur.getEmail()%>"" name="email"
 							required>
 					</div>
 

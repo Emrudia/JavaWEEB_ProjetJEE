@@ -28,7 +28,7 @@ public class UserDao {
 
 			User user = new User (resultSet.getInt("idUtilisateur"), resultSet.getString("Compte_identifiant"),resultSet.getString("prenom"), resultSet.getString("nom"), 
 					JDBCUtils.getUtilDate(resultSet.getDate("dateDeNaissance")), JDBCUtils.getUtilDate(resultSet.getDate("dateInscription")), 
-					resultSet.getInt("banni") != 0, resultSet.getInt("nbParties"));
+					resultSet.getInt("banni") != 0, resultSet.getInt("nbParties"), resultSet.getString("email"));
 			return user;
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block

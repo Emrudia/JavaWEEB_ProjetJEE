@@ -78,6 +78,21 @@ public class User extends Personne implements Serializable {
 		this.nbParties = nbParties;
 		this.jeuxFavoris = new ArrayList<Jeu>();
 	}
+	
+	public User(int idUtilisateur, String identifiant, String prenom, String nom, LocalDate dateNaissance, LocalDate dateInscription, boolean banni,
+			int nbParties, String email) {
+		super();
+		this.idUtilisateur = idUtilisateur;
+		this.setIdentifiant(identifiant);
+		this.prenom = prenom;
+		this.nom = nom;
+		this.dateNaissance = dateNaissance;
+		this.dateInscription = dateInscription;
+		this.banni = banni;
+		this.nbParties = nbParties;
+		this.jeuxFavoris = new ArrayList<Jeu>();
+		this.setEmail(email);
+	}
 
 	public User() {
 		// TODO Auto-generated constructor stub
