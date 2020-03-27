@@ -2,7 +2,9 @@
 	
         <div class="container2">
     
-<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList, java.util.Collections"%>
+<%@page import="java.util.List,net.model.Jeu,net.model.PartieEnCours,net.web.PartieEnCoursController,java.util.ArrayList,java.util.Collections,java.time.format.DateTimeFormatter"%>
+<%DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); %>
+
         <table>
             <tr>
                 <td class="colonne1">Nom du jeu</td>
@@ -19,7 +21,7 @@
                 
                 <td><%=pec.getNomJeu() %></td>
                 <td><%=pec.getNomUtilisateur() %></td>
-                <td><%=pec.getDateDebut().toString() %></td>
+                <td><%=pec.getDateDebut().format(formatter) %></td>
                 <td><a href = "<%=request.getContextPath()%>/AdminFinPartie?index=<%=index%>"> <button class="endGameBtn" style="width:90%;">Terminer la partie</button></a></td>
             </tr>
             <%index++;
