@@ -15,7 +15,7 @@ import net.utils.JDBCUtils;
 public class UserDao {
 
 	public static User getUser (String username) {
-		String GET_USER_SQL = "SELECT * FROM Utilisateur WHERE Compte_identifiant = '?';";
+		String GET_USER_SQL = "SELECT * FROM Utilisateur WHERE Compte_identifiant = ?;";
 		Connection connection;
 		try {
 			connection = JDBCUtils.getConnection();
@@ -23,8 +23,10 @@ public class UserDao {
 			preparedStatement.setString(1, username);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			resultSet.next();
 
-			User user = new User (resultSet.getString("prenom"), resultSet.getString("nom"), 
+			User user = new User (resultSet.getInt("idUtilisateur"), resultSet.getString("Compte_identifiant"),resultSet.getString("prenom"), resultSet.getString("nom"), 
 					JDBCUtils.getUtilDate(resultSet.getDate("dateDeNaissance")), JDBCUtils.getUtilDate(resultSet.getDate("dateInscription")), 
 					resultSet.getInt("banni") != 0, resultSet.getInt("nbParties"));
 			return user;
