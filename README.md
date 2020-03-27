@@ -16,5 +16,20 @@ Théo : 33.5h
 Philippe: 31h
 
 
+Pour faire le déployement du site sur le serveur : 
+Commencer par repérer l'emplacement de votre fichier javaweeb.war
+Ouvrir un terminal 
+Utiliser la commande : cd {chemin du répertoire où se trouve le fichier javaweeb.war}
+Vérifier par la commande : ls la présence dudit fichier
+Lancer les commandes suivantes : (pour la version 8.5.37 de tomcat)
+sudo /opt/tomcat/apache-tomcat-8.5.37/bin/startup.sh
+sudo cp javaweeb.war /opt/tomcat/apache-tomcat-8.5.37/webapps/
+
+Une fois ceci fait, ouvrir un navigateur internet et entrer l'URL suivante :
+localhost:8080/javaweeb/
+
+Pour fermer le serveur, faire la commande suivante : 
+sudo /opt/tomcat/apache-tomcat-8.5.37/bin/shutdown.sh
+
 
   
