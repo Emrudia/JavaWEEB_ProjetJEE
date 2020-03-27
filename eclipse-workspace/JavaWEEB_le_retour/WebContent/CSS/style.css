@@ -192,10 +192,15 @@ p, li {
 }
 
 
-.container3>img {
-	width: 100%;
+.container3 a{
+	width: 15%;
 	display: table-cell;
 	padding: 5px 5px;
+	align-items: center;
+}
+
+.container3 img {
+	width: 100%;
 	align-items: center;
 }
 

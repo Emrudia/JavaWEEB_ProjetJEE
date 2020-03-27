@@ -26,12 +26,12 @@
 						e-mail.</h2>
 				</div>
 				<div class="container3">
-					<img src="<%=request.getContextPath()%>/image/facebook_logo.png" style="width: 15%;" /> <img
-						src="<%=request.getContextPath()%>/image/twitter_logo.png" style="width: 15%;" /> <img
-						src="<%=request.getContextPath()%>/image/instagram_logo.png" style="width: 15%;" /> <img
-						src="<%=request.getContextPath()%>/image/msn_logo.png" style="width: 18%;" /> <img
-						src="<%=request.getContextPath()%>/image/myspace_logo.png" style="width: 15%;" /> <img
-						src="<%=request.getContextPath()%>/image/skyblog_logo.png" style="width: 15%;" />
+					<a><img src="<%=request.getContextPath()%>/image/facebook_logo.png" style="width: 80%;" /></a> 
+					<a><img src="<%=request.getContextPath()%>/image/twitter_logo.png" style="width: 80%;" /> </a> 
+					<a><img src="<%=request.getContextPath()%>/image/instagram_logo.png" style="width: 80%;" /> </a> 
+					<a><img src="<%=request.getContextPath()%>/image/msn_logo.png" style="width: 80%;" /> </a> 
+					<a><img src="<%=request.getContextPath()%>/image/myspace_logo.png" style="width: 80%;" /> </a> 
+					<a><img src="<%=request.getContextPath()%>/image/skyblog_logo.png" style="width: 80%;" /> </a> 
 				</div>
 				<div>
 					<h2>javaweeb@gmail.com</h2>
