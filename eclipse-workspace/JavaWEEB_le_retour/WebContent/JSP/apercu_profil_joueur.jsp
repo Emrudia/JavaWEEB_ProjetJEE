@@ -58,15 +58,9 @@
 					</div>
 
 					<div>
-						<label for="uname">Mot de passe :</label> <input type="password"
-							class="form-control" id="password" placeholder="<%=joueur.getMotDePasse() %>"
+						<label for="uname">Id Utilisateur</label> <input type="password"
+							class="form-control" id="password" placeholder="<%=joueur.getIdUtilisateur() %>"
 							name="password" required>
-					</div>
-					
-					<div>
-						<label for="uname">Id Utilisateur :</label> <input type="idUtilisateur"
-							class="form-control" id="idUtilisateur" placeholder="<%=joueur.getIdUtilisateur() %>"
-							name="idUtilisateur" required>
 					</div>
 
 				</h3>
