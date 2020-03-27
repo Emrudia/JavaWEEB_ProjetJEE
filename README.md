@@ -3,7 +3,7 @@
 - war : /javaweeb.war
 - rapport : rapport_equipe_4
 - projet : /eclipse-workspace/JavaWEEB_le_retour
-- consignes installation : 
+
 - vidéos : /projet-jee-equipe4_partie1.mp4 et ~/projet-jee-equipe4_partie2.mp4, on a réalisé 2 vidéos car on avait oublié de présenter des éléments et nous n'avions pas le temps de faire du montage.  (https://youtu.be/MLxaV4i4HV8, https://youtu.be/UIJHWT4t5b8 si le chargement ne se fait pas)
 
 	Nombre d’heures
@@ -15,7 +15,7 @@ Mathieu : 31h
 Théo : 33.5h
 Philippe: 31h
 
-
+- consignes installation : 
 Pour faire le déployement du site sur le serveur : 
 Commencer par repérer l'emplacement de votre fichier javaweeb.war
 Ouvrir un terminal 
