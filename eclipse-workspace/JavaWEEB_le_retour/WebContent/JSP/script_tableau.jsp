@@ -20,7 +20,7 @@
                 <td><%=pec.getNomJeu() %></td>
                 <td><%=pec.getNomUtilisateur() %></td>
                 <td><%=pec.getDateDebut().toString() %></td>
-                <td><a href = "<%=request.getContextPath()%>/AdminFinPartie?index=<%=index%>"> <button class="endGameBtn" style="width = 90%">Terminer la partie</button></a></td>
+                <td><a href = "<%=request.getContextPath()%>/AdminFinPartie?index=<%=index%>"> <button class="endGameBtn" style="width:90%;">Terminer la partie</button></a></td>
             </tr>
             <%index++;
             } 
