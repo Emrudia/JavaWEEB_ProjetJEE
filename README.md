@@ -28,6 +28,8 @@ sudo cp javaweeb.war /opt/tomcat/apache-tomcat-8.5.37/webapps/
 Une fois ceci fait, ouvrir un navigateur internet et entrer l'URL suivante :
 localhost:8080/javaweeb/
 
+si l'on souhaite se connecter en tant qu'administrateur utiliser (id : admin, msp : admin)
+
 Pour fermer le serveur, faire la commande suivante : 
 sudo /opt/tomcat/apache-tomcat-8.5.37/bin/shutdown.sh
 
